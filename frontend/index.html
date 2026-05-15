@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>BirdBrain — Karnataka Birds</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" href="/static/icon-192.svg">
+    <link rel="apple-touch-icon" href="/static/icon-192.svg">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header id="header">
+            <div class="header-left">
+                <h1>🐦 BirdBrain</h1>
+                <span class="subtitle">Karnataka Birds</span>
+            </div>
+            <div class="header-right">
+                <div class="stat-pill" id="streak-pill">🔥 <span id="streak">0</span></div>
+                <div class="stat-pill" id="accuracy-pill">🎯 <span id="accuracy">0</span>%</div>
+                <button id="menu-btn" class="icon-btn" onclick="toggleStats()">📊</button>
+            </div>
+        </header>
+
+        <!-- Mode Selector -->
+        <div id="mode-selector">
+            <button class="mode-btn active" data-mode="photo" onclick="setMode('photo')">📷 Photo</button>
+            <button class="mode-btn" data-mode="sound" onclick="setMode('sound')">🔊 Sound</button>
+            <button class="mode-btn" data-mode="reverse" onclick="setMode('reverse')">🔄 Reverse</button>
+        </div>
+
+        <!-- Quiz Area -->
+        <main id="quiz-area">
+            <!-- Loading -->
+            <div id="loading" class="screen active">
+                <div class="loader"></div>
+                <p>Loading birds...</p>
+            </div>
+
+            <!-- Question -->
+            <div id="question-screen" class="screen">
+                <!-- Photo/Sound prompt -->
+                <div id="prompt-area">
+                    <img id="prompt-image" src="" alt="Which bird is this?" style="display:none;">
+                    <div id="prompt-audio" style="display:none;">
+                        <button id="play-sound-btn" class="play-btn" onclick="playSound()">
+                            ▶ Play Bird Call
+                        </button>
+                        <audio id="audio-player" preload="auto"></audio>
+                    </div>
+                    <div id="prompt-text" style="display:none;">
+                        <p class="reverse-label">Which bird is this?</p>
+                        <h2 id="reverse-name"></h2>
+                    </div>
+                </div>
+
+                <!-- Choices -->
+                <div id="choices"></div>
+
+                <!-- Progress dots -->
+                <div id="progress-bar">
+                    <span id="round-counter">Round 1</span>
+                    <div id="mastery-bar">
+                        <div id="mastery-fill"></div>
+                    </div>
+                    <span id="mastery-label">0/20 mastered</span>
+                </div>
+            </div>
+
+            <!-- Result Feedback -->
+            <div id="result-screen" class="screen">
+                <div id="result-icon"></div>
+                <h2 id="result-title"></h2>
+                <p id="result-bird-name"></p>
+                <p id="result-scientific" class="scientific"></p>
+                <p id="result-fact" class="fun-fact"></p>
+                <p id="result-habitat" class="detail"></p>
+                <p id="result-spots" class="detail"></p>
+                <div id="result-stats">
+                    <div class="mini-stat">🔥 Streak: <span id="res-streak">0</span></div>
+                    <div class="mini-stat">📦 Box: <span id="res-box">1</span>/4</div>
+                </div>
+                <button id="next-btn" class="primary-btn" onclick="nextQuestion()">Next Bird →</button>
+            </div>
+        </main>
+
+        <!-- Stats Panel (hidden by default) -->
+        <div id="stats-panel" class="panel hidden">
+            <div class="panel-header">
+                <h2>📊 Your Progress</h2>
+                <button class="icon-btn" onclick="toggleStats()">✕</button>
+            </div>
+            <div id="stats-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="s-accuracy">0%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="s-streak">0</div>
+                        <div class="stat-label">Best Streak</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="s-mastered">0</div>
+                        <div class="stat-label">Mastered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="s-rounds">0</div>
+                        <div class="stat-label">Rounds</div>
+                    </div>
+                </div>
+                <h3>Bird Progress</h3>
+                <div id="bird-progress-list"></div>
+                <button class="danger-btn" onclick="resetProgress()">🗑️ Reset All Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
