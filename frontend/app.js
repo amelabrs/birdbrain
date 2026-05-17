@@ -197,8 +197,6 @@ function showResult(data, correct) {
 
     // Update progress counter
     const total = data.total_birds || 24;
-    document.getElementById("mastery-fill").style.width = `${(sessionBird / total) * 100}%`;
-    document.getElementById("mastery-label").textContent = `${mastered}/${total} mastered`;
     document.getElementById("round-counter").textContent = `Bird ${sessionBird} of ${total}`;
 
     showScreen("result-screen");
