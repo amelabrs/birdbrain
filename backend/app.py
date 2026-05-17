@@ -48,19 +48,21 @@ class AnswerRequest(BaseModel):
 
 
 @app.get("/api/question")
-def get_question(mode: str = Query("photo", regex="^(photo|sound|reverse)$")):
-    bird_id = sr.pick_bird(ALL_IDS)
-    bird = BIRD_MAP[bird_id]
+def get_question(
+    mode: str = Query("photo", regex="^(photo|sound|reverse)$"),
+    seen: str = Query(""),
+):
+    seen_ids = set(seen.split(",")) if seen else set()
+    available = [bid for bid in ALL_IDS if bid not in seen_ids] or ALL_IDS
 
-    # For sound mode, skip birds without sound URLs
     if mode == "sound":
-        birds_with_sound = [b for b in BIRDS if b.get("sound_url")]
-        if birds_with_sound:
-            bird_id = sr.pick_bird([b["id"] for b in birds_with_sound])
-            bird = BIRD_MAP[bird_id]
-        else:
-            mode = "photo"  # fallback
+        sound_ids = [b["id"] for b in BIRDS if b.get("sound_url")]
+        available_sound = [bid for bid in sound_ids if bid not in seen_ids] or sound_ids
+        bird_id = sr.pick_bird(available_sound)
+    else:
+        bird_id = sr.pick_bird(available)
 
+    bird = BIRD_MAP[bird_id]
     return generate_question(bird, BIRDS, mode=mode)
 
 

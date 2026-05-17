@@ -3,6 +3,11 @@
 let currentMode = "photo";
 let currentQuestion = null;
 let answered = false;
+let sessionBird = 0;
+let sessionTotal = 0;
+let sessionCorrect = 0;
+let sessionWrong = [];
+let sessionSeen = new Set();
 
 // ── Mode ────────────────────────────────────────────────────────────
 
@@ -17,12 +22,26 @@ function setMode(mode) {
 // ── Load Question ───────────────────────────────────────────────────
 
 async function loadQuestion() {
+    // Check if session is complete
+    if (sessionTotal > 0 && sessionBird >= sessionTotal) {
+        showSessionSummary();
+        return;
+    }
+
     answered = false;
     showScreen("loading");
 
     try {
-        const res = await fetch(`/api/question?mode=${currentMode}`);
+        const seen = Array.from(sessionSeen).join(",");
+        const res = await fetch(`/api/question?mode=${currentMode}&seen=${encodeURIComponent(seen)}`);
         currentQuestion = await res.json();
+
+        // Track unique birds in session
+        if (!sessionSeen.has(currentQuestion.bird_id)) {
+            sessionSeen.add(currentQuestion.bird_id);
+            sessionBird = sessionSeen.size;
+        }
+
         renderQuestion();
         showScreen("question-screen");
     } catch (err) {
@@ -133,6 +152,14 @@ async function submitAnswer(chosenIndex) {
         });
         const data = await res.json();
 
+        // Track session score
+        if (correct) {
+            sessionCorrect++;
+        } else {
+            sessionWrong.push(data.correct_name || currentQuestion.bird_id);
+        }
+        sessionTotal = data.total_birds || 24;
+
         // Update header stats
         document.getElementById("streak").textContent = data.streak;
         document.getElementById("accuracy").textContent = data.accuracy;
@@ -168,12 +195,11 @@ function showResult(data, correct) {
     document.getElementById("res-streak").textContent = data.streak;
     document.getElementById("res-box").textContent = data.box;
 
-    // Update mastery bar
-    const mastered = data.mastered || 0;
-    const total = data.total_birds || 20;
-    document.getElementById("mastery-fill").style.width = `${(mastered / total) * 100}%`;
+    // Update progress counter
+    const total = data.total_birds || 24;
+    document.getElementById("mastery-fill").style.width = `${(sessionBird / total) * 100}%`;
     document.getElementById("mastery-label").textContent = `${mastered}/${total} mastered`;
-    document.getElementById("round-counter").textContent = `Round ${data.total_rounds || 0}`;
+    document.getElementById("round-counter").textContent = `Bird ${sessionBird} of ${total}`;
 
     showScreen("result-screen");
 }
@@ -181,6 +207,44 @@ function showResult(data, correct) {
 // ── Next Question ───────────────────────────────────────────────────
 
 function nextQuestion() {
+    loadQuestion();
+}
+
+// ── Session Summary ─────────────────────────────────────────────────
+
+function showSessionSummary() {
+    const total = sessionTotal;
+    const pct = total > 0 ? Math.round((sessionCorrect / total) * 100) : 0;
+
+    let grade, emoji;
+    if (pct >= 90) { grade = "Excellent!"; emoji = "🏆"; }
+    else if (pct >= 70) { grade = "Great job!"; emoji = "🌟"; }
+    else if (pct >= 50) { grade = "Good effort!"; emoji = "👍"; }
+    else { grade = "Keep practising!"; emoji = "💪"; }
+
+    let wrongHtml = "";
+    if (sessionWrong.length > 0) {
+        wrongHtml = `<div class="needs-work" style="margin-top:12px;text-align:left">
+            <strong>⚠️ Work on these:</strong><br>${sessionWrong.join(", ")}
+        </div>`;
+    }
+
+    document.getElementById("summary-screen").innerHTML = `
+        <div style="font-size:48px;margin-bottom:8px">${emoji}</div>
+        <h2>${grade}</h2>
+        <p style="font-size:32px;font-weight:bold;color:var(--primary);margin:12px 0">${sessionCorrect}/${total}</p>
+        <p style="color:var(--text-dim);margin-bottom:8px">${pct}% accuracy this session</p>
+        ${wrongHtml}
+        <button class="primary-btn" style="margin-top:20px" onclick="startNewSession()">Play Again →</button>
+    `;
+    showScreen("summary-screen");
+}
+
+function startNewSession() {
+    sessionBird = 0;
+    sessionCorrect = 0;
+    sessionWrong = [];
+    sessionSeen = new Set();
     loadQuestion();
 }
 
@@ -255,7 +319,7 @@ async function resetProgress() {
     document.getElementById("streak").textContent = "0";
     document.getElementById("accuracy").textContent = "0";
     toggleStats();
-    loadQuestion();
+    startNewSession();
 }
 
 // ── Screen Management ───────────────────────────────────────────────
