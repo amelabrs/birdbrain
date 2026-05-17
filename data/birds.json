@@ -310,5 +310,31 @@
     "fun_fact": "A tiny, restless bird that cocks its tail upright and scolds everything that moves. Despite its size, it dominates garden soundscapes with sheer volume.",
     "habitat": "Gardens, scrub, grassland, urban greenery",
     "karnataka_spots": "Every garden in Bangalore, Mysore, Mangalore — one of the commonest birds"
+  },
+  {
+    "id": "indian-white-eye",
+    "name": "Indian White-eye",
+    "scientific_name": "Zosterops palpebrosus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126366191/2400",
+    "image_credit": "Abhishek Das / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540348/mp3",
+    "xc_id": "",
+    "sound_tip": "A soft, tinkling 'chee-chee-chee' — like tiny glass wind chimes in a gentle breeze. Easy to miss unless you're listening for it.",
+    "fun_fact": "Tiny olive-green birds with a bold white eye-ring. They travel in restless flocks, hanging upside down from flowers to sip nectar like miniature acrobats.",
+    "habitat": "Gardens, woodland edges, flowering trees",
+    "karnataka_spots": "Lalbagh, Cubbon Park, Coorg, any garden with flowering trees"
+  },
+  {
+    "id": "spotted-dove",
+    "name": "Spotted Dove",
+    "scientific_name": "Spilopelia chinensis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/621165796/2400",
+    "image_credit": "Aseem Kothiala / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538379/mp3",
+    "xc_id": "",
+    "sound_tip": "A gentle, three-note 'coo-coo-croo' — soft and dreamy, like a lullaby on repeat. Slower and deeper than the Laughing Dove.",
+    "fun_fact": "Named for the black-and-white spotted patch on its neck. One of the most familiar garden doves, often seen walking calmly on the ground.",
+    "habitat": "Gardens, open woodland, urban areas, farmland",
+    "karnataka_spots": "Common everywhere — gardens, campuses, rooftops across Karnataka"
   }
 ]
