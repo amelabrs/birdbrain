@@ -297,5 +297,18 @@
     "fun_fact": "India's answer to the hummingbird. Males in breeding plumage are iridescent purple-black that flashes in sunlight like a jewel.",
     "habitat": "Gardens, scrub, forest edges, flowering trees",
     "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, any flowering garden"
+  },
+  {
+    "id": "ashy-prinia",
+    "name": "Ashy Prinia",
+    "scientific_name": "Prinia socialis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126403561/2400",
+    "image_credit": "Balaji P B / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540342/mp3",
+    "xc_id": "",
+    "sound_tip": "A nagging, electric 'jimmy-jimmy-jimmy' or 'zzzt-zzzt-zzzt' — like a tiny broken doorbell buzzing non-stop. Persistent and impossible to tune out.",
+    "fun_fact": "A tiny, restless bird that cocks its tail upright and scolds everything that moves. Despite its size, it dominates garden soundscapes with sheer volume.",
+    "habitat": "Gardens, scrub, grassland, urban greenery",
+    "karnataka_spots": "Every garden in Bangalore, Mysore, Mangalore — one of the commonest birds"
   }
 ]
