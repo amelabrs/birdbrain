@@ -77,6 +77,7 @@ function renderQuestion() {
     // Render choices
     const choicesEl = document.getElementById("choices");
     choicesEl.innerHTML = "";
+    choicesEl.classList.toggle("image-grid", q.mode === "reverse");
 
     q.choices.forEach((choice, i) => {
         const btn = document.createElement("button");
