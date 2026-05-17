@@ -106,10 +106,11 @@ def list_birds():
     ]
 
 
-# ── Serve frontend ──────────────────────────────────────────────────
+# ── Serve frontend & data assets ─────────────────────────────────────
 
 FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
 
+app.mount("/data", StaticFiles(directory=str(DATA_DIR)), name="data")
 app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
 
 
