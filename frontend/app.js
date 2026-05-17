@@ -65,7 +65,7 @@ function renderQuestion() {
 
         if (q.mode === "reverse" && choice.image_url) {
             btn.className += " image-choice";
-            btn.innerHTML = `<img src="${choice.image_url}" alt="Bird option"><span>${choice.label}</span>`;
+            btn.innerHTML = `<img src="${choice.image_url}" alt="Bird option">`;
         } else {
             btn.textContent = choice.label;
         }
@@ -153,6 +153,16 @@ function showResult(data, correct) {
     document.getElementById("result-bird-name").textContent = data.correct_name || "";
     document.getElementById("result-scientific").textContent = data.scientific_name || "";
     document.getElementById("result-fact").textContent = `💡 ${data.fun_fact || ""}`;
+
+    // Show sound tip in sound mode
+    const soundTipEl = document.getElementById("result-sound-tip");
+    if (currentMode === "sound" && data.sound_tip) {
+        soundTipEl.textContent = `🎵 Remember: ${data.sound_tip}`;
+        soundTipEl.style.display = "block";
+    } else {
+        soundTipEl.style.display = "none";
+    }
+
     document.getElementById("result-habitat").textContent = data.habitat ? `🌿 ${data.habitat}` : "";
     document.getElementById("result-spots").textContent = data.karnataka_spots ? `📍 ${data.karnataka_spots}` : "";
     document.getElementById("res-streak").textContent = data.streak;
@@ -206,6 +216,16 @@ function renderStats(stats) {
     if (stats.birds) {
         // Sort: lowest box first
         const entries = Object.entries(stats.birds).sort((a, b) => a[1].box - b[1].box);
+
+        // Identify birds that need work (box 1 with wrong > 0)
+        const needsWork = entries.filter(([, b]) => b.box === 1 && b.wrong > 0);
+        if (needsWork.length > 0) {
+            const tipEl = document.createElement("div");
+            tipEl.className = "needs-work";
+            tipEl.innerHTML = `<strong>⚠️ Needs work:</strong> ${needsWork.map(([id]) => id.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())).join(", ")}`;
+            listEl.appendChild(tipEl);
+        }
+
         for (const [birdId, bData] of entries) {
             const name = birdId.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
             const row = document.createElement("div");
@@ -216,10 +236,13 @@ function renderStats(stats) {
                 boxes += `<div class="box-dot ${i <= bData.box ? "filled" : ""}"></div>`;
             }
 
+            const total = bData.correct + bData.wrong;
+            const pct = total > 0 ? Math.round((bData.correct / total) * 100) : 0;
+
             row.innerHTML = `
                 <span class="bird-name">${name}</span>
                 <div class="boxes">${boxes}</div>
-                <span style="font-size:12px;color:var(--text-dim)">${bData.correct}✓ ${bData.wrong}✗</span>
+                <span style="font-size:12px;color:var(--text-dim)">${pct}% (${bData.correct}✓ ${bData.wrong}✗)</span>
             `;
             listEl.appendChild(row);
         }

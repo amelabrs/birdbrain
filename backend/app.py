@@ -73,6 +73,7 @@ def submit_answer(req: AnswerRequest):
         "correct": correct,
         "correct_name": bird.get("name", ""),
         "fun_fact": bird.get("fun_fact", ""),
+        "sound_tip": bird.get("sound_tip", ""),
         "scientific_name": bird.get("scientific_name", ""),
         "habitat": bird.get("habitat", ""),
         "karnataka_spots": bird.get("karnataka_spots", ""),
