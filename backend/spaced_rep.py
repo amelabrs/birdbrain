@@ -79,8 +79,18 @@ class SpacedRepetition:
                 eligible.append((bid, weight))
 
         if not eligible:
-            # All birds seen recently — pick the one with lowest box
-            eligible = [(bid, (5 - self._state["birds"][bid]["box"]) ** 2) for bid in all_bird_ids]
+            # All birds seen recently — pick the most overdue one
+            # (highest ratio of rounds_waited / interval)
+            overdue = []
+            for bid in all_bird_ids:
+                b = self._state["birds"][bid]
+                interval = self.BOX_INTERVALS.get(b["box"], 10)
+                rounds_since = current_round - b["last_seen_round"]
+                overdue.append((bid, rounds_since / interval))
+            overdue.sort(key=lambda x: x[1], reverse=True)
+            # Pick randomly from the top few most-overdue birds
+            top = overdue[:max(3, len(overdue) // 4)]
+            return random.choice(top)[0]
 
         # Weighted random selection
         ids, weights = zip(*eligible)
