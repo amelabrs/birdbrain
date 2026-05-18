@@ -5,6 +5,26 @@ from __future__ import annotations
 import random
 from typing import Any
 
+VARIANT_CHANCE = 0.3  # 30% chance to show a variant instead of the main image/sound
+
+
+def _pick_sound(bird: dict) -> tuple[str, str | None, str | None]:
+    """Return (url, variant_label, variant_tip). Label/tip are None for main sound."""
+    extras = bird.get("extra_sounds") or []
+    if extras and random.random() < VARIANT_CHANCE:
+        v = random.choice(extras)
+        return v["url"], v.get("label"), v.get("tip")
+    return bird.get("sound_url", ""), None, None
+
+
+def _pick_image(bird: dict) -> tuple[str, str | None]:
+    """Return (url, variant_label). Label is None for main image."""
+    extras = bird.get("extra_images") or []
+    if extras and random.random() < VARIANT_CHANCE:
+        v = random.choice(extras)
+        return v["url"], v.get("label")
+    return bird["image_url"], None
+
 
 def generate_question(
     target_bird: dict,
@@ -64,13 +84,13 @@ def generate_question(
     correct_index = next(i for i, c in enumerate(choices) if c["id"] == target_bird["id"])
 
     if mode == "sound":
-        prompt = target_bird.get("sound_url", "")
+        prompt, variant_label, variant_tip = _pick_sound(target_bird)
         prompt_type = "audio"
     else:
-        prompt = target_bird["image_url"]
+        prompt, variant_label = _pick_image(target_bird)
         prompt_type = "image"
 
-    return {
+    result = {
         "mode": mode,
         "prompt": prompt,
         "prompt_type": prompt_type,
@@ -79,3 +99,8 @@ def generate_question(
         "bird_id": target_bird["id"],
         "fun_fact": target_bird["fun_fact"],
     }
+    if variant_label:
+        result["variant_label"] = variant_label
+    if mode == "sound" and variant_tip:
+        result["variant_sound_tip"] = variant_tip
+    return result

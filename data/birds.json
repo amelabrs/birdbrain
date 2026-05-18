@@ -125,6 +125,13 @@
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540183/mp3",
     "xc_id": "",
     "sound_tip": "A rising, manic 'ku-OO! ku-OO! ku-OO!' that climbs in pitch and intensity — like an alarm clock that won't stop. The female replies with a rapid 'kik-kik-kik'.",
+    "extra_sounds": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540184/mp3",
+        "label": "Female call",
+        "tip": "A rapid, sharp 'kik-kik-kik-kik' — like an angry typist hammering keys. Completely different from the male's rising whistle."
+      }
+    ],
     "fun_fact": "A brood parasite — lays eggs in crows' nests. Its rising 'ku-OO' call is a classic Indian summer sound.",
     "habitat": "Light woodlands, gardens, urban areas",
     "karnataka_spots": "Heard across every city and town in Karnataka"
@@ -294,6 +301,18 @@
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540427/mp3",
     "xc_id": "",
     "sound_tip": "A rapid, high-pitched 'chwit-chwit-chwit' or a fast tinkling song — like someone speed-tapping a tiny xylophone. Often given while hovering at flowers.",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/126385381/1200",
+        "label": "Female",
+        "credit": "Albin Jacob / Macaulay Library"
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126385411/1800",
+        "label": "Non-breeding male",
+        "credit": "Albin Jacob / Macaulay Library"
+      }
+    ],
     "fun_fact": "India's answer to the hummingbird. Males in breeding plumage are iridescent purple-black that flashes in sunlight like a jewel.",
     "habitat": "Gardens, scrub, forest edges, flowering trees",
     "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, any flowering garden"

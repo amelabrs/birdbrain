@@ -63,6 +63,15 @@ function renderQuestion() {
     document.getElementById("prompt-audio").style.display = "none";
     document.getElementById("prompt-text").style.display = "none";
 
+    // Variant label
+    const variantEl = document.getElementById("variant-label");
+    if (q.variant_label) {
+        variantEl.textContent = q.prompt_type === "audio" ? `🎵 ${q.variant_label}` : `📷 ${q.variant_label}`;
+        variantEl.style.display = "block";
+    } else {
+        variantEl.style.display = "none";
+    }
+
     // Show the right prompt
     if (q.prompt_type === "image") {
         const img = document.getElementById("prompt-image");
@@ -189,9 +198,15 @@ function showResult(data, correct) {
 
     // Show sound tip in sound mode
     const soundTipEl = document.getElementById("result-sound-tip");
-    if (currentMode === "sound" && data.sound_tip) {
-        soundTipEl.textContent = `🎵 Remember: ${data.sound_tip}`;
-        soundTipEl.style.display = "block";
+    if (currentMode === "sound") {
+        const tip = currentQuestion.variant_sound_tip || data.sound_tip;
+        if (tip) {
+            const prefix = currentQuestion.variant_label ? `🎵 ${currentQuestion.variant_label}: ` : "🎵 Remember: ";
+            soundTipEl.textContent = `${prefix}${tip}`;
+            soundTipEl.style.display = "block";
+        } else {
+            soundTipEl.style.display = "none";
+        }
     } else {
         soundTipEl.style.display = "none";
     }

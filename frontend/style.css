@@ -400,6 +400,17 @@ body {
     color: var(--accent);
 }
 
+.variant-label {
+    background: rgba(249, 168, 38, 0.15);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
 .needs-work {
     background: rgba(233, 69, 96, 0.1);
     border-left: 3px solid var(--error);
