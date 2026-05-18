@@ -5,6 +5,7 @@ let currentQuestion = null;
 let answered = false;
 let sessionBird = 0;
 let sessionTotal = 0;
+let totalBirdCount = 0;
 let sessionCorrect = 0;
 let sessionWrong = [];
 let sessionSeen = new Set();
@@ -35,6 +36,10 @@ async function loadQuestion() {
         const seen = Array.from(sessionSeen).join(",");
         const res = await fetch(`/api/question?mode=${currentMode}&seen=${encodeURIComponent(seen)}`);
         currentQuestion = await res.json();
+
+        // Track pool size from backend
+        sessionTotal = currentQuestion.unlocked_count || sessionTotal;
+        totalBirdCount = currentQuestion.total_bird_count || sessionTotal;
 
         // Track unique birds in session
         if (!sessionSeen.has(currentQuestion.bird_id)) {
@@ -169,7 +174,7 @@ async function submitAnswer(chosenIndex) {
         setTimeout(() => showResult(data, correct), 800);
     } catch (err) {
         console.error("Failed to submit answer:", err);
-        setTimeout(() => showResult({ streak: 0, box: 1, mastered: 0, total_birds: 20, total_rounds: 0 }, correct), 800);
+        setTimeout(() => showResult({ streak: 0, box: 1, total_birds: sessionTotal, total_rounds: 0 }, correct), 800);
     }
 }
 
@@ -197,8 +202,7 @@ function showResult(data, correct) {
     document.getElementById("res-box").textContent = data.box;
 
     // Update progress counter
-    const total = data.total_birds || 24;
-    document.getElementById("round-counter").textContent = `Bird ${sessionBird} of ${total}`;
+    document.getElementById("round-counter").textContent = `Bird ${sessionBird} of ${sessionTotal}`;
 
     showScreen("result-screen");
 }
@@ -228,15 +232,25 @@ function showSessionSummary() {
         </div>`;
     }
 
+    // Show unlock progress
+    const lockHtml = sessionTotal < totalBirdCount
+        ? `<p style="color:var(--text-dim);font-size:13px;margin-top:8px">🔓 ${sessionTotal} of ${totalBirdCount} birds unlocked${pct >= 80 ? " — scoring ≥80% unlocks more!" : " — score ≥80% to unlock more"}</p>`
+        : `<p style="color:var(--text-dim);font-size:13px;margin-top:8px">🔓 All ${totalBirdCount} birds unlocked!</p>`;
+
     document.getElementById("summary-screen").innerHTML = `
         <div style="font-size:48px;margin-bottom:8px">${emoji}</div>
         <h2>${grade}</h2>
         <p style="font-size:32px;font-weight:bold;color:var(--primary);margin:12px 0">${sessionCorrect}/${total}</p>
         <p style="color:var(--text-dim);margin-bottom:8px">${pct}% accuracy this session</p>
         ${wrongHtml}
+        ${lockHtml}
+        <div id="unlock-msg"></div>
         <button class="primary-btn" style="margin-top:20px" onclick="startNewSession()">Play Again →</button>
     `;
     showScreen("summary-screen");
+
+    // Check for unlocks
+    checkUnlock(pct);
 }
 
 function startNewSession() {
@@ -245,6 +259,29 @@ function startNewSession() {
     sessionWrong = [];
     sessionSeen = new Set();
     loadQuestion();
+}
+
+async function checkUnlock(pct) {
+    try {
+        const res = await fetch("/api/session-complete", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ score_pct: pct }),
+        });
+        const data = await res.json();
+        const msgEl = document.getElementById("unlock-msg");
+        if (data.newly_unlocked > 0) {
+            sessionTotal = data.unlocked_count;
+            totalBirdCount = data.total_birds;
+            msgEl.innerHTML = `<div style="margin-top:12px;padding:12px;background:rgba(255,215,0,0.15);border-radius:12px;border:1px solid rgba(255,215,0,0.3)">
+                <span style="font-size:24px">🎉</span>
+                <strong style="color:#ffd700"> ${data.newly_unlocked} new bird${data.newly_unlocked > 1 ? 's' : ''} unlocked!</strong>
+                <br><span style="color:var(--text-dim);font-size:13px">${data.unlocked_count} of ${data.total_birds} now available</span>
+            </div>`;
+        }
+    } catch (err) {
+        console.error("Failed to check unlock:", err);
+    }
 }
 
 // ── Stats Panel ─────────────────────────────────────────────────────

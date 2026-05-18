@@ -32,14 +32,23 @@ class SpacedRepetition:
         self._path = self._dir / self.SAVE_FILE
         self._state: dict = self._load()
 
+    INITIAL_UNLOCK = 5
+    UNLOCK_STEP = 3
+    UNLOCK_THRESHOLD = 80  # session accuracy % needed to unlock
+
     def _load(self) -> dict:
         if self._path.exists():
             try:
-                return json.loads(self._path.read_text("utf-8"))
+                data = json.loads(self._path.read_text("utf-8"))
+                # Migrate: add unlocked_count if missing
+                if "unlocked_count" not in data:
+                    data["unlocked_count"] = max(self.INITIAL_UNLOCK, len(data.get("birds", {})))
+                return data
             except (json.JSONDecodeError, OSError):
                 pass
         return {
             "round": 0,
+            "unlocked_count": self.INITIAL_UNLOCK,
             "birds": {},  # bird_id -> {box, correct_streak, total_correct, total_wrong, last_seen_round}
             "history": [],  # last 50 answers
             "stats": {"total_correct": 0, "total_wrong": 0, "best_streak": 0, "current_streak": 0},
@@ -156,15 +165,40 @@ class SpacedRepetition:
             "learning": sum(1 for v in birds_state.values() if 2 <= v["box"] <= 3),
             "new": sum(1 for v in birds_state.values() if v["box"] == 1),
             "total_birds": len(birds_state),
+            "unlocked_count": self.get_unlocked_count(),
             "birds": {
                 bid: {"box": v["box"], "correct": v["total_correct"], "wrong": v["total_wrong"]}
                 for bid, v in birds_state.items()
             },
         }
 
+    def get_unlocked_count(self) -> int:
+        return self._state.get("unlocked_count", self.INITIAL_UNLOCK)
+
+    def get_unlocked_ids(self, all_bird_ids: list[str]) -> list[str]:
+        """Return the first N bird IDs that are unlocked."""
+        n = self.get_unlocked_count()
+        return all_bird_ids[:n]
+
+    def try_unlock(self, total_birds: int, session_pct: int) -> dict:
+        """After a session, maybe unlock more birds. Returns unlock info."""
+        current = self.get_unlocked_count()
+        newly_unlocked = 0
+        if session_pct >= self.UNLOCK_THRESHOLD and current < total_birds:
+            new_count = min(current + self.UNLOCK_STEP, total_birds)
+            newly_unlocked = new_count - current
+            self._state["unlocked_count"] = new_count
+            self._save()
+        return {
+            "unlocked_count": self.get_unlocked_count(),
+            "total_birds": total_birds,
+            "newly_unlocked": newly_unlocked,
+        }
+
     def reset(self) -> None:
         self._state = {
             "round": 0,
+            "unlocked_count": self.INITIAL_UNLOCK,
             "birds": {},
             "history": [],
             "stats": {"total_correct": 0, "total_wrong": 0, "best_streak": 0, "current_streak": 0},

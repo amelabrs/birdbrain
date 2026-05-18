@@ -44,6 +44,10 @@ class AnswerRequest(BaseModel):
     correct_index: int
 
 
+class SessionCompleteRequest(BaseModel):
+    score_pct: int
+
+
 # ── API Endpoints ────────────────────────────────────────────────────
 
 
@@ -52,18 +56,25 @@ def get_question(
     mode: str = Query("photo", regex="^(photo|sound|reverse)$"),
     seen: str = Query(""),
 ):
+    # Only quiz on unlocked birds
+    unlocked_ids = sr.get_unlocked_ids(ALL_IDS)
     seen_ids = set(seen.split(",")) if seen else set()
-    available = [bid for bid in ALL_IDS if bid not in seen_ids] or ALL_IDS
+    available = [bid for bid in unlocked_ids if bid not in seen_ids] or unlocked_ids
 
     if mode == "sound":
         sound_ids = [b["id"] for b in BIRDS if b.get("sound_url")]
-        available_sound = [bid for bid in sound_ids if bid not in seen_ids] or sound_ids
+        unlocked_sound = [bid for bid in sound_ids if bid in set(unlocked_ids)]
+        available_sound = [bid for bid in unlocked_sound if bid not in seen_ids] or unlocked_sound
         bird_id = sr.pick_bird(available_sound)
     else:
         bird_id = sr.pick_bird(available)
 
     bird = BIRD_MAP[bird_id]
-    return generate_question(bird, BIRDS, mode=mode)
+    unlocked_birds = [BIRD_MAP[bid] for bid in unlocked_ids]
+    q = generate_question(bird, unlocked_birds, mode=mode)
+    q["unlocked_count"] = len(unlocked_ids)
+    q["total_bird_count"] = len(ALL_IDS)
+    return q
 
 
 @app.post("/api/answer")
@@ -92,6 +103,13 @@ def get_stats():
 def reset_progress():
     sr.reset()
     return {"status": "ok"}
+
+
+@app.post("/api/session-complete")
+def session_complete(req: SessionCompleteRequest):
+    """Called when a session ends. May unlock new birds."""
+    result = sr.try_unlock(len(ALL_IDS), req.score_pct)
+    return result
 
 
 @app.get("/api/birds")
