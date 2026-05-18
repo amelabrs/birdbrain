@@ -10,7 +10,8 @@
     "sound_tip": "A clear, rising 3-note whistle: 'he-will-SEE' — like someone calling from inside the bushes. Think of a referee's whistle that goes up in pitch.",
     "fun_fact": "A skulking ground bird that rummages through leaf litter like a tiny detective. Its loud song belies its shy nature.",
     "habitat": "Dense undergrowth, forest floor, bamboo thickets",
-    "karnataka_spots": "Dandeli, Bhadra Wildlife Sanctuary, Coorg forests"
+    "karnataka_spots": "Dandeli, Bhadra Wildlife Sanctuary, Coorg forests",
+    "ebird_code": "putbab1"
   },
   {
     "id": "eurasian-hoopoe",
@@ -23,7 +24,8 @@
     "sound_tip": "A soft, low 'hoo-po-po' or 'oop-oop-oop' — hollow and ventriloquial, like someone blowing across a bottle. The bird's name literally sounds like its call.",
     "fun_fact": "Named for its distinctive 'hoo-po-po' call. Its striking black-and-white striped wings and erectile crest make it unmistakable.",
     "habitat": "Open ground, gardens, light woodland",
-    "karnataka_spots": "Hesaraghatta, Nandi Hills, Bandipur outskirts"
+    "karnataka_spots": "Hesaraghatta, Nandi Hills, Bandipur outskirts",
+    "ebird_code": "hoopoe"
   },
   {
     "id": "white-cheeked-barbet",
@@ -36,7 +38,8 @@
     "sound_tip": "A loud, monotonous 'kutroo-kutroo-kutroo' on repeat — like a broken record. Once you hear it in Coorg, you can never un-hear it.",
     "fun_fact": "Endemic to the Western Ghats. Its repetitive 'kutroo-kutroo' call is a signature sound of Karnataka hill stations.",
     "habitat": "Moist deciduous forests, gardens, plantations",
-    "karnataka_spots": "Coorg, Chikmagalur, Agumbe"
+    "karnataka_spots": "Coorg, Chikmagalur, Agumbe",
+    "ebird_code": "whcbar1"
   },
   {
     "id": "white-browed-bulbul",
@@ -49,7 +52,8 @@
     "sound_tip": "A bubbly, cheerful jumble of whistles and chatters — like an excited person talking too fast. Louder and more frantic than other bulbuls.",
     "fun_fact": "A plain olive-yellow bulbul with a distinctive white eyebrow. Its loud, cheerful song is one of the first sounds of dawn in South Indian scrublands.",
     "habitat": "Dry scrub, gardens, forest edges",
-    "karnataka_spots": "Bangalore outskirts, Nandi Hills, Bannerghatta"
+    "karnataka_spots": "Bangalore outskirts, Nandi Hills, Bannerghatta",
+    "ebird_code": "whbbul2"
   },
   {
     "id": "tickells-blue-flycatcher",
@@ -62,7 +66,8 @@
     "sound_tip": "A sweet, tinkling metallic song — like tiny bells or a music box playing in the forest. Short melodious phrases with pauses between them.",
     "fun_fact": "A stunning blue bird with an orange breast. Males sing a sweet, melodious song from low perches in shady forests.",
     "habitat": "Dense undergrowth, shady forests, bamboo thickets",
-    "karnataka_spots": "Dandeli, Coorg, Bhadra Wildlife Sanctuary"
+    "karnataka_spots": "Dandeli, Coorg, Bhadra Wildlife Sanctuary",
+    "ebird_code": "tibfly3"
   },
   {
     "id": "brown-shrike",
@@ -75,7 +80,8 @@
     "sound_tip": "A harsh, grating 'chack-chack' alarm — like two stones being scraped together. Also mimics other birds, so if a song sounds 'off', suspect the shrike.",
     "fun_fact": "A winter visitor known as the 'butcher bird' — it impales prey on thorns to eat later. Sits upright on exposed perches scanning for insects.",
     "habitat": "Open scrub, gardens, forest edges",
-    "karnataka_spots": "Hesaraghatta, Lalbagh, Nandi Hills"
+    "karnataka_spots": "Hesaraghatta, Lalbagh, Nandi Hills",
+    "ebird_code": "brnshr"
   },
   {
     "id": "asian-paradise-flycatcher",
@@ -88,7 +94,8 @@
     "sound_tip": "A sharp, nasal 'zwee!' or 'che-wew' — like a squeaky toy being stepped on. Short, abrupt, and surprisingly harsh for such a graceful bird.",
     "fun_fact": "Males have extraordinary long ribbon-like tail streamers. They come in two colour morphs — rufous and white.",
     "habitat": "Shady forests, groves, well-wooded gardens",
-    "karnataka_spots": "Dandeli, Ranganathittu, Coorg, Bhadra"
+    "karnataka_spots": "Dandeli, Ranganathittu, Coorg, Bhadra",
+    "ebird_code": "aspfly1"
   },
   {
     "id": "indian-cuckooshrike",
@@ -101,7 +108,8 @@
     "sound_tip": "A high-pitched, thin 'wee-wee-wee' whistle — insistent and slightly whiny, like a child tugging your sleeve saying 'please-please-please'.",
     "fun_fact": "Males are glossy black while females are barred grey-brown — so different they were once thought to be separate species.",
     "habitat": "Forest canopy, deciduous woodland, plantations",
-    "karnataka_spots": "Dandeli, Bhadra, Sharavathi Valley"
+    "karnataka_spots": "Dandeli, Bhadra, Sharavathi Valley",
+    "ebird_code": "larcuc1"
   },
   {
     "id": "common-tailorbird",
@@ -114,7 +122,8 @@
     "sound_tip": "A loud, rhythmic 'towit-towit-towit' — like a tiny sewing machine stitching away. Relentless and piercing for such a small bird.",
     "fun_fact": "Stitches leaves together with plant fibre or spider silk to make a cradle-shaped nest — nature's own tailor.",
     "habitat": "Gardens, scrub, urban greenery",
-    "karnataka_spots": "Common in gardens across Bangalore, Mysore, Mangalore"
+    "karnataka_spots": "Common in gardens across Bangalore, Mysore, Mangalore",
+    "ebird_code": "comtai1"
   },
   {
     "id": "asian-koel",
@@ -132,9 +141,17 @@
         "tip": "A rapid, sharp 'kik-kik-kik-kik' — like an angry typist hammering keys. Completely different from the male's rising whistle."
       }
     ],
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126392871/480",
+        "label": "Female / Immature male",
+        "credit": "Cornell Lab of Ornithology / Macaulay Library"
+      }
+    ],
     "fun_fact": "A brood parasite — lays eggs in crows' nests. Its rising 'ku-OO' call is a classic Indian summer sound.",
     "habitat": "Light woodlands, gardens, urban areas",
-    "karnataka_spots": "Heard across every city and town in Karnataka"
+    "karnataka_spots": "Heard across every city and town in Karnataka",
+    "ebird_code": "asikoe2"
   },
   {
     "id": "red-whiskered-bulbul",
@@ -147,7 +164,8 @@
     "sound_tip": "A sharp, cheerful 'pettigrew!' or 'kick-pettigrew!' — crisp and musical, like a bird announcing someone's arrival at the door.",
     "fun_fact": "Named for the red patch behind its eye. One of the most vocal garden birds — sings at dawn and dusk.",
     "habitat": "Light woodland, gardens, urban parks",
-    "karnataka_spots": "Coorg, Chikmagalur, Bangalore gardens"
+    "karnataka_spots": "Coorg, Chikmagalur, Bangalore gardens",
+    "ebird_code": "rewbul"
   },
   {
     "id": "indian-golden-oriole",
@@ -159,8 +177,16 @@
     "xc_id": "",
     "sound_tip": "A rich, fluting 'pi-lo-lo' whistle — mellow and liquid, like a human whistling a tune from a mango tree. One of the most beautiful calls in Indian birding.",
     "fun_fact": "Brilliant yellow with a black eye-stripe. Despite its vivid colour, it stays hidden in leafy canopies — more often heard than seen.",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/126552111/480",
+        "label": "Female",
+        "credit": "Cornell Lab of Ornithology / Macaulay Library"
+      }
+    ],
     "habitat": "Open deciduous forests, gardens, mango groves",
-    "karnataka_spots": "Bangalore, Mysore, Bandipur"
+    "karnataka_spots": "Bangalore, Mysore, Bandipur",
+    "ebird_code": "ingori1"
   },
   {
     "id": "red-vented-bulbul",
@@ -173,7 +199,8 @@
     "sound_tip": "A perky 'Hey-selena!' or quick chattering 'Hey-selena-see-me-fly' — lively and conversational, like neighbours gossiping over a fence.",
     "fun_fact": "One of India's most common birds. Named for the crimson red patch under its tail. Often the first bird a beginner learns.",
     "habitat": "Gardens, scrub, open woodland, urban areas",
-    "karnataka_spots": "Everywhere — gardens, parks, balconies across Karnataka"
+    "karnataka_spots": "Everywhere — gardens, parks, balconies across Karnataka",
+    "ebird_code": "revbul"
   },
   {
     "id": "large-hawk-cuckoo",
@@ -186,7 +213,8 @@
     "sound_tip": "A frantic, escalating 'brain-FE-ver! brain-FE-VER! BRAIN-FE-VER!' — each repetition louder and higher, like someone losing their mind. Unmistakable once heard.",
     "fun_fact": "Called 'brain-fever bird' for its maddening, ascending 'brain-FE-ver!' call that repeats endlessly during monsoon nights.",
     "habitat": "Dense forests, wooded hills, plantations",
-    "karnataka_spots": "Western Ghats, Coorg, Kudremukh"
+    "karnataka_spots": "Western Ghats, Coorg, Kudremukh",
+    "ebird_code": "larhac2"
   },
   {
     "id": "shikra",
@@ -199,7 +227,8 @@
     "sound_tip": "A rapid, sharp 'ti-ti-ti-ti-ti' — like a bicycle bell being hit repeatedly. When you hear it, watch the other birds scatter in terror.",
     "fun_fact": "A small, fierce raptor used in falconry for centuries. Its piercing 'ti-ti-ti-ti' alarm call sends garden birds into a panic.",
     "habitat": "Open woodland, gardens, urban trees",
-    "karnataka_spots": "Bangalore, Mysore, Nandi Hills"
+    "karnataka_spots": "Bangalore, Mysore, Nandi Hills",
+    "ebird_code": "shikra1"
   },
   {
     "id": "rufous-treepie",
@@ -212,7 +241,8 @@
     "sound_tip": "A metallic, ringing 'ko-kee!' or 'bob-o-link' — loud and twangy, like a rusty gate hinge. Impossible to ignore in the forest.",
     "fun_fact": "A long-tailed member of the crow family with striking rufous, black and grey plumage. Bold and noisy — raids picnics and kitchen windows.",
     "habitat": "Open forests, gardens, plantations",
-    "karnataka_spots": "Bandipur, Nagarhole, Nandi Hills"
+    "karnataka_spots": "Bandipur, Nagarhole, Nandi Hills",
+    "ebird_code": "ruftre2"
   },
   {
     "id": "indian-robin",
@@ -225,7 +255,8 @@
     "sound_tip": "A sweet, variable warble interspersed with a sharp 'chrrr' — like a tiny musician who keeps clearing his throat between phrases.",
     "fun_fact": "Males are glossy black with a rust-orange patch under the tail, which they flick upward constantly.",
     "habitat": "Open stony ground, scrub, gardens",
-    "karnataka_spots": "Open areas across the Deccan Plateau"
+    "karnataka_spots": "Open areas across the Deccan Plateau",
+    "ebird_code": "indrob1"
   },
   {
     "id": "common-myna",
@@ -238,7 +269,8 @@
     "sound_tip": "A loud, raucous medley of squawks, whistles, and gurgles — like a noisy argument at a bus stop. No two phrases sound the same. The bird that never shuts up.",
     "fun_fact": "One of the world's most invasive species. Bold and streetwise, it struts around like it owns the place — and in many cities, it practically does.",
     "habitat": "Urban areas, gardens, open woodland, farmland",
-    "karnataka_spots": "Everywhere — cities, towns, and villages across Karnataka"
+    "karnataka_spots": "Everywhere — cities, towns, and villages across Karnataka",
+    "ebird_code": "hilmyn"
   },
   {
     "id": "cinereous-tit",
@@ -251,7 +283,8 @@
     "sound_tip": "A bright, ringing 'tee-cher! tee-cher! tee-cher!' — two-note see-saw rhythm, like a tiny bicycle pump. Clear and mechanical, easy to pick out.",
     "fun_fact": "Recently split from the Great Tit. A lively acrobat that hangs upside down from branches while hunting insects and seeds.",
     "habitat": "Open woodland, gardens, scrub, forest edges",
-    "karnataka_spots": "Bangalore gardens, Nandi Hills, Coorg, Mysore"
+    "karnataka_spots": "Bangalore gardens, Nandi Hills, Coorg, Mysore",
+    "ebird_code": "cintit13"
   },
   {
     "id": "black-kite",
@@ -264,7 +297,8 @@
     "sound_tip": "A shrill, quavering 'wheee-he-he-he' — like a high-pitched whinnying laugh. Think of a kite (the toy) whistling in the wind.",
     "fun_fact": "India's most common raptor. Soars effortlessly over cities, snatching food from markets and picnics with surgical precision.",
     "habitat": "Cities, towns, open country, near water",
-    "karnataka_spots": "Everywhere — soaring over Bangalore, Mysore, and every Karnataka city"
+    "karnataka_spots": "Everywhere — soaring over Bangalore, Mysore, and every Karnataka city",
+    "ebird_code": "blakit1"
   },
   {
     "id": "rose-ringed-parakeet",
@@ -277,7 +311,8 @@
     "sound_tip": "A loud, screeching 'kee-ak! kee-ak!' — like a rusty gate swinging open. Impossible to miss when a flock flies over.",
     "fun_fact": "The green blur of Indian cities. Males sport a rose-pink and black neck ring. Flocks roost communally in thousands, painting trees green at dusk.",
     "habitat": "Urban areas, gardens, farmland, woodland",
-    "karnataka_spots": "Lalbagh, Cubbon Park, Mysore Palace grounds, everywhere urban"
+    "karnataka_spots": "Lalbagh, Cubbon Park, Mysore Palace grounds, everywhere urban",
+    "ebird_code": "rorpar"
   },
   {
     "id": "indian-grey-hornbill",
@@ -290,7 +325,8 @@
     "sound_tip": "A squealing, cackling broken voice — like a squeaky toy being squeezed rapidly. Often calls in flight, so look up when you hear it.",
     "fun_fact": "The female seals herself inside a tree cavity to nest, leaving only a slit through which the male feeds her for weeks.",
     "habitat": "Dry deciduous forests, gardens, avenue trees",
-    "karnataka_spots": "Bangalore (IISc campus, Cubbon Park), Mysore, Ramanagara"
+    "karnataka_spots": "Bangalore (IISc campus, Cubbon Park), Mysore, Ramanagara",
+    "ebird_code": "inghor2"
   },
   {
     "id": "purple-sunbird",
@@ -315,7 +351,8 @@
     ],
     "fun_fact": "India's answer to the hummingbird. Males in breeding plumage are iridescent purple-black that flashes in sunlight like a jewel.",
     "habitat": "Gardens, scrub, forest edges, flowering trees",
-    "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, any flowering garden"
+    "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, any flowering garden",
+    "ebird_code": "pursun4"
   },
   {
     "id": "ashy-prinia",
@@ -328,7 +365,8 @@
     "sound_tip": "A nagging, electric 'jimmy-jimmy-jimmy' or 'zzzt-zzzt-zzzt' — like a tiny broken doorbell buzzing non-stop. Persistent and impossible to tune out.",
     "fun_fact": "A tiny, restless bird that cocks its tail upright and scolds everything that moves. Despite its size, it dominates garden soundscapes with sheer volume.",
     "habitat": "Gardens, scrub, grassland, urban greenery",
-    "karnataka_spots": "Every garden in Bangalore, Mysore, Mangalore — one of the commonest birds"
+    "karnataka_spots": "Every garden in Bangalore, Mysore, Mangalore — one of the commonest birds",
+    "ebird_code": "ashpri1"
   },
   {
     "id": "indian-white-eye",
@@ -341,7 +379,8 @@
     "sound_tip": "A soft, tinkling 'chee-chee-chee' — like tiny glass wind chimes in a gentle breeze. Easy to miss unless you're listening for it.",
     "fun_fact": "Tiny olive-green birds with a bold white eye-ring. They travel in restless flocks, hanging upside down from flowers to sip nectar like miniature acrobats.",
     "habitat": "Gardens, woodland edges, flowering trees",
-    "karnataka_spots": "Lalbagh, Cubbon Park, Coorg, any garden with flowering trees"
+    "karnataka_spots": "Lalbagh, Cubbon Park, Coorg, any garden with flowering trees",
+    "ebird_code": "indwhe1"
   },
   {
     "id": "spotted-dove",
@@ -354,7 +393,8 @@
     "sound_tip": "A gentle, three-note 'coo-coo-croo' — soft and dreamy, like a lullaby on repeat. Slower and deeper than the Laughing Dove.",
     "fun_fact": "Named for the black-and-white spotted patch on its neck. One of the most familiar garden doves, often seen walking calmly on the ground.",
     "habitat": "Gardens, open woodland, urban areas, farmland",
-    "karnataka_spots": "Common everywhere — gardens, campuses, rooftops across Karnataka"
+    "karnataka_spots": "Common everywhere — gardens, campuses, rooftops across Karnataka",
+    "ebird_code": "spodov"
   },
   {
     "id": "black-drongo",
@@ -367,7 +407,8 @@
     "sound_tip": "A harsh, metallic 'tchwee-tchwee' mixed with mimicry of other birds — like a DJ remixing forest sounds through a distortion pedal. If it sounds too good to be true, it's probably the drongo.",
     "fun_fact": "A fearless bully that dive-bombs birds of prey, crows, and even cattle. Often rides on the backs of livestock, snapping up insects they disturb.",
     "habitat": "Open country, farmland, gardens, forest edges",
-    "karnataka_spots": "Everywhere — perched on wires and fences across Karnataka"
+    "karnataka_spots": "Everywhere — perched on wires and fences across Karnataka",
+    "ebird_code": "bladro1"
   },
   {
     "id": "oriental-magpie-robin",
@@ -380,6 +421,7 @@
     "sound_tip": "A rich, varied song of whistles and trills — like a confident singer doing scales from a rooftop. One of the best songsters in Indian gardens, often the first bird heard at dawn.",
     "fun_fact": "The national bird of Bangladesh. Males are striking black-and-white, and they sing from the highest perch they can find — the rockstars of the garden.",
     "habitat": "Gardens, open woodland, urban parks",
-    "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, every well-wooded garden"
+    "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, every well-wooded garden",
+    "ebird_code": "magrob"
   }
 ]

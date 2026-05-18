@@ -21,8 +21,6 @@
                 <span class="subtitle">Karnataka Birds</span>
             </div>
             <div class="header-right">
-                <div class="stat-pill" id="streak-pill">🔥 <span id="streak">0</span></div>
-                <div class="stat-pill" id="accuracy-pill">🎯 <span id="accuracy">0</span>%</div>
                 <button id="menu-btn" class="icon-btn" onclick="toggleStats()">📊</button>
             </div>
         </header>
@@ -77,12 +75,9 @@
                 <p id="result-scientific" class="scientific"></p>
                 <p id="result-fact" class="fun-fact"></p>
                 <p id="result-sound-tip" class="sound-tip" style="display:none;"></p>
+                <div id="result-links" class="result-links" style="display:none;"></div>
                 <p id="result-habitat" class="detail"></p>
                 <p id="result-spots" class="detail"></p>
-                <div id="result-stats">
-                    <div class="mini-stat">🔥 Streak: <span id="res-streak">0</span></div>
-                    <div class="mini-stat">📦 Box: <span id="res-box">1</span>/4</div>
-                </div>
                 <button id="next-btn" class="primary-btn" onclick="nextQuestion()">Next Bird →</button>
             </div>
 
@@ -104,10 +99,6 @@
                         <div class="stat-label">Accuracy</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-value" id="s-streak">0</div>
-                        <div class="stat-label">Best Streak</div>
-                    </div>
-                    <div class="stat-card">
                         <div class="stat-value" id="s-mastered">0</div>
                         <div class="stat-label">Mastered</div>
                     </div>
@@ -118,6 +109,13 @@
                 </div>
                 <h3>Bird Progress</h3>
                 <div id="bird-progress-list"></div>
+                <div class="settings-section">
+                    <h3>Settings</h3>
+                    <label class="toggle-row">
+                        <span>Show all birds (skip drip feed)</span>
+                        <input type="checkbox" id="all-birds-toggle" onchange="toggleAllBirds(this.checked)">
+                    </label>
+                </div>
                 <button class="danger-btn" onclick="resetProgress()">🗑️ Reset All Progress</button>
             </div>
         </div>

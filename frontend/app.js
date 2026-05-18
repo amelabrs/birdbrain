@@ -3,12 +3,27 @@
 let currentMode = "photo";
 let currentQuestion = null;
 let answered = false;
-let sessionBird = 0;
-let sessionTotal = 0;
 let totalBirdCount = 0;
-let sessionCorrect = 0;
-let sessionWrong = [];
-let sessionSeen = new Set();
+let useAllBirds = localStorage.getItem("birdbrain_all_birds") === "true";
+
+// Per-mode session tracking
+let sessions = {
+    photo: { bird: 0, total: 0, correct: 0, wrong: [], seen: new Set() },
+    sound: { bird: 0, total: 0, correct: 0, wrong: [], seen: new Set() },
+    reverse: { bird: 0, total: 0, correct: 0, wrong: [], seen: new Set() },
+};
+
+function getSession() { return sessions[currentMode]; }
+
+function toggleAllBirds(checked) {
+    useAllBirds = checked;
+    localStorage.setItem("birdbrain_all_birds", checked);
+    // Reset all sessions when toggling
+    for (const mode of Object.keys(sessions)) {
+        sessions[mode] = { bird: 0, total: 0, correct: 0, wrong: [], seen: new Set() };
+    }
+    loadQuestion();
+}
 
 // ── Mode ────────────────────────────────────────────────────────────
 
@@ -23,8 +38,9 @@ function setMode(mode) {
 // ── Load Question ───────────────────────────────────────────────────
 
 async function loadQuestion() {
+    const s = getSession();
     // Check if session is complete
-    if (sessionTotal > 0 && sessionBird >= sessionTotal) {
+    if (s.total > 0 && s.bird >= s.total) {
         showSessionSummary();
         return;
     }
@@ -33,18 +49,19 @@ async function loadQuestion() {
     showScreen("loading");
 
     try {
-        const seen = Array.from(sessionSeen).join(",");
-        const res = await fetch(`/api/question?mode=${currentMode}&seen=${encodeURIComponent(seen)}`);
+        const seen = Array.from(s.seen).join(",");
+        const allParam = useAllBirds ? "&all_birds=true" : "";
+        const res = await fetch(`/api/question?mode=${currentMode}&seen=${encodeURIComponent(seen)}${allParam}`);
         currentQuestion = await res.json();
 
         // Track pool size from backend
-        sessionTotal = currentQuestion.unlocked_count || sessionTotal;
-        totalBirdCount = currentQuestion.total_bird_count || sessionTotal;
+        s.total = currentQuestion.unlocked_count || s.total;
+        totalBirdCount = currentQuestion.total_bird_count || s.total;
 
         // Track unique birds in session
-        if (!sessionSeen.has(currentQuestion.bird_id)) {
-            sessionSeen.add(currentQuestion.bird_id);
-            sessionBird = sessionSeen.size;
+        if (!s.seen.has(currentQuestion.bird_id)) {
+            s.seen.add(currentQuestion.bird_id);
+            s.bird = s.seen.size;
         }
 
         renderQuestion();
@@ -168,22 +185,19 @@ async function submitAnswer(chosenIndex) {
         const data = await res.json();
 
         // Track session score
+        const s = getSession();
         if (correct) {
-            sessionCorrect++;
+            s.correct++;
         } else {
-            sessionWrong.push(data.correct_name || currentQuestion.bird_id);
+            s.wrong.push(data.correct_name || currentQuestion.bird_id);
         }
-        sessionTotal = data.total_birds || 24;
-
-        // Update header stats
-        document.getElementById("streak").textContent = data.streak;
-        document.getElementById("accuracy").textContent = data.accuracy;
+        s.total = data.total_birds || s.total;
 
         // Show result after brief pause
         setTimeout(() => showResult(data, correct), 800);
     } catch (err) {
         console.error("Failed to submit answer:", err);
-        setTimeout(() => showResult({ streak: 0, box: 1, total_birds: sessionTotal, total_rounds: 0 }, correct), 800);
+        setTimeout(() => showResult({ streak: 0, box: 1, total_birds: getSession().total, total_rounds: 0 }, correct), 800);
     }
 }
 
@@ -211,13 +225,32 @@ function showResult(data, correct) {
         soundTipEl.style.display = "none";
     }
 
+    // Show sound + eBird links after correct answer in photo/reverse modes
+    const linksEl = document.getElementById("result-links");
+    if (correct && (currentMode === "photo" || currentMode === "reverse")) {
+        let linksHtml = "";
+        if (data.sound_url) {
+            linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">🔊 Listen to call</a>`;
+        }
+        if (data.ebird_code) {
+            linksHtml += `<a href="https://ebird.org/species/${data.ebird_code}" target="_blank" class="result-link">📖 eBird page</a>`;
+        }
+        if (linksHtml) {
+            linksEl.innerHTML = linksHtml;
+            linksEl.style.display = "flex";
+        } else {
+            linksEl.style.display = "none";
+        }
+    } else {
+        linksEl.style.display = "none";
+    }
+
     document.getElementById("result-habitat").textContent = data.habitat ? `🌿 ${data.habitat}` : "";
     document.getElementById("result-spots").textContent = data.karnataka_spots ? `📍 ${data.karnataka_spots}` : "";
-    document.getElementById("res-streak").textContent = data.streak;
-    document.getElementById("res-box").textContent = data.box;
 
     // Update progress counter
-    document.getElementById("round-counter").textContent = `Bird ${sessionBird} of ${sessionTotal}`;
+    const s = getSession();
+    document.getElementById("round-counter").textContent = `Bird ${s.bird} of ${s.total}`;
 
     showScreen("result-screen");
 }
@@ -231,8 +264,9 @@ function nextQuestion() {
 // ── Session Summary ─────────────────────────────────────────────────
 
 function showSessionSummary() {
-    const total = sessionTotal;
-    const pct = total > 0 ? Math.round((sessionCorrect / total) * 100) : 0;
+    const s = getSession();
+    const total = s.total;
+    const pct = total > 0 ? Math.round((s.correct / total) * 100) : 0;
 
     let grade, emoji;
     if (pct >= 90) { grade = "Excellent!"; emoji = "🏆"; }
@@ -241,21 +275,24 @@ function showSessionSummary() {
     else { grade = "Keep practising!"; emoji = "💪"; }
 
     let wrongHtml = "";
-    if (sessionWrong.length > 0) {
+    if (s.wrong.length > 0) {
         wrongHtml = `<div class="needs-work" style="margin-top:12px;text-align:left">
-            <strong>⚠️ Work on these:</strong><br>${sessionWrong.join(", ")}
+            <strong>⚠️ Work on these:</strong><br>${s.wrong.join(", ")}
         </div>`;
     }
 
     // Show unlock progress
-    const lockHtml = sessionTotal < totalBirdCount
-        ? `<p style="color:var(--text-dim);font-size:13px;margin-top:8px">🔓 ${sessionTotal} of ${totalBirdCount} birds unlocked${pct >= 80 ? " — scoring ≥80% unlocks more!" : " — score ≥80% to unlock more"}</p>`
+    const lockHtml = s.total < totalBirdCount
+        ? `<p style="color:var(--text-dim);font-size:13px;margin-top:8px">🔓 ${s.total} of ${totalBirdCount} birds unlocked${pct >= 80 ? " — scoring ≥80% unlocks more!" : " — score ≥80% to unlock more"}</p>`
         : `<p style="color:var(--text-dim);font-size:13px;margin-top:8px">🔓 All ${totalBirdCount} birds unlocked!</p>`;
+
+    const modeLabel = currentMode === "photo" ? "📷 Photo" : currentMode === "sound" ? "🔊 Sound" : "🔄 Reverse";
 
     document.getElementById("summary-screen").innerHTML = `
         <div style="font-size:48px;margin-bottom:8px">${emoji}</div>
         <h2>${grade}</h2>
-        <p style="font-size:32px;font-weight:bold;color:var(--primary);margin:12px 0">${sessionCorrect}/${total}</p>
+        <p style="font-size:14px;color:var(--text-dim);margin-bottom:4px">${modeLabel} mode</p>
+        <p style="font-size:32px;font-weight:bold;color:var(--primary);margin:12px 0">${s.correct}/${total}</p>
         <p style="color:var(--text-dim);margin-bottom:8px">${pct}% accuracy this session</p>
         ${wrongHtml}
         ${lockHtml}
@@ -269,10 +306,11 @@ function showSessionSummary() {
 }
 
 function startNewSession() {
-    sessionBird = 0;
-    sessionCorrect = 0;
-    sessionWrong = [];
-    sessionSeen = new Set();
+    const s = getSession();
+    s.bird = 0;
+    s.correct = 0;
+    s.wrong = [];
+    s.seen = new Set();
     loadQuestion();
 }
 
@@ -286,7 +324,8 @@ async function checkUnlock(pct) {
         const data = await res.json();
         const msgEl = document.getElementById("unlock-msg");
         if (data.newly_unlocked > 0) {
-            sessionTotal = data.unlocked_count;
+            const s = getSession();
+            s.total = data.unlocked_count;
             totalBirdCount = data.total_birds;
             msgEl.innerHTML = `<div style="margin-top:12px;padding:12px;background:rgba(255,215,0,0.15);border-radius:12px;border:1px solid rgba(255,215,0,0.3)">
                 <span style="font-size:24px">🎉</span>
@@ -312,6 +351,9 @@ async function toggleStats() {
         } catch (err) {
             console.error("Failed to load stats:", err);
         }
+        // Sync toggle
+        const toggle = document.getElementById("all-birds-toggle");
+        if (toggle) toggle.checked = useAllBirds;
         panel.classList.remove("hidden");
     } else {
         panel.classList.add("hidden");
@@ -320,7 +362,6 @@ async function toggleStats() {
 
 function renderStats(stats) {
     document.getElementById("s-accuracy").textContent = `${stats.accuracy}%`;
-    document.getElementById("s-streak").textContent = stats.best_streak;
     document.getElementById("s-mastered").textContent = stats.mastered;
     document.getElementById("s-rounds").textContent = stats.total_rounds;
 
@@ -367,8 +408,6 @@ function renderStats(stats) {
 async function resetProgress() {
     if (!confirm("Reset all progress? This cannot be undone.")) return;
     await fetch("/api/reset", { method: "POST" });
-    document.getElementById("streak").textContent = "0";
-    document.getElementById("accuracy").textContent = "0";
     toggleStats();
     startNewSession();
 }
@@ -383,15 +422,9 @@ function showScreen(id) {
 // ── Init ────────────────────────────────────────────────────────────
 
 async function init() {
-    // Load initial stats
-    try {
-        const res = await fetch("/api/stats");
-        const stats = await res.json();
-        document.getElementById("streak").textContent = stats.current_streak;
-        document.getElementById("accuracy").textContent = stats.accuracy;
-    } catch (err) {
-        // ignore
-    }
+    // Restore toggle state
+    const toggle = document.getElementById("all-birds-toggle");
+    if (toggle) toggle.checked = useAllBirds;
 
     loadQuestion();
 }

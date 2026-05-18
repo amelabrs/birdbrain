@@ -55,9 +55,13 @@ class SessionCompleteRequest(BaseModel):
 def get_question(
     mode: str = Query("photo", regex="^(photo|sound|reverse)$"),
     seen: str = Query(""),
+    all_birds: bool = Query(False),
 ):
-    # Only quiz on unlocked birds
-    unlocked_ids = sr.get_unlocked_ids(ALL_IDS)
+    # Use all birds or only unlocked based on toggle
+    if all_birds:
+        unlocked_ids = ALL_IDS
+    else:
+        unlocked_ids = sr.get_unlocked_ids(ALL_IDS)
     seen_ids = set(seen.split(",")) if seen else set()
     available = [bid for bid in unlocked_ids if bid not in seen_ids] or unlocked_ids
 
@@ -90,6 +94,8 @@ def submit_answer(req: AnswerRequest):
         "scientific_name": bird.get("scientific_name", ""),
         "habitat": bird.get("habitat", ""),
         "karnataka_spots": bird.get("karnataka_spots", ""),
+        "sound_url": bird.get("sound_url", ""),
+        "ebird_code": bird.get("ebird_code", ""),
         **stats,
     }
 
