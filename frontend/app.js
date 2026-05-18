@@ -6,6 +6,7 @@ let answered = false;
 let totalBirdCount = 0;
 let useAllBirds = localStorage.getItem("birdbrain_all_birds") === "true";
 let autoPlaySound = localStorage.getItem("birdbrain_autoplay") !== "false"; // on by default
+let resultAudio = null; // track auto-played sound for stopping
 
 // Per-mode session tracking
 let sessions = {
@@ -246,9 +247,9 @@ function showResult(data, correct) {
         let linksHtml = "";
         if (data.sound_url) {
             if (autoPlaySound) {
-                const audio = new Audio(data.sound_url);
-                audio.volume = 0.7;
-                audio.play().catch(() => {});
+                resultAudio = new Audio(data.sound_url);
+                resultAudio.volume = 0.7;
+                resultAudio.play().catch(() => {});
             } else {
                 linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">🔊 Listen to call</a>`;
             }
@@ -279,6 +280,10 @@ function showResult(data, correct) {
 // ── Next Question ───────────────────────────────────────────────────
 
 function nextQuestion() {
+    if (resultAudio) {
+        resultAudio.pause();
+        resultAudio = null;
+    }
     loadQuestion();
 }
 
