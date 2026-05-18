@@ -104,8 +104,17 @@ function renderQuestion() {
         document.getElementById("prompt-audio").style.display = "block";
         const audio = document.getElementById("audio-player");
         audio.src = q.prompt;
-        document.getElementById("play-sound-btn").textContent = "▶ Play Bird Call";
+        document.getElementById("play-sound-btn").textContent = "▶ Play Again";
         document.getElementById("play-sound-btn").classList.remove("playing");
+        // Auto-play the sound prompt
+        audio.play().then(() => {
+            document.getElementById("play-sound-btn").textContent = "⏸ Playing...";
+            document.getElementById("play-sound-btn").classList.add("playing");
+        }).catch(() => {});
+        audio.onended = () => {
+            document.getElementById("play-sound-btn").textContent = "▶ Play Again";
+            document.getElementById("play-sound-btn").classList.remove("playing");
+        };
     } else {
         document.getElementById("prompt-text").style.display = "block";
         document.getElementById("reverse-name").textContent = q.prompt;
