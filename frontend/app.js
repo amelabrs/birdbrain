@@ -231,6 +231,10 @@ function showResult(data, correct) {
         let linksHtml = "";
         if (data.sound_url) {
             linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">🔊 Listen to call</a>`;
+            // Auto-play the bird's call
+            const audio = new Audio(data.sound_url);
+            audio.volume = 0.7;
+            audio.play().catch(() => {});
         }
         if (data.ebird_code) {
             linksHtml += `<a href="https://ebird.org/species/${data.ebird_code}" target="_blank" class="result-link">📖 eBird page</a>`;
