@@ -163,7 +163,7 @@
     "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/537621/mp3",
     "xc_id": "",
-    "sound_tip": "A perky 'be-CARE-ful!' or quick chattering 'pik-pik-pik' — lively and conversational, like neighbours gossiping over a fence.",
+    "sound_tip": "A perky 'Hey-selena!' or quick chattering 'Hey-selena-see-me-fly' — lively and conversational, like neighbours gossiping over a fence.",
     "fun_fact": "One of India's most common birds. Named for the crimson red patch under its tail. Often the first bird a beginner learns.",
     "habitat": "Gardens, scrub, open woodland, urban areas",
     "karnataka_spots": "Everywhere — gardens, parks, balconies across Karnataka"
@@ -336,5 +336,31 @@
     "fun_fact": "Named for the black-and-white spotted patch on its neck. One of the most familiar garden doves, often seen walking calmly on the ground.",
     "habitat": "Gardens, open woodland, urban areas, farmland",
     "karnataka_spots": "Common everywhere — gardens, campuses, rooftops across Karnataka"
+  },
+  {
+    "id": "black-drongo",
+    "name": "Black Drongo",
+    "scientific_name": "Dicrurus macrocercus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126548371/2400",
+    "image_credit": "Derhasar Brahma / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540285/mp3",
+    "xc_id": "",
+    "sound_tip": "A harsh, metallic 'tchwee-tchwee' mixed with mimicry of other birds — like a DJ remixing forest sounds through a distortion pedal. If it sounds too good to be true, it's probably the drongo.",
+    "fun_fact": "A fearless bully that dive-bombs birds of prey, crows, and even cattle. Often rides on the backs of livestock, snapping up insects they disturb.",
+    "habitat": "Open country, farmland, gardens, forest edges",
+    "karnataka_spots": "Everywhere — perched on wires and fences across Karnataka"
+  },
+  {
+    "id": "oriental-magpie-robin",
+    "name": "Oriental Magpie-Robin",
+    "scientific_name": "Turdus saularis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126371181/2400",
+    "image_credit": "Craig Brelsford / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540368/mp3",
+    "xc_id": "",
+    "sound_tip": "A rich, varied song of whistles and trills — like a confident singer doing scales from a rooftop. One of the best songsters in Indian gardens, often the first bird heard at dawn.",
+    "fun_fact": "The national bird of Bangladesh. Males are striking black-and-white, and they sing from the highest perch they can find — the rockstars of the garden.",
+    "habitat": "Gardens, open woodland, urban parks",
+    "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, every well-wooded garden"
   }
 ]
