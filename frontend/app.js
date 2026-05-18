@@ -5,6 +5,7 @@ let currentQuestion = null;
 let answered = false;
 let totalBirdCount = 0;
 let useAllBirds = localStorage.getItem("birdbrain_all_birds") === "true";
+let autoPlaySound = localStorage.getItem("birdbrain_autoplay") !== "false"; // on by default
 
 // Per-mode session tracking
 let sessions = {
@@ -23,6 +24,11 @@ function toggleAllBirds(checked) {
         sessions[mode] = { bird: 0, total: 0, correct: 0, wrong: [], seen: new Set() };
     }
     loadQuestion();
+}
+
+function toggleAutoPlay(checked) {
+    autoPlaySound = checked;
+    localStorage.setItem("birdbrain_autoplay", checked);
 }
 
 // ── Mode ────────────────────────────────────────────────────────────
@@ -230,11 +236,13 @@ function showResult(data, correct) {
     if (correct && (currentMode === "photo" || currentMode === "reverse")) {
         let linksHtml = "";
         if (data.sound_url) {
-            linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">🔊 Listen to call</a>`;
-            // Auto-play the bird's call
-            const audio = new Audio(data.sound_url);
-            audio.volume = 0.7;
-            audio.play().catch(() => {});
+            if (autoPlaySound) {
+                const audio = new Audio(data.sound_url);
+                audio.volume = 0.7;
+                audio.play().catch(() => {});
+            } else {
+                linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">🔊 Listen to call</a>`;
+            }
         }
         if (data.ebird_code) {
             linksHtml += `<a href="https://ebird.org/species/${data.ebird_code}" target="_blank" class="result-link">📖 eBird page</a>`;
@@ -355,9 +363,11 @@ async function toggleStats() {
         } catch (err) {
             console.error("Failed to load stats:", err);
         }
-        // Sync toggle
+        // Sync toggles
         const toggle = document.getElementById("all-birds-toggle");
         if (toggle) toggle.checked = useAllBirds;
+        const apToggle = document.getElementById("autoplay-toggle");
+        if (apToggle) apToggle.checked = autoPlaySound;
         panel.classList.remove("hidden");
     } else {
         panel.classList.add("hidden");
@@ -426,9 +436,11 @@ function showScreen(id) {
 // ── Init ────────────────────────────────────────────────────────────
 
 async function init() {
-    // Restore toggle state
+    // Restore toggle states
     const toggle = document.getElementById("all-birds-toggle");
     if (toggle) toggle.checked = useAllBirds;
+    const apToggle = document.getElementById("autoplay-toggle");
+    if (apToggle) apToggle.checked = autoPlaySound;
 
     loadQuestion();
 }
