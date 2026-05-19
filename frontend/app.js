@@ -4,7 +4,7 @@ let currentMode = "photo";
 let currentQuestion = null;
 let answered = false;
 let totalBirdCount = 0;
-let useAllBirds = localStorage.getItem("birdbrain_all_birds") === "true";
+let useAllBirds = localStorage.getItem("birdbrain_all_birds") !== "false"; // on by default (Quiz mode)
 let autoPlaySound = localStorage.getItem("birdbrain_autoplay") !== "false"; // on by default
 let resultAudio = null; // track auto-played sound for stopping
 
@@ -19,7 +19,7 @@ function getSession() { return sessions[currentMode]; }
 
 function toggleAllBirds(checked) {
     useAllBirds = checked;
-    localStorage.setItem("birdbrain_all_birds", checked);
+    localStorage.setItem("birdbrain_all_birds", checked ? "true" : "false");
     // Reset all sessions when toggling
     for (const mode of Object.keys(sessions)) {
         sessions[mode] = { bird: 0, total: 0, correct: 0, wrong: [], seen: new Set() };
@@ -29,7 +29,7 @@ function toggleAllBirds(checked) {
 
 function toggleAutoPlay(checked) {
     autoPlaySound = checked;
-    localStorage.setItem("birdbrain_autoplay", checked);
+    localStorage.setItem("birdbrain_autoplay", checked ? "true" : "false");
 }
 
 // ── Mode ────────────────────────────────────────────────────────────
