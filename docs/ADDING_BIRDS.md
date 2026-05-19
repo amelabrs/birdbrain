@@ -6,8 +6,8 @@ This guide explains how to add birds to the quiz **without writing any code**.
 
 ## Quick Summary
 
-1. Run `python3 scripts/add_bird.py`
-2. Answer the prompts
+1. Run `python3 scripts/add_bird.py https://ebird.org/species/CODE`
+2. Answer 3 questions (sound tip, fun fact, Karnataka spots)
 3. `git push`
 4. Done — Render auto-deploys
 
@@ -17,15 +17,25 @@ This guide explains how to add birds to the quiz **without writing any code**.
 
 ```bash
 cd ~/birdbrain
-python3 scripts/add_bird.py
+python3 scripts/add_bird.py https://ebird.org/species/lescou1
 ```
 
-The script will:
-- Ask you for each field (name, image URL, sound URL, etc.)
-- Auto-generate the bird ID from the name
-- Look up the eBird species code automatically
-- Offer to add female/variant images and sounds
-- Save everything to `data/birds.json`
+The script auto-fetches: name, scientific name, top-rated photo, top-rated sound, eBird code.
+
+You only answer **3 questions**:
+- Sound tip (mnemonic to remember the call)
+- Fun fact (one interesting thing)
+- Karnataka spots (where to find it)
+
+You can also pass just the species code:
+```bash
+python3 scripts/add_bird.py lescou1
+```
+
+Or run without arguments for interactive mode (asks for name or URL):
+```bash
+python3 scripts/add_bird.py
+```
 
 After running it:
 ```bash

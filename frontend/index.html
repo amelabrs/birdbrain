@@ -10,7 +10,7 @@
     <link rel="manifest" href="/static/manifest.json">
     <link rel="icon" href="/static/icon-192.svg">
     <link rel="apple-touch-icon" href="/static/icon-192.svg">
-    <link rel="stylesheet" href="/static/style.css?v=3">
+    <link rel="stylesheet" href="/static/style.css?v=4">
 </head>
 <body>
     <div id="app">
@@ -28,13 +28,12 @@
         <!-- Mode Selector -->
         <div id="settings-bar">
             <label class="setting-toggle">
-                <span class="toggle-label-left">Quiz</span>
-                <input type="checkbox" id="all-birds-toggle" onchange="toggleAllBirds(!this.checked)">
-                <span class="toggle-label-right">Memory</span>
+                <input type="checkbox" id="all-birds-toggle" onchange="toggleAllBirds(this.checked)" checked>
+                <span class="toggle-label-right">Quiz mode</span>
             </label>
             <label class="setting-toggle">
-                <span class="toggle-label-left">Auto-play Call</span>
                 <input type="checkbox" id="autoplay-toggle" onchange="toggleAutoPlay(this.checked)">
+                <span class="toggle-label-right">Auto-play Call</span>
             </label>
         </div>
 
@@ -128,6 +127,6 @@
         </div>
     </div>
 
-    <script src="/static/app.js?v=3"></script>
+    <script src="/static/app.js?v=4"></script>
 </body>
 </html>

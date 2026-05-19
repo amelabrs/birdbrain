@@ -423,5 +423,19 @@
     "habitat": "Gardens, open woodland, urban parks",
     "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, every well-wooded garden",
     "ebird_code": "magrob"
+  },
+  {
+    "id": "lesser-coucal",
+    "name": "Lesser Coucal",
+    "scientific_name": "Centropus bengalensis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/142115921/2400",
+    "image_credit": "Kai Pflug",
+    "sound_url": "\u001bhttps://cdn.download.ams.birds.cornell.edu/api/v2/asset/541422/mp3",
+    "xc_id": "",
+    "sound_tip": "Call, a short phrase of deep hooting notes. A rising and falling ”Boop-bip-boo-boo”.",
+    "fun_fact": "A large coucal of lowland forest. Note all black plumage and pale bill with red eye. Found in thick cover of humid forest where it is very skulking and difficult to see. Similar to Lesser Black Coucal, but Greater Black Coucal is more often found in forest, and is larger with a red eye and paler bill.",
+    "habitat": "Found in thick cover of humid forest.",
+    "karnataka_spots": "City",
+    "ebird_code": "lescou1"
   }
 ]

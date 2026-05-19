@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
-"""Add a new bird to birds.json interactively.
+"""Add a new bird to birds.json from an eBird URL.
 
-Run: python3 scripts/add_bird.py
+Usage:
+    python3 scripts/add_bird.py https://ebird.org/species/lescou1
+    python3 scripts/add_bird.py lescou1
+    python3 scripts/add_bird.py              (interactive — asks for name)
 
-It will ask you for each field and add the bird to data/birds.json.
-It can also look up the eBird species code automatically.
+Auto-fetches: name, scientific name, photo, sound, eBird code.
+You only answer 3 questions: sound_tip, fun_fact, karnataka_spots.
 """
 
 import json
+import re
+import sys
 import urllib.request
 import urllib.parse
 from pathlib import Path
 
 DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "birds.json"
+EBIRD_API_KEY = "jfekjedvescr"
 
 
 def load_birds():
@@ -21,24 +27,6 @@ def load_birds():
 
 def save_birds(birds):
     DATA_FILE.write_text(json.dumps(birds, indent=2, ensure_ascii=False) + "\n", "utf-8")
-
-
-def lookup_ebird_code(bird_name):
-    """Look up eBird species code from bird name."""
-    url = f"https://api.ebird.org/v2/ref/taxon/find?locale=en&cat=species&key=jfekjedvescr&q={urllib.parse.quote(bird_name)}"
-    try:
-        with urllib.request.urlopen(url) as resp:
-            data = json.loads(resp.read())
-            if data:
-                code = data[0]["code"]
-                print(f"  Found: {data[0]['name']} → {code}")
-                return code
-            else:
-                print("  ⚠️  Not found on eBird. You can add it manually later.")
-                return ""
-    except Exception as e:
-        print(f"  ⚠️  Lookup failed: {e}")
-        return ""
 
 
 def make_id(name):
@@ -54,38 +42,122 @@ def ask(prompt, required=True):
         print("    (required — please enter a value)")
 
 
+def fetch_json(url, headers=None):
+    """Fetch JSON from a URL."""
+    hdrs = headers or {}
+    req = urllib.request.Request(url, headers=hdrs)
+    with urllib.request.urlopen(req) as resp:
+        return json.loads(resp.read())
+
+
+def get_taxonomy(species_code):
+    """Get bird name and scientific name from eBird taxonomy API."""
+    url = f"https://api.ebird.org/v2/ref/taxonomy/ebird?species={species_code}&fmt=json"
+    data = fetch_json(url, {"X-eBirdApiToken": EBIRD_API_KEY})
+    if data:
+        return data[0]["comName"], data[0]["sciName"]
+    return None, None
+
+
+def get_macaulay_asset(species_code, media_type):
+    """Get top-rated asset ID from Macaulay Library for a species."""
+    url = f"https://search.macaulaylibrary.org/api/v1/search?taxonCode={species_code}&mediaType={media_type}&sort=rating_rank_desc&count=1"
+    data = fetch_json(url, {"User-Agent": "BirdBrain/1.0"})
+    if data.get("results") and data["results"].get("content"):
+        item = data["results"]["content"][0]
+        return item["assetId"], item.get("userDisplayName", "Cornell Lab / Macaulay Library")
+    return None, None
+
+
+def lookup_code_from_name(bird_name):
+    """Look up eBird species code from bird name."""
+    url = f"https://api.ebird.org/v2/ref/taxon/find?locale=en&cat=species&key={EBIRD_API_KEY}&q={urllib.parse.quote(bird_name)}"
+    data = fetch_json(url)
+    if data:
+        return data[0]["code"]
+    return None
+
+
+def parse_species_code(arg):
+    """Extract species code from URL or bare code."""
+    # Handle: https://ebird.org/species/lescou1
+    m = re.search(r"ebird\.org/species/([a-zA-Z0-9]+)", arg)
+    if m:
+        return m.group(1)
+    # Handle bare code like: lescou1
+    if re.match(r"^[a-zA-Z0-9]+$", arg):
+        return arg
+    return None
+
+
 def main():
     birds = load_birds()
     print(f"\n🐦 BirdBrain — Add New Bird")
     print(f"   Currently {len(birds)} birds in the database.\n")
 
-    name = ask("Bird name (e.g. 'Indian Robin')")
+    species_code = None
+
+    # Check if URL/code was passed as argument
+    if len(sys.argv) > 1:
+        species_code = parse_species_code(sys.argv[1])
+        if not species_code:
+            print(f"  ❌ Could not parse species code from: {sys.argv[1]}")
+            print(f"  Usage: python3 scripts/add_bird.py https://ebird.org/species/CODE")
+            return
+
+    # If no argument, ask for name or URL
+    if not species_code:
+        user_input = ask("eBird URL or bird name (e.g. https://ebird.org/species/lescou1)")
+        species_code = parse_species_code(user_input)
+        if not species_code:
+            # Treat as bird name, look up code
+            print(f"  Looking up '{user_input}' on eBird...")
+            species_code = lookup_code_from_name(user_input)
+            if not species_code:
+                print(f"  ❌ Could not find '{user_input}' on eBird.")
+                return
+
+    # Fetch taxonomy
+    print(f"  Fetching taxonomy for: {species_code}...")
+    name, scientific_name = get_taxonomy(species_code)
+    if not name:
+        print(f"  ❌ Species code '{species_code}' not found in eBird taxonomy.")
+        return
+
     bird_id = make_id(name)
+    print(f"  ✓ {name} ({scientific_name})")
 
     # Check for duplicates
     if any(b["id"] == bird_id for b in birds):
         print(f"\n  ❌ Bird '{name}' (id: {bird_id}) already exists!")
         return
 
-    print(f"\n  ID will be: {bird_id}")
-    print(f"\n── Required fields ──")
+    # Fetch photo
+    print(f"  Fetching top-rated photo...")
+    photo_id, photo_credit = get_macaulay_asset(species_code, "photo")
+    if photo_id:
+        image_url = f"https://cdn.download.ams.birds.cornell.edu/api/v1/asset/{photo_id}/2400"
+        print(f"  ✓ Photo found (asset {photo_id}, by {photo_credit})")
+    else:
+        print(f"  ⚠️  No photo found. You'll need to provide one.")
+        image_url = ask("Image URL")
+        photo_credit = ask("Image credit")
 
-    scientific_name = ask("Scientific name (e.g. 'Copsychus fulicatus')")
-    image_url = ask("Image URL (full URL to a bird photo)")
-    image_credit = ask("Image credit (e.g. 'Wikimedia Commons (CC BY-SA)')")
-    sound_url = ask("Sound URL (MP3 link — from xeno-canto or Cornell)")
-    xc_id = ask("Xeno-canto ID (e.g. 'XC955886', or leave blank)", required=False)
-    sound_tip = ask("Sound tip (mnemonic to remember the call)")
-    fun_fact = ask("Fun fact (one interesting thing about this bird)")
-    habitat = ask("Habitat (e.g. 'Open fields, gardens')")
+    # Fetch sound
+    print(f"  Fetching top-rated audio...")
+    audio_id, audio_credit = get_macaulay_asset(species_code, "audio")
+    if audio_id:
+        sound_url = f"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{audio_id}/mp3"
+        print(f"  ✓ Sound found (asset {audio_id}, by {audio_credit})")
+    else:
+        print(f"  ⚠️  No audio found. You'll need to provide one.")
+        sound_url = ask("Sound URL (MP3 link)")
+
+    # Only 3 questions!
+    print(f"\n── Just 3 questions ──")
+    sound_tip = ask("Sound tip (how to remember the call)")
+    fun_fact = ask("Fun fact (one interesting thing)")
     karnataka_spots = ask("Karnataka spots (where to find it)")
-
-    # eBird code
-    print(f"\n── eBird code ──")
-    print(f"  Looking up '{name}' on eBird...")
-    ebird_code = lookup_ebird_code(name)
-    if not ebird_code:
-        ebird_code = ask("Enter eBird species code manually (or leave blank)", required=False)
 
     # Build bird entry
     bird = {
@@ -93,43 +165,39 @@ def main():
         "name": name,
         "scientific_name": scientific_name,
         "image_url": image_url,
-        "image_credit": image_credit,
+        "image_credit": photo_credit,
         "sound_url": sound_url,
-        "xc_id": xc_id,
+        "xc_id": "",
         "sound_tip": sound_tip,
         "fun_fact": fun_fact,
-        "habitat": habitat,
+        "habitat": "",
         "karnataka_spots": karnataka_spots,
-        "ebird_code": ebird_code,
+        "ebird_code": species_code,
     }
 
     # Optional: extra sounds
-    print(f"\n── Extra sounds (optional) ──")
+    print(f"\n── Extras (optional) ──")
     extra_sounds = []
     while True:
         add = input("  Add an extra sound (e.g. female call)? [y/N]: ").strip().lower()
         if add != "y":
             break
-        url = ask("  Sound URL")
+        es_url = ask("  Sound URL")
         label = ask("  Label (e.g. 'Female call')")
         tip = ask("  Sound tip for this variant")
-        extra_sounds.append({"url": url, "label": label, "tip": tip})
-
+        extra_sounds.append({"url": es_url, "label": label, "tip": tip})
     if extra_sounds:
         bird["extra_sounds"] = extra_sounds
 
-    # Optional: extra images
-    print(f"\n── Extra images (optional) ──")
     extra_images = []
     while True:
         add = input("  Add an extra image (e.g. female plumage)? [y/N]: ").strip().lower()
         if add != "y":
             break
-        url = ask("  Image URL")
+        ei_url = ask("  Image URL")
         label = ask("  Label (e.g. 'Female')")
         credit = ask("  Image credit")
-        extra_images.append({"url": url, "label": label, "credit": credit})
-
+        extra_images.append({"url": ei_url, "label": label, "credit": credit})
     if extra_images:
         bird["extra_images"] = extra_images
 

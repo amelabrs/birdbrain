@@ -455,7 +455,7 @@ function showScreen(id) {
 async function init() {
     // Restore toggle states
     const toggle = document.getElementById("all-birds-toggle");
-    if (toggle) toggle.checked = !useAllBirds; // checked = Memory (drip), unchecked = Quiz (all)
+    if (toggle) toggle.checked = useAllBirds; // checked = Quiz (all birds), unchecked = Memory (drip)
     const apToggle = document.getElementById("autoplay-toggle");
     if (apToggle) apToggle.checked = autoPlaySound;
 
