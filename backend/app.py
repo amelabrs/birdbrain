@@ -89,6 +89,7 @@ def submit_answer(req: AnswerRequest):
     return {
         "correct": correct,
         "correct_name": bird.get("name", ""),
+        "image_url": bird.get("image_url", ""),
         "fun_fact": bird.get("fun_fact", ""),
         "sound_tip": bird.get("sound_tip", ""),
         "scientific_name": bird.get("scientific_name", ""),

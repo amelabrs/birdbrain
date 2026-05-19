@@ -221,6 +221,16 @@ async function submitAnswer(chosenIndex) {
 function showResult(data, correct) {
     document.getElementById("result-icon").textContent = correct ? "✅" : "❌";
     document.getElementById("result-title").textContent = correct ? "Correct!" : "Not quite!";
+
+    // Show bird image in sound mode
+    const resultImg = document.getElementById("result-image");
+    if (currentMode === "sound" && data.image_url) {
+        resultImg.src = data.image_url;
+        resultImg.style.display = "block";
+    } else {
+        resultImg.style.display = "none";
+    }
+
     document.getElementById("result-bird-name").textContent = data.correct_name || "";
     document.getElementById("result-scientific").textContent = data.scientific_name || "";
     document.getElementById("result-fact").textContent = `💡 ${data.fun_fact || ""}`;

@@ -304,8 +304,9 @@ body {
 .choice-btn.image-choice img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
+    background: var(--bg);
 }
 
 /* ── Progress Bar ────────────────────────────────────────────────── */
@@ -398,6 +399,14 @@ body {
     max-width: 360px;
     margin: 4px 0 8px 0;
     color: var(--accent);
+}
+
+.result-image {
+    max-width: 200px;
+    max-height: 160px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    margin: 8px auto;
 }
 
 .result-links {
