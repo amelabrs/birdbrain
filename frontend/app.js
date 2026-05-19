@@ -207,7 +207,6 @@ async function submitAnswer(chosenIndex) {
         } else {
             s.wrong.push(data.correct_name || currentQuestion.bird_id);
         }
-        s.total = data.total_birds || s.total;
 
         // Show result after brief pause
         setTimeout(() => showResult(data, correct), 800);
