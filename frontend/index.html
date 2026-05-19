@@ -10,7 +10,7 @@
     <link rel="manifest" href="/static/manifest.json">
     <link rel="icon" href="/static/icon-192.svg">
     <link rel="apple-touch-icon" href="/static/icon-192.svg">
-    <link rel="stylesheet" href="/static/style.css?v=2">
+    <link rel="stylesheet" href="/static/style.css?v=3">
 </head>
 <body>
     <div id="app">
@@ -26,6 +26,18 @@
         </header>
 
         <!-- Mode Selector -->
+        <div id="settings-bar">
+            <label class="setting-toggle">
+                <span class="toggle-label-left">Quiz</span>
+                <input type="checkbox" id="all-birds-toggle" onchange="toggleAllBirds(!this.checked)">
+                <span class="toggle-label-right">Memory</span>
+            </label>
+            <label class="setting-toggle">
+                <span class="toggle-label-left">Auto-play Call</span>
+                <input type="checkbox" id="autoplay-toggle" onchange="toggleAutoPlay(this.checked)">
+            </label>
+        </div>
+
         <div id="mode-selector">
             <button class="mode-btn active" data-mode="photo" onclick="setMode('photo')">📷 Photo</button>
             <button class="mode-btn" data-mode="sound" onclick="setMode('sound')">🔊 Sound</button>
@@ -110,22 +122,12 @@
                 </div>
                 <h3>Bird Progress</h3>
                 <div id="bird-progress-list"></div>
-                <div class="settings-section">
-                    <h3>Settings</h3>
-                    <label class="toggle-row">
-                        <span>Show all birds (skip drip feed)</span>
-                        <input type="checkbox" id="all-birds-toggle" onchange="toggleAllBirds(this.checked)">
-                    </label>
-                    <label class="toggle-row">
-                        <span>Auto-play call on correct answer</span>
-                        <input type="checkbox" id="autoplay-toggle" onchange="toggleAutoPlay(this.checked)">
-                    </label>
-                </div>
+                <button class="danger-btn" onclick="resetProgress()">🗑️ Reset All Progress</button>
                 <button class="danger-btn" onclick="resetProgress()">🗑️ Reset All Progress</button>
             </div>
         </div>
     </div>
 
-    <script src="/static/app.js?v=2"></script>
+    <script src="/static/app.js?v=3"></script>
 </body>
 </html>

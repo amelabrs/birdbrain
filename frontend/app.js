@@ -259,9 +259,8 @@ function showResult(data, correct) {
                 resultAudio = new Audio(data.sound_url);
                 resultAudio.volume = 0.7;
                 resultAudio.play().catch(() => {});
-            } else {
-                linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">🔊 Listen to call</a>`;
             }
+            linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">🔊 Listen to call</a>`;
         }
         if (data.ebird_code) {
             linksHtml += `<a href="https://ebird.org/species/${data.ebird_code}" target="_blank" class="result-link">📖 eBird page</a>`;
@@ -386,11 +385,6 @@ async function toggleStats() {
         } catch (err) {
             console.error("Failed to load stats:", err);
         }
-        // Sync toggles
-        const toggle = document.getElementById("all-birds-toggle");
-        if (toggle) toggle.checked = useAllBirds;
-        const apToggle = document.getElementById("autoplay-toggle");
-        if (apToggle) apToggle.checked = autoPlaySound;
         panel.classList.remove("hidden");
     } else {
         panel.classList.add("hidden");
@@ -461,7 +455,7 @@ function showScreen(id) {
 async function init() {
     // Restore toggle states
     const toggle = document.getElementById("all-birds-toggle");
-    if (toggle) toggle.checked = useAllBirds;
+    if (toggle) toggle.checked = !useAllBirds; // checked = Memory (drip), unchecked = Quiz (all)
     const apToggle = document.getElementById("autoplay-toggle");
     if (apToggle) apToggle.checked = autoPlaySound;
 
