@@ -437,5 +437,33 @@
     "habitat": "Found in thick cover of humid forest.",
     "karnataka_spots": "City",
     "ebird_code": "lescou1"
+  },
+  {
+    "id": "white-browed-fantail",
+    "name": "White-browed Fantail",
+    "scientific_name": "Rhipidura aureola",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/634918468/2400",
+    "image_credit": "Hemant Kirola",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/469624841/mp3",
+    "xc_id": "",
+    "sound_tip": "Frequent song is a 4- to 7-note melodious whistling phrase that ascends and then sometimes descends or is left incomplete. Contact call is a harsh \"switch-wich.\"",
+    "fun_fact": "The White-browed Fantail (Rhipidura aureola) has a fascinating foraging trick: it fans and flicks its tail dramatically not just for display, but to flush insects from leaf litter and vegetation. The sudden movement startles hidden insects into flying up — straight into the bird's waiting beak. The tail is essentially a hunting tool.",
+    "habitat": "",
+    "karnataka_spots": "Western Ghats fringe & deciduous forests, Bangalore & surrounds",
+    "ebird_code": "whbfan2",
+    "extra_sounds": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/542928/mp3",
+        "label": "Contact call",
+        "tip": ""
+      }
+    ],
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/148956361/1800",
+        "label": "Tail fanned",
+        "credit": "Cornell Lab / Macaulay Library"
+      }
+    ]
   }
 ]

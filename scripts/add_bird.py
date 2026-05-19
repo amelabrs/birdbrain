@@ -179,24 +179,34 @@ def main():
     print(f"\n── Extras (optional) ──")
     extra_sounds = []
     while True:
-        add = input("  Add an extra sound (e.g. female call)? [y/N]: ").strip().lower()
-        if add != "y":
+        add = input("  Extra sound? [y/N or paste URL]: ").strip()
+        if add.lower() == "n" or add == "":
             break
-        es_url = ask("  Sound URL")
+        if add.startswith("http"):
+            es_url = add
+        elif add.lower() == "y":
+            es_url = ask("  Sound URL")
+        else:
+            break
         label = ask("  Label (e.g. 'Female call')")
-        tip = ask("  Sound tip for this variant")
-        extra_sounds.append({"url": es_url, "label": label, "tip": tip})
+        tip = ask("  Sound tip for this variant", required=False)
+        extra_sounds.append({"url": es_url, "label": label, "tip": tip} if tip else {"url": es_url, "label": label, "tip": ""})
     if extra_sounds:
         bird["extra_sounds"] = extra_sounds
 
     extra_images = []
     while True:
-        add = input("  Add an extra image (e.g. female plumage)? [y/N]: ").strip().lower()
-        if add != "y":
+        add = input("  Extra image? [y/N or paste URL]: ").strip()
+        if add.lower() == "n" or add == "":
             break
-        ei_url = ask("  Image URL")
+        if add.startswith("http"):
+            ei_url = add
+        elif add.lower() == "y":
+            ei_url = ask("  Image URL")
+        else:
+            break
         label = ask("  Label (e.g. 'Female')")
-        credit = ask("  Image credit")
+        credit = ask("  Image credit", required=False) or "Cornell Lab / Macaulay Library"
         extra_images.append({"url": ei_url, "label": label, "credit": credit})
     if extra_images:
         bird["extra_images"] = extra_images
