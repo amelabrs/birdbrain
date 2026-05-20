@@ -44,7 +44,22 @@ function setMode(mode) {
 
 // ── Load Question ───────────────────────────────────────────────────
 
+function stopAllAudio() {
+    // Stop result audio (post-answer auto-play)
+    if (resultAudio) {
+        resultAudio.pause();
+        resultAudio = null;
+    }
+    // Stop prompt audio (sound mode player)
+    const player = document.getElementById("audio-player");
+    if (player) {
+        player.pause();
+        player.currentTime = 0;
+    }
+}
+
 async function loadQuestion() {
+    stopAllAudio();
     const s = getSession();
     // Check if session is complete
     if (s.total > 0 && s.bird >= s.total) {
@@ -288,10 +303,7 @@ function showResult(data, correct) {
 // ── Next Question ───────────────────────────────────────────────────
 
 function nextQuestion() {
-    if (resultAudio) {
-        resultAudio.pause();
-        resultAudio = null;
-    }
+    stopAllAudio();
     loadQuestion();
 }
 
