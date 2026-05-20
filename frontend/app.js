@@ -459,6 +459,13 @@ async function init() {
     const apToggle = document.getElementById("autoplay-toggle");
     if (apToggle) apToggle.checked = autoPlaySound;
 
+    // Show deploy timestamp
+    try {
+        const res = await fetch("/api/version");
+        const v = await res.json();
+        document.getElementById("build-stamp").textContent = v.deploy_time;
+    } catch (e) {}
+
     loadQuestion();
 }
 

@@ -12,6 +12,7 @@ Endpoints:
 from __future__ import annotations
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 from fastapi import FastAPI, Query
@@ -23,6 +24,9 @@ from backend.quiz import generate_question
 from backend.spaced_rep import SpacedRepetition
 
 app = FastAPI(title="BirdBrain", version="1.0.0")
+
+# Server start time = deploy time on Render
+DEPLOY_TIME = datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC")
 
 # ── Data ─────────────────────────────────────────────────────────────
 
@@ -132,6 +136,11 @@ def list_birds():
         }
         for b in BIRDS
     ]
+
+
+@app.get("/api/version")
+def get_version():
+    return {"deploy_time": DEPLOY_TIME, "birds": len(BIRDS)}
 
 
 # ── Serve frontend & data assets ─────────────────────────────────────

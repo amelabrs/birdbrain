@@ -72,6 +72,12 @@ body {
     gap: 8px;
 }
 
+.build-stamp {
+    font-size: 10px;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
 .stat-pill {
     background: var(--bg-card);
     padding: 6px 12px;
