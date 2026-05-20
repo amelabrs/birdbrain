@@ -465,5 +465,33 @@
         "credit": "Cornell Lab / Macaulay Library"
       }
     ]
+  },
+  {
+    "id": "red-wattled-lapwing",
+    "name": "Red-wattled Lapwing",
+    "scientific_name": "Vanellus indicus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/239270221/2400",
+    "image_credit": "Ramesh Desai",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/239274571/mp3",
+    "xc_id": "",
+    "sound_tip": "A bird known for its characteristics loud alarm call, often compared to the words “Did we do it?”",
+    "fun_fact": "hey feed primarily on insects, catching them in a typical plover like manner, running a short distance and picking up food from ground",
+    "habitat": "",
+    "karnataka_spots": "City",
+    "ebird_code": "rewlap1",
+    "extra_sounds": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540190/mp3",
+        "label": "White-necked",
+        "tip": ""
+      }
+    ],
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126390831/480",
+        "label": "Flight",
+        "credit": "Ebird"
+      }
+    ]
   }
 ]

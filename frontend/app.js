@@ -39,7 +39,7 @@ function setMode(mode) {
     document.querySelectorAll(".mode-btn").forEach((btn) => {
         btn.classList.toggle("active", btn.dataset.mode === mode);
     });
-    if (!answered) loadQuestion();
+    loadQuestion();
 }
 
 // ── Load Question ───────────────────────────────────────────────────
