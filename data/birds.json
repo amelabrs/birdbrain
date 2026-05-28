@@ -493,5 +493,26 @@
         "credit": "Ebird"
       }
     ]
+  },
+  {
+    "id": "house-sparrow",
+    "name": "House Sparrow",
+    "scientific_name": "Passer domesticus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/316920511/2400",
+    "image_credit": "Matthew Plante",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/231711901/mp3",
+    "xc_id": "",
+    "sound_tip": "cheep-chirrup (repetitive, rapid, without melody)",
+    "fun_fact": "was once so common it was taken for granted — but urban development has caused a sharp decline, making it a species of local conservation concern in Karnataka.",
+    "habitat": "",
+    "karnataka_spots": "Old residential areas (Basavanagudi, Malleswaram), railway stations, and rural villages around Mysuru and Mandya.",
+    "ebird_code": "houspa",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/305874101/640",
+        "label": "Female",
+        "credit": "E-bird"
+      }
+    ]
   }
 ]
