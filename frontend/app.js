@@ -98,7 +98,7 @@ function renderQuestion() {
     const q = currentQuestion;
 
     // Hide all prompt types
-    document.getElementById("prompt-image").style.display = "none";
+    document.getElementById("prompt-image-wrap").style.display = "none";
     document.getElementById("prompt-audio").style.display = "none";
     document.getElementById("prompt-text").style.display = "none";
 
@@ -113,9 +113,12 @@ function renderQuestion() {
 
     // Show the right prompt
     if (q.prompt_type === "image") {
+        const wrap = document.getElementById("prompt-image-wrap");
         const img = document.getElementById("prompt-image");
+        const bgImg = document.getElementById("prompt-image-bg");
         img.src = q.prompt;
-        img.style.display = "block";
+        bgImg.src = q.prompt;
+        wrap.style.display = "block";
     } else if (q.prompt_type === "audio") {
         document.getElementById("prompt-audio").style.display = "block";
         const audio = document.getElementById("audio-player");
@@ -237,9 +240,9 @@ function showResult(data, correct) {
     document.getElementById("result-icon").textContent = correct ? "✅" : "❌";
     document.getElementById("result-title").textContent = correct ? "Correct!" : "Not quite!";
 
-    // Show bird image in sound mode
+    // Always show bird photo on result — reinforces the image-name link
     const resultImg = document.getElementById("result-image");
-    if (currentMode === "sound" && data.image_url) {
+    if (data.image_url) {
         resultImg.src = data.image_url;
         resultImg.style.display = "block";
     } else {

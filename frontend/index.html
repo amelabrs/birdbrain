@@ -10,7 +10,10 @@
     <link rel="manifest" href="/static/manifest.json">
     <link rel="icon" href="/static/icon-192.svg">
     <link rel="apple-touch-icon" href="/static/icon-192.svg">
-    <link rel="stylesheet" href="/static/style.css?v=6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css?v=8">
 </head>
 <body>
     <div id="app">
@@ -57,7 +60,10 @@
                 <!-- Photo/Sound prompt -->
                 <div id="prompt-area">
                     <div id="variant-label" class="variant-label" style="display:none;"></div>
-                    <img id="prompt-image" src="" alt="Which bird is this?" style="display:none;">
+                    <div id="prompt-image-wrap" class="prompt-image-wrap" style="display:none;">
+                        <img id="prompt-image-bg" class="prompt-image-bg" alt="">
+                        <img id="prompt-image" src="" alt="Which bird is this?">
+                    </div>
                     <div id="prompt-audio" style="display:none;">
                         <button id="play-sound-btn" class="play-btn" onclick="playSound()">
                             ▶ Play Bird Call
@@ -123,11 +129,10 @@
                 <h3>Bird Progress</h3>
                 <div id="bird-progress-list"></div>
                 <button class="danger-btn" onclick="resetProgress()">🗑️ Reset All Progress</button>
-                <button class="danger-btn" onclick="resetProgress()">🗑️ Reset All Progress</button>
             </div>
         </div>
     </div>
 
-    <script src="/static/app.js?v=7"></script>
+    <script src="/static/app.js?v=8"></script>
 </body>
 </html>
