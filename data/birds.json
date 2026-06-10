@@ -562,6 +562,7 @@
     "name": "Great Cormorant",
     "scientific_name": "Phalacrocorax carbo",
     "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/255272571/2400",
+    "breeding_adult_image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/66026501/320",
     "image_credit": "Natthaphat Chotjuckdikul",
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/309407421/mp3",
     "xc_id": "",
@@ -614,18 +615,18 @@
     "ebird_code": "commoo3"
   },
   {
-    "id": "indian-spot-billed-duck",
-    "name": "Indian Spot-billed Duck",
-    "scientific_name": "Anas poecilorhyncha",
-    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/614390841/2400",
-    "image_credit": "Abhijit Mishra",
-    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/204024871/mp3",
+    "id": "mallard",
+    "name": "Mallard",
+    "scientific_name": "Anas platyrhynchos",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/205833351/2400",
+    "image_credit": "Imran Shah",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/616578316/mp3",
     "xc_id": "",
-    "sound_tip": "A classic loud quack -- females call more than males",
-    "fun_fact": "One of the few ducks that breeds in India year-round rather than migrating -- named for the yellow tip on its bill",
-    "habitat": "",
-    "karnataka_spots": "Common resident at Ulsoor, Hebbal, Bellandur, Ranganathittu, and most Karnataka lakes",
-    "ebird_code": "isbduc1"
+    "sound_tip": "The classic QUACK — females are loud and frequent; males give a softer raspy kwek",
+    "fun_fact": "The ancestor of almost every domestic duck breed. The male's iridescent green head is unmistakable — but it is a scarce winter visitor to Karnataka rather than a year-round resident.",
+    "habitat": "Lakes, wetlands, rivers, flooded fields",
+    "karnataka_spots": "Kabini, Ranganathittu, Ulsoor Lake, Hebbal Lake — uncommon winter visitor to large Karnataka water bodies",
+    "ebird_code": "mallar3"
   },
   {
     "id": "asian-green-bee-eater",

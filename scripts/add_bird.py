@@ -60,11 +60,29 @@ def get_taxonomy(species_code):
 
 
 def get_macaulay_asset(species_code, media_type):
-    """Get top-rated asset ID from Macaulay Library for a species."""
-    url = f"https://search.macaulaylibrary.org/api/v1/search?taxonCode={species_code}&mediaType={media_type}&sort=rating_rank_desc&count=1"
-    data = fetch_json(url, {"User-Agent": "BirdBrain/1.0"})
-    if data.get("results") and data["results"].get("content"):
-        item = data["results"]["content"][0]
+    """Get top-rated asset ID from Macaulay Library for a species (v2 API)."""
+    import http.cookiejar
+    jar = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+    ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+    opener.addheaders = [("User-Agent", ua)]
+    # Establish session and collect XSRF token
+    opener.open("https://search.macaulaylibrary.org/")
+    xsrf = next((c.value for c in jar if c.name == "XSRF-TOKEN"), "")
+    url = (
+        f"https://search.macaulaylibrary.org/api/v2/search"
+        f"?taxonCode={species_code}&mediaType={media_type}&sort=rating_rank_desc&count=1"
+    )
+    req = urllib.request.Request(url, headers={
+        "User-Agent": ua,
+        "Accept": "application/json",
+        "Referer": "https://search.macaulaylibrary.org/",
+        "X-XSRF-TOKEN": xsrf,
+    })
+    with opener.open(req) as resp:
+        data = json.loads(resp.read())
+    if isinstance(data, list) and data:
+        item = data[0]
         return item["assetId"], item.get("userDisplayName", "Cornell Lab / Macaulay Library")
     return None, None
 
