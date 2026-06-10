@@ -17,6 +17,73 @@ let sessions = {
 
 function getSession() { return sessions[currentMode]; }
 
+// ── Bird data (for extra plumages / calls on the result screen) ──────
+let birdDataMap = {};
+let extraCallAudio = null;
+
+async function loadBirdData() {
+    try {
+        const res = await fetch("/data/birds.json");
+        const arr = await res.json();
+        birdDataMap = Object.fromEntries(arr.map((b) => [b.id, b]));
+    } catch (e) { /* extras are optional */ }
+}
+
+function sizedUrl(url, px) {
+    if (!url) return url;
+    url = url.replace(/[\u0000-\u001f]/g, "").trim();
+    return url.replace(/(\/api\/v\d\/asset\/\d+)\/\d+$/, `$1/${px}`);
+}
+
+function renderExtras(birdId) {
+    const plumesWrap = document.getElementById("result-plumes-wrap");
+    const plumesEl = document.getElementById("result-plumes");
+    const callsWrap = document.getElementById("result-calls-wrap");
+    const callsEl = document.getElementById("result-calls");
+    plumesEl.innerHTML = "";
+    callsEl.innerHTML = "";
+    plumesWrap.style.display = "none";
+    callsWrap.style.display = "none";
+
+    const bird = birdDataMap[birdId];
+    if (!bird) return;
+
+    const extras = (bird.extra_images || []).filter((e) => e.url);
+    if (extras.length) {
+        const main = document.createElement("div");
+        main.className = "plume main";
+        main.innerHTML = `<img src="${sizedUrl(bird.image_url, 480)}" alt=""><div class="cap">As shown</div>`;
+        plumesEl.appendChild(main);
+        extras.forEach((e) => {
+            const d = document.createElement("div");
+            d.className = "plume";
+            d.innerHTML = `<img src="${sizedUrl(e.url, 480)}" alt=""><div class="cap">${e.label || ""}</div>`;
+            plumesEl.appendChild(d);
+        });
+        plumesWrap.style.display = "block";
+    }
+
+    const calls = (bird.extra_sounds || []).filter((c) => c.url);
+    if (calls.length) {
+        calls.forEach((c, i) => {
+            const btn = document.createElement("button");
+            btn.className = "call-btn";
+            btn.textContent = c.label || `Call ${i + 1}`;
+            btn.onclick = () => {
+                const wasPlaying = btn.classList.contains("playing");
+                if (extraCallAudio) extraCallAudio.pause();
+                document.querySelectorAll(".call-btn").forEach((x) => x.classList.remove("playing"));
+                if (wasPlaying) return;
+                extraCallAudio = new Audio(sizedUrl(c.url, 480));
+                extraCallAudio.play().then(() => btn.classList.add("playing")).catch(() => {});
+                extraCallAudio.onended = () => btn.classList.remove("playing");
+            };
+            callsEl.appendChild(btn);
+        });
+        callsWrap.style.display = "block";
+    }
+}
+
 function toggleAllBirds(checked) {
     useAllBirds = checked;
     localStorage.setItem("birdbrain_all_birds", checked ? "true" : "false");
@@ -49,6 +116,11 @@ function stopAllAudio() {
     if (resultAudio) {
         resultAudio.pause();
         resultAudio = null;
+    }
+    // Stop extra-call audio (plumage panel)
+    if (extraCallAudio) {
+        extraCallAudio.pause();
+        extraCallAudio = null;
     }
     // Stop prompt audio (sound mode player)
     const player = document.getElementById("audio-player");
@@ -105,7 +177,7 @@ function renderQuestion() {
     // Variant label
     const variantEl = document.getElementById("variant-label");
     if (q.variant_label) {
-        variantEl.textContent = q.prompt_type === "audio" ? `🎵 ${q.variant_label}` : `📷 ${q.variant_label}`;
+        variantEl.textContent = q.variant_label;
         variantEl.style.display = "block";
     } else {
         variantEl.style.display = "none";
@@ -123,15 +195,15 @@ function renderQuestion() {
         document.getElementById("prompt-audio").style.display = "block";
         const audio = document.getElementById("audio-player");
         audio.src = q.prompt;
-        document.getElementById("play-sound-btn").textContent = "▶ Play Again";
+        document.getElementById("play-sound-btn").textContent = "Play again";
         document.getElementById("play-sound-btn").classList.remove("playing");
         // Auto-play the sound prompt
         audio.play().then(() => {
-            document.getElementById("play-sound-btn").textContent = "⏸ Playing...";
+            document.getElementById("play-sound-btn").textContent = "Playing\u2026";
             document.getElementById("play-sound-btn").classList.add("playing");
         }).catch(() => {});
         audio.onended = () => {
-            document.getElementById("play-sound-btn").textContent = "▶ Play Again";
+            document.getElementById("play-sound-btn").textContent = "Play again";
             document.getElementById("play-sound-btn").classList.remove("playing");
         };
     } else {
@@ -168,17 +240,17 @@ function playSound() {
 
     if (audio.paused) {
         audio.play();
-        btn.textContent = "⏸ Playing...";
+        btn.textContent = "Playing\u2026";
         btn.classList.add("playing");
 
         audio.onended = () => {
-            btn.textContent = "▶ Play Again";
+            btn.textContent = "Play again";
             btn.classList.remove("playing");
         };
     } else {
         audio.pause();
         audio.currentTime = 0;
-        btn.textContent = "▶ Play Bird Call";
+        btn.textContent = "Play call";
         btn.classList.remove("playing");
     }
 }
@@ -237,8 +309,14 @@ async function submitAnswer(chosenIndex) {
 // ── Show Result ─────────────────────────────────────────────────────
 
 function showResult(data, correct) {
-    document.getElementById("result-icon").textContent = correct ? "✅" : "❌";
-    document.getElementById("result-title").textContent = correct ? "Correct!" : "Not quite!";
+    const iconEl = document.getElementById("result-icon");
+    iconEl.classList.toggle("no", !correct);
+    iconEl.innerHTML = correct
+        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+    const titleEl = document.getElementById("result-title");
+    titleEl.textContent = correct ? "Correct" : "Not quite";
+    titleEl.classList.toggle("no", !correct);
 
     // Always show bird photo on result — reinforces the image-name link
     const resultImg = document.getElementById("result-image");
@@ -251,14 +329,14 @@ function showResult(data, correct) {
 
     document.getElementById("result-bird-name").textContent = data.correct_name || "";
     document.getElementById("result-scientific").textContent = data.scientific_name || "";
-    document.getElementById("result-fact").textContent = `💡 ${data.fun_fact || ""}`;
+    document.getElementById("result-fact").textContent = data.fun_fact || "";
 
     // Show sound tip in sound mode
     const soundTipEl = document.getElementById("result-sound-tip");
     if (currentMode === "sound") {
         const tip = currentQuestion.variant_sound_tip || data.sound_tip;
         if (tip) {
-            const prefix = currentQuestion.variant_label ? `🎵 ${currentQuestion.variant_label}: ` : "🎵 Remember: ";
+            const prefix = currentQuestion.variant_label ? `${currentQuestion.variant_label}: ` : "";
             soundTipEl.textContent = `${prefix}${tip}`;
             soundTipEl.style.display = "block";
         } else {
@@ -278,10 +356,10 @@ function showResult(data, correct) {
                 resultAudio.volume = 0.7;
                 resultAudio.play().catch(() => {});
             }
-            linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">🔊 Listen to call</a>`;
+            linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">Listen to call</a>`;
         }
         if (data.ebird_code) {
-            linksHtml += `<a href="https://ebird.org/species/${data.ebird_code}" target="_blank" class="result-link">📖 eBird page</a>`;
+            linksHtml += `<a href="https://ebird.org/species/${data.ebird_code}" target="_blank" class="result-link">eBird page</a>`;
         }
         if (linksHtml) {
             linksEl.innerHTML = linksHtml;
@@ -293,8 +371,11 @@ function showResult(data, correct) {
         linksEl.style.display = "none";
     }
 
-    document.getElementById("result-habitat").textContent = data.habitat ? `🌿 ${data.habitat}` : "";
-    document.getElementById("result-spots").textContent = data.karnataka_spots ? `📍 ${data.karnataka_spots}` : "";
+    document.getElementById("result-habitat").textContent = data.habitat || "";
+    document.getElementById("result-spots").textContent = data.karnataka_spots || "";
+
+    // Show extra plumages (female / immature) + extra calls from birds.json
+    try { renderExtras(currentQuestion.bird_id); } catch (e) {}
 
     // Update progress counter
     const s = getSession();
@@ -317,36 +398,34 @@ function showSessionSummary() {
     const total = s.total;
     const pct = total > 0 ? Math.round((s.correct / total) * 100) : 0;
 
-    let grade, emoji;
-    if (pct >= 90) { grade = "Excellent!"; emoji = "🏆"; }
-    else if (pct >= 70) { grade = "Great job!"; emoji = "🌟"; }
-    else if (pct >= 50) { grade = "Good effort!"; emoji = "👍"; }
-    else { grade = "Keep practising!"; emoji = "💪"; }
+    let grade;
+    if (pct >= 90) grade = "Excellent";
+    else if (pct >= 70) grade = "Great round";
+    else if (pct >= 50) grade = "Good effort";
+    else grade = "Keep practising";
 
     let wrongHtml = "";
     if (s.wrong.length > 0) {
-        wrongHtml = `<div class="needs-work" style="margin-top:12px;text-align:left">
-            <strong>⚠️ Work on these:</strong><br>${s.wrong.join(", ")}
+        wrongHtml = `<div class="needs-work" style="margin-top:16px;text-align:left">
+            <strong>Review these</strong>${s.wrong.join(", ")}
         </div>`;
     }
 
-    // Show unlock progress
     const lockHtml = s.total < totalBirdCount
-        ? `<p style="color:var(--text-dim);font-size:13px;margin-top:8px">🔓 ${s.total} of ${totalBirdCount} birds unlocked${pct >= 80 ? " — scoring ≥80% unlocks more!" : " — score ≥80% to unlock more"}</p>`
-        : `<p style="color:var(--text-dim);font-size:13px;margin-top:8px">🔓 All ${totalBirdCount} birds unlocked!</p>`;
+        ? `<p class="summary-unlock">${s.total} of ${totalBirdCount} birds unlocked${pct >= 80 ? " \u00b7 scoring 80%+ unlocks more" : " \u00b7 score 80%+ to unlock more"}</p>`
+        : `<p class="summary-unlock">All ${totalBirdCount} birds unlocked</p>`;
 
-    const modeLabel = currentMode === "photo" ? "📷 Photo" : currentMode === "sound" ? "🔊 Sound" : "🔄 Reverse";
+    const modeLabel = currentMode === "photo" ? "Photo" : currentMode === "sound" ? "Sound" : "Reverse";
 
     document.getElementById("summary-screen").innerHTML = `
-        <div style="font-size:48px;margin-bottom:8px">${emoji}</div>
+        <div class="summary-eyebrow">Session complete \u00b7 ${modeLabel}</div>
         <h2>${grade}</h2>
-        <p style="font-size:14px;color:var(--text-dim);margin-bottom:4px">${modeLabel} mode</p>
-        <p style="font-size:32px;font-weight:bold;color:var(--primary);margin:12px 0">${s.correct}/${total}</p>
-        <p style="color:var(--text-dim);margin-bottom:8px">${pct}% accuracy this session</p>
+        <div class="summary-score">${s.correct}<span>/${total}</span></div>
+        <div class="summary-acc">${pct}% accuracy this round</div>
         ${wrongHtml}
         ${lockHtml}
         <div id="unlock-msg"></div>
-        <button class="primary-btn" style="margin-top:20px" onclick="startNewSession()">Play Again →</button>
+        <button class="primary-btn" onclick="startNewSession()">New round</button>
     `;
     showScreen("summary-screen");
 
@@ -376,10 +455,9 @@ async function checkUnlock(pct) {
             const s = getSession();
             s.total = data.unlocked_count;
             totalBirdCount = data.total_birds;
-            msgEl.innerHTML = `<div style="margin-top:12px;padding:12px;background:rgba(255,215,0,0.15);border-radius:12px;border:1px solid rgba(255,215,0,0.3)">
-                <span style="font-size:24px">🎉</span>
-                <strong style="color:#ffd700"> ${data.newly_unlocked} new bird${data.newly_unlocked > 1 ? 's' : ''} unlocked!</strong>
-                <br><span style="color:var(--text-dim);font-size:13px">${data.unlocked_count} of ${data.total_birds} now available</span>
+            msgEl.innerHTML = `<div class="unlock-banner">
+                <b>${data.newly_unlocked} new bird${data.newly_unlocked > 1 ? 's' : ''} unlocked</b><br>
+                <span style="color:var(--text-dim);font-size:12px">${data.unlocked_count} of ${data.total_birds} now available</span>
             </div>`;
         }
     } catch (err) {
@@ -481,6 +559,7 @@ async function init() {
         document.getElementById("build-stamp").textContent = v.deploy_time;
     } catch (e) {}
 
+    await loadBirdData();
     loadQuestion();
 }
 

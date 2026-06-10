@@ -9,6 +9,11 @@ BirdBrain is a single-service Python web app (FastAPI + uvicorn) that serves bot
 - **GitHub**: `https://github.com/amelabrs/birdbrain`
 - **Branch**: `main`
 
+## Live Service
+
+- **Render Dashboard**: https://dashboard.render.com/web/srv-d84ic80jo89c73at9ck0
+- **App URL**: *(check dashboard for the .onrender.com URL)*
+
 ## Project Structure
 
 ```

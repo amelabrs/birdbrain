@@ -5,27 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#1a1a2e">
+    <meta name="theme-color" content="#efe8d8">
     <title>BirdBrain — Karnataka Birds</title>
     <link rel="manifest" href="/static/manifest.json">
     <link rel="icon" href="/static/icon-192.svg">
     <link rel="apple-touch-icon" href="/static/icon-192.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/style.css?v=8">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css?v=9">
 </head>
 <body>
     <div id="app">
         <!-- Header -->
         <header id="header">
             <div class="header-left">
-                <h1>🐦 BirdBrain</h1>
-                <span class="subtitle">Karnataka Birds</span>
+                <h1>BirdBrain</h1>
+                <span class="subtitle">Karnataka · Field Guide</span>
             </div>
             <div class="header-right">
                 <span id="build-stamp" class="build-stamp"></span>
-                <button id="menu-btn" class="icon-btn" onclick="toggleStats()">📊</button>
+                <button id="menu-btn" class="icon-btn" onclick="toggleStats()" aria-label="Progress">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 19V11M12 19V5M19 19v-6"/></svg>
+                </button>
             </div>
         </header>
 
@@ -42,9 +44,9 @@
         </div>
 
         <div id="mode-selector">
-            <button class="mode-btn active" data-mode="photo" onclick="setMode('photo')">📷 Photo</button>
-            <button class="mode-btn" data-mode="sound" onclick="setMode('sound')">🔊 Sound</button>
-            <button class="mode-btn" data-mode="reverse" onclick="setMode('reverse')">🔄 Reverse</button>
+            <button class="mode-btn active" data-mode="photo" onclick="setMode('photo')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2L8 5h8l1.5 2h2A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.2"/></svg>Photo</button>
+            <button class="mode-btn" data-mode="sound" onclick="setMode('sound')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L13 19V5L7.5 9.5z"/><path d="M16.5 9a4 4 0 0 1 0 6"/><path d="M19 6.5a7.5 7.5 0 0 1 0 11"/></svg>Sound</button>
+            <button class="mode-btn" data-mode="reverse" onclick="setMode('reverse')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9a8 8 0 0 1 13.4-3.2L20 9"/><path d="M20 4v5h-5"/><path d="M20.5 15a8 8 0 0 1-13.4 3.2L4 15"/><path d="M4 20v-5h5"/></svg>Reverse</button>
         </div>
 
         <!-- Quiz Area -->
@@ -66,7 +68,7 @@
                     </div>
                     <div id="prompt-audio" style="display:none;">
                         <button id="play-sound-btn" class="play-btn" onclick="playSound()">
-                            ▶ Play Bird Call
+                            Play call
                         </button>
                         <audio id="audio-player" preload="auto"></audio>
                     </div>
@@ -95,6 +97,14 @@
                 <p id="result-fact" class="fun-fact"></p>
                 <p id="result-sound-tip" class="sound-tip" style="display:none;"></p>
                 <div id="result-links" class="result-links" style="display:none;"></div>
+                <div id="result-plumes-wrap" style="display:none;">
+                    <div class="plumes-label">Plumages · also look for</div>
+                    <div id="result-plumes"></div>
+                </div>
+                <div id="result-calls-wrap" style="display:none;">
+                    <div class="calls-label">More calls</div>
+                    <div id="result-calls"></div>
+                </div>
                 <p id="result-habitat" class="detail"></p>
                 <p id="result-spots" class="detail"></p>
                 <button id="next-btn" class="primary-btn" onclick="nextQuestion()">Next Bird →</button>
@@ -133,6 +143,6 @@
         </div>
     </div>
 
-    <script src="/static/app.js?v=8"></script>
+    <script src="/static/app.js?v=9"></script>
 </body>
 </html>
