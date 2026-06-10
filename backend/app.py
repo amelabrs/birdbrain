@@ -57,15 +57,10 @@ class SessionCompleteRequest(BaseModel):
 
 @app.get("/api/question")
 def get_question(
-    mode: str = Query("photo", regex="^(photo|sound|reverse)$"),
+    mode: str = Query("photo", pattern="^(photo|sound|reverse)$"),
     seen: str = Query(""),
-    all_birds: bool = Query(False),
 ):
-    # Use all birds or only unlocked based on toggle
-    if all_birds:
-        unlocked_ids = ALL_IDS
-    else:
-        unlocked_ids = sr.get_unlocked_ids(ALL_IDS)
+    unlocked_ids = ALL_IDS
     seen_ids = set(seen.split(",")) if seen else set()
     available = [bid for bid in unlocked_ids if bid not in seen_ids] or unlocked_ids
 

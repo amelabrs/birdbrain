@@ -4,7 +4,6 @@ let currentMode = "photo";
 let currentQuestion = null;
 let answered = false;
 let totalBirdCount = 0;
-let useAllBirds = localStorage.getItem("birdbrain_all_birds") !== "false"; // on by default (Quiz mode)
 let autoPlaySound = localStorage.getItem("birdbrain_autoplay") !== "false"; // on by default
 let resultAudio = null; // track auto-played sound for stopping
 
@@ -84,15 +83,6 @@ function renderExtras(birdId) {
     }
 }
 
-function toggleAllBirds(checked) {
-    useAllBirds = checked;
-    localStorage.setItem("birdbrain_all_birds", checked ? "true" : "false");
-    // Reset all sessions when toggling
-    for (const mode of Object.keys(sessions)) {
-        sessions[mode] = { bird: 0, total: 0, correct: 0, wrong: [], seen: new Set() };
-    }
-    loadQuestion();
-}
 
 function toggleAutoPlay(checked) {
     autoPlaySound = checked;
@@ -144,8 +134,7 @@ async function loadQuestion() {
 
     try {
         const seen = Array.from(s.seen).join(",");
-        const allParam = useAllBirds ? "&all_birds=true" : "";
-        const res = await fetch(`/api/question?mode=${currentMode}&seen=${encodeURIComponent(seen)}${allParam}`);
+        const res = await fetch(`/api/question?mode=${currentMode}&seen=${encodeURIComponent(seen)}`);
         currentQuestion = await res.json();
 
         // Track pool size from backend
@@ -547,8 +536,6 @@ function showScreen(id) {
 
 async function init() {
     // Restore toggle states
-    const toggle = document.getElementById("all-birds-toggle");
-    if (toggle) toggle.checked = useAllBirds; // checked = Quiz (all birds), unchecked = Memory (drip)
     const apToggle = document.getElementById("autoplay-toggle");
     if (apToggle) apToggle.checked = autoPlaySound;
 
