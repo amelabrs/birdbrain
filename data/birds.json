@@ -562,8 +562,10 @@
     "name": "Great Cormorant",
     "scientific_name": "Phalacrocorax carbo",
     "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/255272571/2400",
-    "breeding_adult_image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/66026501/320",
     "image_credit": "Natthaphat Chotjuckdikul",
+    "extra_images": [
+      { "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/66026501/2400", "label": "Breeding adult" }
+    ],
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/309407421/mp3",
     "xc_id": "",
     "sound_tip": "Deep guttural grunts at colonies -- mostly silent when fishing alone",
