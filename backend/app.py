@@ -12,10 +12,11 @@ Endpoints:
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
@@ -35,9 +36,16 @@ BIRDS: list[dict] = json.loads((DATA_DIR / "birds.json").read_text("utf-8"))
 BIRD_MAP: dict[str, dict] = {b["id"]: b for b in BIRDS}
 ALL_IDS: list[str] = [b["id"] for b in BIRDS]
 
-# ── Spaced repetition (single-user for now) ──────────────────────────
+# ── Spaced repetition — one instance per device ──────────────────────
 
-sr = SpacedRepetition(DATA_DIR)
+_sr_cache: dict[str, SpacedRepetition] = {}
+
+def _get_sr(request: Request) -> SpacedRepetition:
+    raw = request.headers.get("X-Device-ID", "default")
+    safe = re.sub(r"[^a-zA-Z0-9_-]", "", raw)[:64] or "default"
+    if safe not in _sr_cache:
+        _sr_cache[safe] = SpacedRepetition(DATA_DIR, safe)
+    return _sr_cache[safe]
 
 # ── Models ───────────────────────────────────────────────────────────
 
@@ -57,31 +65,31 @@ class SessionCompleteRequest(BaseModel):
 
 @app.get("/api/question")
 def get_question(
+    request: Request,
     mode: str = Query("photo", pattern="^(photo|sound|reverse)$"),
     seen: str = Query(""),
 ):
-    unlocked_ids = ALL_IDS
+    sr = _get_sr(request)
     seen_ids = set(seen.split(",")) if seen else set()
-    available = [bid for bid in unlocked_ids if bid not in seen_ids] or unlocked_ids
+    available = [bid for bid in ALL_IDS if bid not in seen_ids] or ALL_IDS
 
     if mode == "sound":
         sound_ids = [b["id"] for b in BIRDS if b.get("sound_url")]
-        unlocked_sound = [bid for bid in sound_ids if bid in set(unlocked_ids)]
-        available_sound = [bid for bid in unlocked_sound if bid not in seen_ids] or unlocked_sound
+        available_sound = [bid for bid in sound_ids if bid not in seen_ids] or sound_ids
         bird_id = sr.pick_bird(available_sound)
     else:
         bird_id = sr.pick_bird(available)
 
     bird = BIRD_MAP[bird_id]
-    unlocked_birds = [BIRD_MAP[bid] for bid in unlocked_ids]
-    q = generate_question(bird, unlocked_birds, mode=mode)
-    q["unlocked_count"] = len(unlocked_ids)
+    q = generate_question(bird, BIRDS, mode=mode)
+    q["unlocked_count"] = len(ALL_IDS)
     q["total_bird_count"] = len(ALL_IDS)
     return q
 
 
 @app.post("/api/answer")
-def submit_answer(req: AnswerRequest):
+def submit_answer(request: Request, req: AnswerRequest):
+    sr = _get_sr(request)
     correct = req.chosen_index == req.correct_index
     stats = sr.record_answer(req.bird_id, correct)
     bird = BIRD_MAP.get(req.bird_id, {})
@@ -101,20 +109,19 @@ def submit_answer(req: AnswerRequest):
 
 
 @app.get("/api/stats")
-def get_stats():
-    return sr.get_stats()
+def get_stats(request: Request):
+    return _get_sr(request).get_stats()
 
 
 @app.post("/api/reset")
-def reset_progress():
-    sr.reset()
+def reset_progress(request: Request):
+    _get_sr(request).reset()
     return {"status": "ok"}
 
 
 @app.post("/api/session-complete")
-def session_complete(req: SessionCompleteRequest):
-    """Called when a session ends. May unlock new birds."""
-    result = sr.try_unlock(len(ALL_IDS), req.score_pct)
+def session_complete(request: Request, req: SessionCompleteRequest):
+    result = _get_sr(request).try_unlock(len(ALL_IDS), req.score_pct)
     return result
 
 

@@ -1,5 +1,19 @@
 /* ── BirdBrain — App Logic ────────────────────────────────────────── */
 
+// Stable per-device ID so each visitor gets their own progress
+const deviceId = (() => {
+    let id = localStorage.getItem("bb_did");
+    if (!id) { id = crypto.randomUUID(); localStorage.setItem("bb_did", id); }
+    return id;
+})();
+
+function apiFetch(url, opts = {}) {
+    return fetch(url, {
+        ...opts,
+        headers: { "X-Device-ID": deviceId, ...(opts.headers || {}) },
+    });
+}
+
 let currentMode = "photo";
 let currentQuestion = null;
 let answered = false;
@@ -89,6 +103,20 @@ function toggleAutoPlay(checked) {
     localStorage.setItem("birdbrain_autoplay", checked ? "true" : "false");
 }
 
+function toggleResultCall(btn) {
+    if (!resultAudio) return;
+    if (resultAudio.paused) {
+        resultAudio.currentTime = 0;
+        resultAudio.play().catch(() => {});
+        btn.textContent = "Stop";
+        resultAudio.onended = () => { btn.textContent = "Listen to call"; };
+    } else {
+        resultAudio.pause();
+        resultAudio.currentTime = 0;
+        btn.textContent = "Listen to call";
+    }
+}
+
 // ── Mode ────────────────────────────────────────────────────────────
 
 function setMode(mode) {
@@ -134,7 +162,7 @@ async function loadQuestion() {
 
     try {
         const seen = Array.from(s.seen).join(",");
-        const res = await fetch(`/api/question?mode=${currentMode}&seen=${encodeURIComponent(seen)}`);
+        const res = await apiFetch(`/api/question?mode=${currentMode}&seen=${encodeURIComponent(seen)}`);
         currentQuestion = await res.json();
 
         // Track pool size from backend
@@ -268,7 +296,7 @@ async function submitAnswer(chosenIndex) {
 
     // Send to backend
     try {
-        const res = await fetch("/api/answer", {
+        const res = await apiFetch("/api/answer", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -340,12 +368,10 @@ function showResult(data, correct) {
     if (correct && (currentMode === "photo" || currentMode === "reverse")) {
         let linksHtml = "";
         if (data.sound_url) {
-            if (autoPlaySound) {
-                resultAudio = new Audio(data.sound_url);
-                resultAudio.volume = 0.7;
-                resultAudio.play().catch(() => {});
-            }
-            linksHtml += `<a href="${data.sound_url}" target="_blank" class="result-link">Listen to call</a>`;
+            resultAudio = new Audio(data.sound_url);
+            resultAudio.volume = 0.7;
+            if (autoPlaySound) resultAudio.play().catch(() => {});
+            linksHtml += `<button onclick="toggleResultCall(this)" class="result-link">Listen to call</button>`;
         }
         if (data.ebird_code) {
             linksHtml += `<a href="https://ebird.org/species/${data.ebird_code}" target="_blank" class="result-link">eBird page</a>`;
@@ -433,7 +459,7 @@ function startNewSession() {
 
 async function checkUnlock(pct) {
     try {
-        const res = await fetch("/api/session-complete", {
+        const res = await apiFetch("/api/session-complete", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ score_pct: pct }),
@@ -461,7 +487,7 @@ async function toggleStats() {
     if (panel.classList.contains("hidden")) {
         // Load stats
         try {
-            const res = await fetch("/api/stats");
+            const res = await apiFetch("/api/stats");
             const stats = await res.json();
             renderStats(stats);
         } catch (err) {
@@ -491,12 +517,12 @@ function renderStats(stats) {
         if (needsWork.length > 0) {
             const tipEl = document.createElement("div");
             tipEl.className = "needs-work";
-            tipEl.innerHTML = `<strong>⚠️ Needs work:</strong> ${needsWork.map(([id]) => id.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())).join(", ")}`;
+            tipEl.innerHTML = `<strong>⚠️ Needs work:</strong> ${needsWork.map(([id]) => birdDataMap[id]?.name || id.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())).join(", ")}`;
             listEl.appendChild(tipEl);
         }
 
         for (const [birdId, bData] of entries) {
-            const name = birdId.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+            const name = birdDataMap[birdId]?.name || birdId.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
             const row = document.createElement("div");
             row.className = "bird-row";
 
@@ -520,7 +546,7 @@ function renderStats(stats) {
 
 async function resetProgress() {
     if (!confirm("Reset all progress? This cannot be undone.")) return;
-    await fetch("/api/reset", { method: "POST" });
+    await apiFetch("/api/reset", { method: "POST" });
     toggleStats();
     startNewSession();
 }
@@ -541,7 +567,7 @@ async function init() {
 
     // Show deploy timestamp
     try {
-        const res = await fetch("/api/version");
+        const res = await apiFetch("/api/version");
         const v = await res.json();
         document.getElementById("build-stamp").textContent = v.deploy_time;
     } catch (e) {}

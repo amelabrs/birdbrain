@@ -5,6 +5,11 @@
     "scientific_name": "Pellorneum ruficeps",
     "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Puff_throated_babbler_76.jpg/1920px-Puff_throated_babbler_76.jpg",
     "image_credit": "Afsarnayakkan / Wikimedia (CC BY-SA 4.0)",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/133933671/2400"
+      }
+    ],
     "sound_url": "https://xeno-canto.org/sounds/uploaded/YWRKFXUDUR/XC955886-194-Babbler---Puff-throated-%28Pellorneum-ruficeps%29-Song-NOV-1735h-550m-MaePingTH_gi_8238.mp3",
     "xc_id": "XC955886",
     "sound_tip": "A clear, rising 3-note whistle: 'he-will-SEE' — like someone calling from inside the bushes. Think of a referee's whistle that goes up in pitch.",
@@ -253,6 +258,15 @@
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540364/mp3",
     "xc_id": "",
     "sound_tip": "A sweet, variable warble interspersed with a sharp 'chrrr' — like a tiny musician who keeps clearing his throat between phrases.",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126370911/2400"
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126370881/2400",
+        "label": "Female"
+      }
+    ],
     "fun_fact": "Males are glossy black with a rust-orange patch under the tail, which they flick upward constantly.",
     "habitat": "Open stony ground, scrub, gardens",
     "karnataka_spots": "Open areas across the Deccan Plateau",
@@ -448,7 +462,7 @@
     "xc_id": "",
     "sound_tip": "Frequent song is a 4- to 7-note melodious whistling phrase that ascends and then sometimes descends or is left incomplete. Contact call is a harsh \"switch-wich.\"",
     "fun_fact": "The White-browed Fantail (Rhipidura aureola) has a fascinating foraging trick: it fans and flicks its tail dramatically not just for display, but to flush insects from leaf litter and vegetation. The sudden movement startles hidden insects into flying up — straight into the bird's waiting beak. The tail is essentially a hunting tool.",
-    "habitat": "",
+    "habitat": "Dense undergrowth, forest edges, scrub, stream-side thickets",
     "karnataka_spots": "Western Ghats fringe & deciduous forests, Bangalore & surrounds",
     "ebird_code": "whbfan2",
     "extra_sounds": [
@@ -476,7 +490,7 @@
     "xc_id": "",
     "sound_tip": "A bird known for its characteristics loud alarm call, often compared to the words “Did we do it?”",
     "fun_fact": "hey feed primarily on insects, catching them in a typical plover like manner, running a short distance and picking up food from ground",
-    "habitat": "",
+    "habitat": "Open ground, farmland, lake shores, dry grassland",
     "karnataka_spots": "City",
     "ebird_code": "rewlap1",
     "extra_sounds": [
@@ -498,13 +512,13 @@
     "id": "house-sparrow",
     "name": "House Sparrow",
     "scientific_name": "Passer domesticus",
-    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/316920511/2400",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/305880301/2400",
     "image_credit": "Matthew Plante",
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/231711901/mp3",
     "xc_id": "",
     "sound_tip": "cheep-chirrup (repetitive, rapid, without melody)",
     "fun_fact": "was once so common it was taken for granted — but urban development has caused a sharp decline, making it a species of local conservation concern in Karnataka.",
-    "habitat": "",
+    "habitat": "Urban areas, villages, gardens, farmland near human settlements",
     "karnataka_spots": "Old residential areas (Basavanagudi, Malleswaram), railway stations, and rural villages around Mysuru and Mandya.",
     "ebird_code": "houspa",
     "extra_images": [
@@ -525,7 +539,7 @@
     "xc_id": "",
     "sound_tip": "Harsh nasal kaa-kaa repeated endlessly -- one of the most familiar sounds in any Indian town",
     "fun_fact": "One of the most intelligent birds on the planet -- recognises individual human faces and can hold a grudge",
-    "habitat": "",
+    "habitat": "Urban areas, towns, coastal sites, near human habitation",
     "karnataka_spots": "Every city, town, and village across Karnataka -- completely unavoidable",
     "ebird_code": "houcro1"
   },
@@ -539,7 +553,7 @@
     "xc_id": "",
     "sound_tip": "A deeper, hoarser kraah than the House Crow -- more resonant and less nasal",
     "fun_fact": "All-black unlike the grey-necked House Crow -- often seen in pairs patrolling forest edges and rivers",
-    "habitat": "",
+    "habitat": "Forests, forest edges, wooded parks, plantations",
     "karnataka_spots": "Forest edges, wooded parks, and roadsides in Bangalore, Coorg, Western Ghats",
     "ebird_code": "labcro1"
   },
@@ -553,7 +567,7 @@
     "xc_id": "",
     "sound_tip": "Mostly silent -- occasional low grunts at nesting colonies",
     "fun_fact": "Spreads its wings wide to dry after diving -- its feathers are intentionally less waterproof than other waterbirds, helping it sink faster when hunting",
-    "habitat": "",
+    "habitat": "Lakes, reservoirs, ponds, slow rivers, fish farms",
     "karnataka_spots": "Ranganathittu, Ulsoor Lake, Bellandur Lake, Cauvery riverbanks",
     "ebird_code": "litcor1"
   },
@@ -564,13 +578,16 @@
     "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/255272571/2400",
     "image_credit": "Natthaphat Chotjuckdikul",
     "extra_images": [
-      { "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/66026501/2400", "label": "Breeding adult" }
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/66026501/2400",
+        "label": "Breeding adult"
+      }
     ],
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/309407421/mp3",
     "xc_id": "",
     "sound_tip": "Deep guttural grunts at colonies -- mostly silent when fishing alone",
     "fun_fact": "Can dive up to 6 metres deep to catch fish, using its hooked bill to grip slippery prey underwater",
-    "habitat": "",
+    "habitat": "Large lakes, reservoirs, coastal waters, major rivers",
     "karnataka_spots": "Large lakes and reservoirs -- KRS, Kabini, Tungabhadra, coastal Karnataka",
     "ebird_code": "grecor"
   },
@@ -584,7 +601,7 @@
     "xc_id": "",
     "sound_tip": "Mostly silent -- occasional bill clattering at the nest",
     "fun_fact": "Stirs up muddy water with its feet to flush out fish, then snaps its bill shut in under 25 milliseconds -- one of the fastest reflexes of any bird",
-    "habitat": "",
+    "habitat": "Shallow wetlands, paddy fields, lakes, river margins",
     "karnataka_spots": "Ranganathittu Bird Sanctuary, Kokkare Bellur, Kabini, Cauvery delta",
     "ebird_code": "paisto1"
   },
@@ -598,7 +615,7 @@
     "xc_id": "",
     "sound_tip": "A harsh kaarrk when flushed -- usually completely silent while hunting",
     "fun_fact": "Dances with its bright yellow feet in shallow water to stir up fish -- the yellow acts as a lure against dark muddy water",
-    "habitat": "",
+    "habitat": "Wetlands, paddy fields, lake margins, mudflats, streams",
     "karnataka_spots": "Any wetland, paddy field, or lake across Karnataka -- one of the most common egrets",
     "ebird_code": "litegr"
   },
@@ -612,7 +629,7 @@
     "xc_id": "",
     "sound_tip": "A loud explosive krruk -- often heard before seen lurking in reeds",
     "fun_fact": "Pumps its head back and forth like a chicken as it walks -- the bright red forehead shield is a status signal to rivals",
-    "habitat": "",
+    "habitat": "Reed beds, lake margins, vegetated ponds, slow rivers",
     "karnataka_spots": "Reed beds and wetland edges -- Ulsoor Lake, Hebbal Lake, Bellandur, any well-vegetated tank",
     "ebird_code": "commoo3"
   },
@@ -620,7 +637,7 @@
     "id": "mallard",
     "name": "Mallard",
     "scientific_name": "Anas platyrhynchos",
-    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/205833351/2400",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/308743051/2400",
     "image_credit": "Imran Shah",
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/616578316/mp3",
     "xc_id": "",
@@ -640,8 +657,43 @@
     "xc_id": "",
     "sound_tip": "A high rolling trrr-trrr-trrr -- often the first thing you hear from a telegraph wire before you spot the bird",
     "fun_fact": "Removes the sting from bees before eating them -- rubs the bee against a branch to squeeze out the venom first",
-    "habitat": "",
+    "habitat": "Open country, scrub, farmland, forest clearings, roadsides",
     "karnataka_spots": "Open country, gardens, and farmland across Karnataka -- perches conspicuously on wires and bare branches",
     "ebird_code": "grnbee3"
+  },
+  {
+    "id": "green-warbler",
+    "name": "Green Warbler",
+    "scientific_name": "Phylloscopus nitidus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/58696621/2400",
+    "image_credit": "John C. Mittermeier",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/277766671/mp3",
+    "xc_id": "",
+    "sound_tip": "Green is best identified by its loud, fast, trisyllabic “chi-su-wi” call.",
+    "fun_fact": "a yellow wash usually restricted to the face, and a pale orange lower bill. Winters in southern India.",
+    "habitat": "Deciduous forests, forest edges, gardens (winter visitor)",
+    "karnataka_spots": "Western ghats, city parks.",
+    "ebird_code": "grnwar1",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/150276351/640",
+        "label": "None",
+        "credit": "Ebird"
+      }
+    ]
+  },
+  {
+    "id": "greenish-warbler",
+    "name": "Greenish Warbler",
+    "scientific_name": "Phylloscopus trochiloides",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/30421041/2400",
+    "image_credit": "Ian Davies",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/203992471/mp3",
+    "xc_id": "",
+    "sound_tip": "Song is a high-pitched long series \"tsit-psityee psityu-psi-ti-ti-ti-ti-si,\" but often detected by its call, a two-parted \"t-sli\" with flat or downward inflection.",
+    "fun_fact": "has a strong white eyebrow which is broad behind the eye and goes all the way to the forehead.",
+    "habitat": "Forests, forest edges, gardens, orchards (winter visitor)",
+    "karnataka_spots": "Breeds in lowland and montane deciduous and mixed forest.",
+    "ebird_code": "grewar3"
   }
 ]
