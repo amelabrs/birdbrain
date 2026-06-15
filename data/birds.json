@@ -502,7 +502,7 @@
     ],
     "extra_images": [
       {
-        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126390831/480",
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126390871/2400",
         "label": "Flight",
         "credit": "Ebird"
       }
@@ -537,6 +537,12 @@
     "image_credit": "Ian Hearn",
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/101900331/mp3",
     "xc_id": "",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126364891/2400",
+        "label": ""
+      }
+    ],
     "sound_tip": "Harsh nasal kaa-kaa repeated endlessly -- one of the most familiar sounds in any Indian town",
     "fun_fact": "One of the most intelligent birds on the planet -- recognises individual human faces and can hold a grudge",
     "habitat": "Urban areas, towns, coastal sites, near human habitation",
