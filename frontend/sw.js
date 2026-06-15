@@ -1,7 +1,7 @@
 const CACHE = "birdbrain-v1";
 const STATIC = [
     "/",
-    "/static/app.js?v=11",
+    "/static/app.js?v=12",
     "/static/style.css?v=12",
     "/static/manifest.json",
     "/static/icon-192.svg",

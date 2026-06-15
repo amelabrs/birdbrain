@@ -379,6 +379,13 @@ function showResult(data, correct) {
         if (linksHtml) {
             linksEl.innerHTML = linksHtml;
             linksEl.style.display = "flex";
+            if (autoPlaySound && data.sound_url) {
+                const callBtn = linksEl.querySelector("button");
+                if (callBtn) {
+                    callBtn.textContent = "Stop";
+                    resultAudio.onended = () => { callBtn.textContent = "Listen to call"; };
+                }
+            }
         } else {
             linksEl.style.display = "none";
         }
