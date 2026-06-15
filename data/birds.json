@@ -427,7 +427,7 @@
   {
     "id": "oriental-magpie-robin",
     "name": "Oriental Magpie-Robin",
-    "scientific_name": "Turdus saularis",
+    "scientific_name": "Copsychus saularis",
     "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126371181/2400",
     "image_credit": "Craig Brelsford / Macaulay Library",
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540368/mp3",
@@ -444,12 +444,12 @@
     "scientific_name": "Centropus bengalensis",
     "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/142115921/2400",
     "image_credit": "Kai Pflug",
-    "sound_url": "\u001bhttps://cdn.download.ams.birds.cornell.edu/api/v2/asset/541422/mp3",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/541422/mp3",
     "xc_id": "",
     "sound_tip": "Call, a short phrase of deep hooting notes. A rising and falling ”Boop-bip-boo-boo”.",
-    "fun_fact": "A large coucal of lowland forest. Note all black plumage and pale bill with red eye. Found in thick cover of humid forest where it is very skulking and difficult to see. Similar to Lesser Black Coucal, but Greater Black Coucal is more often found in forest, and is larger with a red eye and paler bill.",
+    "fun_fact": "Unlike its larger cousin the Greater Coucal, the Lesser Coucal is a seasonal breeder whose plumage shifts dramatically — streaked brown in non-breeding season, all-black when breeding. Extremely skulking, it prefers to creep through tall grass rather than fly.",
     "habitat": "Found in thick cover of humid forest.",
-    "karnataka_spots": "City",
+    "karnataka_spots": "Tall grasslands and scrub edges — Bandipur, Nagarhole, Kabini grasslands, paddy field margins across the Deccan",
     "ebird_code": "lescou1"
   },
   {
@@ -489,14 +489,14 @@
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/239274571/mp3",
     "xc_id": "",
     "sound_tip": "A bird known for its characteristics loud alarm call, often compared to the words “Did we do it?”",
-    "fun_fact": "hey feed primarily on insects, catching them in a typical plover like manner, running a short distance and picking up food from ground",
+    "fun_fact": "They feed primarily on insects, catching them in a typical plover-like manner — running a short distance then picking food from the ground. Fearlessly mob much larger animals, including humans, when nesting nearby.",
     "habitat": "Open ground, farmland, lake shores, dry grassland",
-    "karnataka_spots": "City",
+    "karnataka_spots": "Open ground, farmland, lake shores across Karnataka — Hesaraghatta, Bannerghatta, Ranganathittu, paddy fields near Mysore and Mandya",
     "ebird_code": "rewlap1",
     "extra_sounds": [
       {
         "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540190/mp3",
-        "label": "White-necked",
+        "label": "Alarm call variant",
         "tip": ""
       }
     ],
@@ -670,14 +670,14 @@
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/277766671/mp3",
     "xc_id": "",
     "sound_tip": "Green is best identified by its loud, fast, trisyllabic “chi-su-wi” call.",
-    "fun_fact": "a yellow wash usually restricted to the face, and a pale orange lower bill. Winters in southern India.",
+    "fun_fact": "A winter visitor to Karnataka with a bright yellow wash on the face and a pale orange lower bill. Once lumped with Greenish Warbler, it was split as a full species — best told apart by its brighter yellow tones and distinctive trisyllabic call.",
     "habitat": "Deciduous forests, forest edges, gardens (winter visitor)",
     "karnataka_spots": "Western ghats, city parks.",
     "ebird_code": "grnwar1",
     "extra_images": [
       {
         "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/150276351/640",
-        "label": "None",
+        "label": "",
         "credit": "Ebird"
       }
     ]
@@ -693,7 +693,7 @@
     "sound_tip": "Song is a high-pitched long series \"tsit-psityee psityu-psi-ti-ti-ti-ti-si,\" but often detected by its call, a two-parted \"t-sli\" with flat or downward inflection.",
     "fun_fact": "has a strong white eyebrow which is broad behind the eye and goes all the way to the forehead.",
     "habitat": "Forests, forest edges, gardens, orchards (winter visitor)",
-    "karnataka_spots": "Breeds in lowland and montane deciduous and mixed forest.",
+    "karnataka_spots": "A common winter visitor — Lalbagh, Cubbon Park, Nandi Hills, wooded areas across Bangalore; also seen in Western Ghats forests during passage",
     "ebird_code": "grewar3"
   }
 ]
