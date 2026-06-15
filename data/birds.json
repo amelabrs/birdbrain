@@ -571,6 +571,10 @@
     "image_credit": "Raghavendra  Pai",
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/283426/mp3",
     "xc_id": "",
+    "extra_images": [
+      { "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126570801/2400", "label": "" },
+      { "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126570741/2400", "label": "" }
+    ],
     "sound_tip": "Mostly silent -- occasional low grunts at nesting colonies",
     "fun_fact": "Spreads its wings wide to dry after diving -- its feathers are intentionally less waterproof than other waterbirds, helping it sink faster when hunting",
     "habitat": "Lakes, reservoirs, ponds, slow rivers, fish farms",
