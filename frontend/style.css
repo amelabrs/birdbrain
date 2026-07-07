@@ -717,6 +717,132 @@ body {
     border-left: 2px solid var(--line-strong);
 }
 
+/* ── Umwelt card ─────────────────────────────────────────────────── */
+.umwelt-card {
+    margin-top: 10px;
+    padding: 13px 15px 12px;
+    border-radius: 10px;
+    background: color-mix(in oklab, var(--accent) 6%, var(--surface));
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+}
+
+.umwelt-header {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    margin-bottom: 7px;
+}
+
+.umwelt-label {
+    font-family: var(--mono);
+    font-size: 8.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.umwelt-sub {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.3px;
+    color: var(--text-muted);
+}
+
+.umwelt-text {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text);
+    margin: 0;
+}
+
+.umwelt-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+/* Confidence badge */
+.umwelt-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    border: 1px solid transparent;
+    background: none;
+    cursor: default;
+}
+
+button.umwelt-badge {
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+button.umwelt-badge:active { opacity: 0.75; }
+
+.conf-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.conf-a .conf-dot  { background: #4a8c62; }
+.conf-a            { color: #4a8c62; border-color: color-mix(in oklab, #4a8c62 30%, transparent); }
+
+.conf-b .conf-dot  { background: var(--accent); }
+.conf-b            { color: var(--accent); border-color: color-mix(in oklab, var(--accent) 30%, transparent); }
+
+.conf-c .conf-dot  { background: var(--text-muted); }
+.conf-c            { color: var(--text-muted); border-color: var(--line-strong); }
+
+.conf-fix .conf-dot { background: var(--accent); }
+.conf-fix           { color: var(--accent); border-color: color-mix(in oklab, var(--accent) 30%, transparent);
+                      font-style: italic; }
+
+/* Expandable drawer */
+.umwelt-drawer {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+}
+
+.umwelt-note {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-dim);
+    margin: 0 0 6px;
+}
+
+.umwelt-citations {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.umwelt-ref-link {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 1px;
+}
+
+.umwelt-ref-link:hover { color: var(--accent); border-color: var(--accent); }
+
 .needs-work {
     background: var(--wrong-bg);
     border: 1px solid var(--wrong-line);

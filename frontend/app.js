@@ -53,13 +53,56 @@ function renderExtras(birdId) {
     const plumesEl = document.getElementById("result-plumes");
     const callsWrap = document.getElementById("result-calls-wrap");
     const callsEl = document.getElementById("result-calls");
+    const umweltEl = document.getElementById("result-umwelt");
     plumesEl.innerHTML = "";
     callsEl.innerHTML = "";
     plumesWrap.style.display = "none";
     callsWrap.style.display = "none";
+    umweltEl.style.display = "none";
+    umweltEl.innerHTML = "";
 
     const bird = birdDataMap[birdId];
     if (!bird) return;
+
+    // Umwelt — only shown on correct answers; renderExtras is called from showResult
+    // which guards correct-only display via the umweltEl being hidden by default above;
+    // the caller (showResult) passes correctness via a flag set on the element.
+    if (bird.umwelt && umweltEl.dataset.correct === "1") {
+        const src = bird.umwelt_sources || {};
+        const conf = src.confidence || "";
+        const confLabel = src.confidence_label || conf;
+        const note = src.note || "";
+        const citations = (src.citations || []).join(" · ");
+        const refUrl = src.reference_url || "";
+
+        const confClass = { A: "conf-a", B: "conf-b", C: "conf-c", FIX: "conf-fix" }[conf] || "conf-c";
+
+        const drawerHtml = (note || citations) ? `
+            <div class="umwelt-drawer" id="umwelt-drawer-${birdId}" hidden>
+                <p class="umwelt-note">${note}</p>
+                ${citations ? `<p class="umwelt-citations">${citations}</p>` : ""}
+            </div>` : "";
+
+        const refHtml = refUrl
+            ? `<a href="${refUrl}" target="_blank" class="umwelt-ref-link">learn more ↗</a>`
+            : "";
+
+        umweltEl.innerHTML = `
+            <div class="umwelt-header">
+                <span class="umwelt-label">Umwelt</span>
+                <span class="umwelt-sub">what this bird's world is actually like</span>
+            </div>
+            <p class="umwelt-text">${bird.umwelt}</p>
+            <div class="umwelt-footer">
+                ${drawerHtml ? `<button class="umwelt-badge ${confClass}" onclick="toggleUmweltDrawer('${birdId}', this)" aria-expanded="false">
+                    <span class="conf-dot"></span>${confLabel}
+                </button>` : `<span class="umwelt-badge ${confClass}"><span class="conf-dot"></span>${confLabel}</span>`}
+                ${refHtml}
+            </div>
+            ${drawerHtml}
+        `;
+        umweltEl.style.display = "block";
+    }
 
     const extras = (bird.extra_images || []).filter((e) => e.url);
     if (extras.length) {
@@ -95,6 +138,15 @@ function renderExtras(birdId) {
         });
         callsWrap.style.display = "block";
     }
+}
+
+
+function toggleUmweltDrawer(birdId, btn) {
+    const drawer = document.getElementById(`umwelt-drawer-${birdId}`);
+    if (!drawer) return;
+    const open = !drawer.hidden;
+    drawer.hidden = open;
+    btn.setAttribute("aria-expanded", String(!open));
 }
 
 
@@ -396,7 +448,9 @@ function showResult(data, correct) {
     document.getElementById("result-habitat").textContent = data.habitat || "";
     document.getElementById("result-spots").textContent = data.karnataka_spots || "";
 
-    // Show extra plumages (female / immature) + extra calls from birds.json
+    // Show extra plumages, extra calls, and umwelt from birds.json
+    const umweltEl = document.getElementById("result-umwelt");
+    if (umweltEl) umweltEl.dataset.correct = correct ? "1" : "0";
     try { renderExtras(currentQuestion.bird_id); } catch (e) {}
 
     // Update progress counter
