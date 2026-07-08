@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <!-- Background -->
+  <rect width="192" height="192" rx="40" fill="#3f6b4f"/>
+  <!-- Body oval -->
+  <ellipse cx="88" cy="112" rx="42" ry="30" fill="#efe8d8"/>
+  <!-- Neck -->
+  <path d="M108 98 Q116 90 120 78" stroke="#efe8d8" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <!-- Head -->
+  <circle cx="124" cy="70" r="22" fill="#efe8d8"/>
+  <!-- Beak -->
+  <polygon points="142,65 166,60 142,76" fill="#a9762a"/>
+  <!-- Eye -->
+  <circle cx="130" cy="65" r="5.5" fill="#3f6b4f"/>
+  <circle cx="131" cy="64" r="2.5" fill="#1a3328"/>
+  <!-- Tail -->
+  <path d="M50 118 L22 130 L28 114 L18 126 L44 104Z" fill="#efe8d8"/>
+  <!-- Wing fold -->
+  <path d="M58 104 Q88 96 116 106" stroke="#c8bea6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Branch -->
+  <rect x="36" y="140" width="122" height="10" rx="5" fill="#a9762a"/>
+  <!-- Legs -->
+  <rect x="80" y="140" width="6" height="16" rx="3" fill="#8a6022"/>
+  <rect x="98" y="140" width="6" height="16" rx="3" fill="#8a6022"/>
+  <!-- Claws -->
+  <path d="M83 155 L72 162 M83 155 L83 164 M83 155 L92 162" stroke="#8a6022" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M101 155 L90 162 M101 155 L101 164 M101 155 L110 162" stroke="#8a6022" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

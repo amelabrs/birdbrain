@@ -1,0 +1,1090 @@
+[
+  {
+    "id": "puff-throated-babbler",
+    "name": "Puff-throated Babbler",
+    "scientific_name": "Pellorneum ruficeps",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Puff_throated_babbler_76.jpg/1920px-Puff_throated_babbler_76.jpg",
+    "image_credit": "Afsarnayakkan / Wikimedia (CC BY-SA 4.0)",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/133933671/2400"
+      }
+    ],
+    "sound_url": "https://xeno-canto.org/sounds/uploaded/YWRKFXUDUR/XC955886-194-Babbler---Puff-throated-%28Pellorneum-ruficeps%29-Song-NOV-1735h-550m-MaePingTH_gi_8238.mp3",
+    "xc_id": "XC955886",
+    "sound_tip": "A clear, rising 3-note whistle: 'he-will-SEE' — like someone calling from inside the bushes. Think of a referee's whistle that goes up in pitch.",
+    "fun_fact": "A skulking ground bird that rummages through leaf litter like a tiny detective. Its loud song belies its shy nature.",
+    "umwelt": "Living low in tangled leaf litter where sightlines run out fast, it navigates mostly by ear, pinpointing the rustle of an insect under a leaf more precisely than it could ever see it. Its loud whistle carries through vegetation that would swallow a visual signal instantly.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Ground/litter foraging by hearing over sight is a well-documented pattern in skulking babblers (Timaliidae) generally; no dedicated acoustic-foraging study exists for this exact species.",
+      "citations": []
+    },
+    "habitat": "Dense undergrowth, forest floor, bamboo thickets",
+    "karnataka_spots": "Dandeli, Bhadra Wildlife Sanctuary, Coorg forests",
+    "ebird_code": "putbab1"
+  },
+  {
+    "id": "eurasian-hoopoe",
+    "name": "Eurasian Hoopoe",
+    "scientific_name": "Upupa epops",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Huppe_fasci%C3%A9e_Lac_de_Tunis.jpg/960px-Huppe_fasci%C3%A9e_Lac_de_Tunis.jpg",
+    "image_credit": "Wikimedia Commons (CC BY-SA)",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/553459/mp3",
+    "xc_id": "",
+    "sound_tip": "A soft, low 'hoo-po-po' or 'oop-oop-oop' — hollow and ventriloquial, like someone blowing across a bottle. The bird's name literally sounds like its call.",
+    "fun_fact": "Named for its distinctive 'hoo-po-po' call. Its striking black-and-white striped wings and erectile crest make it unmistakable.",
+    "umwelt": "Forages by touch as much as sight, probing soil with a long, slightly curved bill packed with sensory receptors that let it feel for grubs underground without seeing them at all, more like a probing finger than a beak.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Hoopoes are known to probe soil for grubs, but the hoopoe is NOT among the three bird families (Scolopacidae shorebirds, Apterygidae kiwi, Threskiornithidae ibises) with a confirmed, studied bill-tip organ of Herbst corpuscles. Treat the tactile-foraging framing as plausible generalist probing behaviour, not a confirmed sensory-organ finding for this species.",
+      "citations": [
+        "du Toit et al. 2022, \"Comparative morphology... remote-touch bill-tip organ in three ibis species,\" Journal of Anatomy",
+        "Cunningham et al. 2013, review of tactile bill specialisation, cited via du Toit et al."
+      ]
+    },
+    "habitat": "Open ground, gardens, light woodland",
+    "karnataka_spots": "Hesaraghatta, Nandi Hills, Bandipur outskirts",
+    "ebird_code": "hoopoe"
+  },
+  {
+    "id": "white-cheeked-barbet",
+    "name": "White-cheeked Barbet",
+    "scientific_name": "Psilopogon viridis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126555281/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://xeno-canto.org/sounds/uploaded/HRYIVDQHBC/XC644204-wcb_20210409_180040.mp3",
+    "xc_id": "XC644204",
+    "sound_tip": "A loud, monotonous 'kutroo-kutroo-kutroo' on repeat — like a broken record. Once you hear it in Coorg, you can never un-hear it.",
+    "fun_fact": "Endemic to the Western Ghats. Its repetitive 'kutroo-kutroo' call is a signature sound of Karnataka hill stations.",
+    "umwelt": "Spends its life in dense canopy where fruit colour is currency, and like most birds it likely sees into the ultraviolet, letting it judge ripeness at a glance in ways invisible to us. Its monotonous call is less for us and more territory-marking sonar, broadcast through leaves too thick to see through.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "UV/tetrachromatic vision is general to birds; no barbet-specific study on fruit-colour discrimination was located.",
+      "citations": []
+    },
+    "habitat": "Moist deciduous forests, gardens, plantations",
+    "karnataka_spots": "Coorg, Chikmagalur, Agumbe",
+    "ebird_code": "whcbar1"
+  },
+  {
+    "id": "white-browed-bulbul",
+    "name": "White-browed Bulbul",
+    "scientific_name": "Pycnonotus luteolus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/133940921/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://xeno-canto.org/sounds/uploaded/DYRARNCEAV/XC1037343-Track-784_WBB.mp3",
+    "xc_id": "XC1037343",
+    "sound_tip": "A bubbly, cheerful jumble of whistles and chatters — like an excited person talking too fast. Louder and more frantic than other bulbuls.",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/133940911/2400"
+      }
+    ],
+    "fun_fact": "A plain olive-yellow bulbul with a distinctive white eyebrow. Its loud, cheerful song is one of the first sounds of dawn in South Indian scrublands.",
+    "umwelt": "Like most bulbuls, it likely sees a wider slice of the colour spectrum than we do, reading ultraviolet highlights on berries and plumage. In dense scrub it relies just as heavily on sound, using its own chatter to keep track of family members it can't always see.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Same general avian UV-vision basis as other bulbuls; no species-specific study.",
+      "citations": []
+    },
+    "habitat": "Dry scrub, gardens, forest edges",
+    "karnataka_spots": "Bangalore outskirts, Nandi Hills, Bannerghatta",
+    "ebird_code": "whbbul2"
+  },
+  {
+    "id": "tickells-blue-flycatcher",
+    "name": "Tickell's Blue Flycatcher",
+    "scientific_name": "Cyornis tickelliae",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/133939821/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://xeno-canto.org/sounds/uploaded/HRYIVDQHBC/XC643747-tbf_20210220_184423.mp3",
+    "xc_id": "XC643747",
+    "sound_tip": "A sweet, tinkling metallic song — like tiny bells or a music box playing in the forest. Short melodious phrases with pauses between them.",
+    "fun_fact": "A stunning blue bird with an orange breast. Males sing a sweet, melodious song from low perches in shady forests.",
+    "umwelt": "A flycatcher's world runs at a faster frame rate than ours; its eyes resolve rapid insect movement that would blur past human vision, which is how it nails prey from a still perch. Its own blue plumage likely reads as more vivid to another flycatcher than to us, thanks to UV-sensitive cones.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Extended from close relative",
+      "note": "High critical flicker-fusion frequency (~130-146 Hz vs ~50-60 Hz in humans) was measured directly in three passerines: blue tit, collared flycatcher, and pied flycatcher -- not this exact species, but genus-level (Ficedula/insectivorous passerine) evidence is strong.",
+      "citations": [
+        "Boström et al. 2016, \"Ultra-rapid vision in birds,\" PLOS ONE / PMC4798572"
+      ]
+    },
+    "habitat": "Dense undergrowth, shady forests, bamboo thickets",
+    "karnataka_spots": "Dandeli, Coorg, Bhadra Wildlife Sanctuary",
+    "ebird_code": "tibfly3"
+  },
+  {
+    "id": "brown-shrike",
+    "name": "Brown Shrike",
+    "scientific_name": "Lanius cristatus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/133724671/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540267/mp3",
+    "xc_id": "",
+    "sound_tip": "A harsh, grating 'chack-chack' alarm — like two stones being scraped together. Also mimics other birds, so if a song sounds 'off', suspect the shrike.",
+    "fun_fact": "A winter visitor known as the 'butcher bird' — it impales prey on thorns to eat later. Sits upright on exposed perches scanning for insects.",
+    "umwelt": "Hunts like a miniature raptor, with sharp vision for spotting insects and small prey from an exposed perch at a distance you'd need binoculars to match. It also holds an acoustic library of other birds' calls in its head, redeploying them as camouflage or decoy. As a long-distance migrant travelling between Siberia/Mongolia and India each year, it likely also relies on an internal magnetic compass, a sense with no human equivalent, to find its way.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Shrike vocal mimicry and sharp perch-hunting vision are documented in the Laniidae generally, no Brown Shrike-specific acuity study found. Brown Shrike is a confirmed long-distance migrant (Siberia/Mongolia to India); the magnetic-compass claim is extended from general migratory-bird magnetoreception research, not tested in this species directly.",
+      "citations": [
+        "Grokipedia / Thai National Parks summaries of Brown Shrike migration route and timing",
+        "Wiltschko & Wiltschko, magnetic compass orientation research (general migratory-bird literature)"
+      ]
+    },
+    "habitat": "Open scrub, gardens, forest edges",
+    "karnataka_spots": "Hesaraghatta, Lalbagh, Nandi Hills",
+    "ebird_code": "brnshr"
+  },
+  {
+    "id": "asian-paradise-flycatcher",
+    "name": "Asian Paradise Flycatcher",
+    "scientific_name": "Terpsiphone paradisi",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/133740231/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540309/mp3",
+    "xc_id": "",
+    "sound_tip": "A sharp, nasal 'zwee!' or 'che-wew' — like a squeaky toy being stepped on. Short, abrupt, and surprisingly harsh for such a graceful bird.",
+    "fun_fact": "Males have extraordinary long ribbon-like tail streamers. They come in two colour morphs — rufous and white.",
+    "umwelt": "Those trailing tail-ribbons aren't wasted on us; in the dim understorey they're a moving signal calibrated for another paradise-flycatcher's eyes. Like other flycatchers, it tracks fast insect movement through a visual system tuned to catch what a human eye would only register as a blur.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Extended from close relative",
+      "note": "Tail-streamer visual signalling is well-established sexual-selection theory; flicker-fusion claim extended from the flycatcher genus study (Boström et al. 2016).",
+      "citations": []
+    },
+    "habitat": "Shady forests, groves, well-wooded gardens",
+    "karnataka_spots": "Dandeli, Ranganathittu, Coorg, Bhadra",
+    "ebird_code": "aspfly1"
+  },
+  {
+    "id": "indian-cuckooshrike",
+    "name": "Indian Cuckooshrike",
+    "scientific_name": "Campephaga indica",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/624756413/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/541589/mp3",
+    "xc_id": "",
+    "sound_tip": "A high-pitched, thin 'wee-wee-wee' whistle — insistent and slightly whiny, like a child tugging your sleeve saying 'please-please-please'.",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/624756410/2400"
+      }
+    ],
+    "fun_fact": "Males are glossy black while females are barred grey-brown — so different they were once thought to be separate species.",
+    "umwelt": "The stark difference between male and female plumage exists partly because these birds are reading each other with sharper colour vision than we bring to it, what looks like two species to us is an ordinary pair to them. Life in the high canopy means vision, not sound, does most of the navigating.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Sexual dichromatism read via UV/tetrachromatic vision is general avian science; no cuckooshrike-specific colour-vision study found.",
+      "citations": []
+    },
+    "habitat": "Forest canopy, deciduous woodland, plantations",
+    "karnataka_spots": "Dandeli, Bhadra, Sharavathi Valley",
+    "ebird_code": "larcuc1"
+  },
+  {
+    "id": "common-tailorbird",
+    "name": "Common Tailorbird",
+    "scientific_name": "Orthotomus sutorius",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126406831/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540333/mp3",
+    "xc_id": "",
+    "sound_tip": "A loud, rhythmic 'towit-towit-towit' — like a tiny sewing machine stitching away. Relentless and piercing for such a small bird.",
+    "fun_fact": "Stitches leaves together with plant fibre or spider silk to make a cradle-shaped nest — nature's own tailor.",
+    "umwelt": "Building a nest by piercing leaves and threading fibre through them takes an unusually fine sense of touch and motor control in the bill-tip, more like a seamstress's fingers than a beak. Its piercing call exists because, in the tangle it lives in, sound travels where sight can't.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Fine bill-tip motor control for leaf-sewing is behaviourally obvious and widely described in field guides; not a dedicated sensory-physiology study.",
+      "citations": []
+    },
+    "habitat": "Gardens, scrub, urban greenery",
+    "karnataka_spots": "Common in gardens across Bangalore, Mysore, Mangalore",
+    "ebird_code": "comtai1"
+  },
+  {
+    "id": "asian-koel",
+    "name": "Asian Koel",
+    "scientific_name": "Eudynamys scolopaceus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126392811/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540183/mp3",
+    "xc_id": "",
+    "sound_tip": "A rising, manic 'ku-OO! ku-OO! ku-OO!' that climbs in pitch and intensity — like an alarm clock that won't stop. The female replies with a rapid 'kik-kik-kik'.",
+    "extra_sounds": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540184/mp3",
+        "label": "Female call",
+        "tip": "A rapid, sharp 'kik-kik-kik-kik' — like an angry typist hammering keys. Completely different from the male's rising whistle."
+      }
+    ],
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126392871/480",
+        "label": "Female / Immature male",
+        "credit": "Cornell Lab of Ornithology / Macaulay Library"
+      }
+    ],
+    "fun_fact": "A brood parasite — lays eggs in crows' nests. Its rising 'ku-OO' call is a classic Indian summer sound.",
+    "umwelt": "As a brood parasite, much of its world is organised around watching host nests without being seen, tracking a crow's or myna's routine closely enough to time an egg-laying raid in the brief window the nest is unattended. That surveillance is entirely visual and entirely one-sided: the host has no idea it's being studied.",
+    "umwelt_sources": {
+      "confidence": "FIX",
+      "confidence_label": "Correction to original entry",
+      "note": "CORRECTED from the original draft, which claimed koel eggs are patterned to mimic house crow eggs. Rigorous testing (reflectance spectrophotometry + avian visual modelling) found NO evidence of host-specific egg mimicry with house crows -- a commonly repeated but unsupported claim. The entry now keeps only the well-supported part: visual nest surveillance before egg-laying.",
+      "citations": [
+        "Yang et al. 2021, \"No evidence of host-specific egg mimicry in Asian koels,\" PLOS ONE / PMC8270166",
+        "Jadav & Parasharya 2014, parasitism-intensity study, Trends in Biosciences"
+      ]
+    },
+    "habitat": "Light woodlands, gardens, urban areas",
+    "karnataka_spots": "Heard across every city and town in Karnataka",
+    "ebird_code": "asikoe2"
+  },
+  {
+    "id": "red-whiskered-bulbul",
+    "name": "Red-whiskered Bulbul",
+    "scientific_name": "Pycnonotus jocosus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/311377551/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538225/mp3",
+    "xc_id": "",
+    "sound_tip": "A sharp, cheerful 'pettigrew!' or 'kick-pettigrew!' — crisp and musical, like a bird announcing someone's arrival at the door.",
+    "fun_fact": "Named for the red patch behind its eye. One of the most vocal garden birds — sings at dawn and dusk.",
+    "umwelt": "Likely sees ultraviolet detail in fruit, flowers, and its own red 'whiskers', which probably signal more to another bulbul than they do to us. It moves through mixed flocks by sound as much as sight, using contact calls to stay linked to companions hidden by foliage.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Same general basis as other bulbul entries.",
+      "citations": []
+    },
+    "habitat": "Light woodland, gardens, urban parks",
+    "karnataka_spots": "Coorg, Chikmagalur, Bangalore gardens",
+    "ebird_code": "rewbul"
+  },
+  {
+    "id": "indian-golden-oriole",
+    "name": "Indian Golden Oriole",
+    "scientific_name": "Oriolus kundoo",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126552081/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540280/mp3",
+    "xc_id": "",
+    "sound_tip": "A rich, fluting 'pi-lo-lo' whistle — mellow and liquid, like a human whistling a tune from a mango tree. One of the most beautiful calls in Indian birding.",
+    "fun_fact": "Brilliant yellow with a black eye-stripe. Despite its vivid colour, it stays hidden in leafy canopies — more often heard than seen.",
+    "umwelt": "Its brilliant yellow is a canopy signal, most striking to a species with UV-sensitive vision like its own; in dappled light it can vanish entirely from a human vantage precisely because it isn't built to be visible to our eyes, only to other orioles'. High in mixed foliage, it locates rivals by voice before it ever gets a clean look at them.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "General avian UV-vision basis; no oriole-specific study found.",
+      "citations": []
+    },
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/126552111/480",
+        "label": "Female",
+        "credit": "Cornell Lab of Ornithology / Macaulay Library"
+      }
+    ],
+    "habitat": "Open deciduous forests, gardens, mango groves",
+    "karnataka_spots": "Bangalore, Mysore, Bandipur",
+    "ebird_code": "ingori1"
+  },
+  {
+    "id": "red-vented-bulbul",
+    "name": "Red-vented Bulbul",
+    "scientific_name": "Pycnonotus cafer",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/300203931/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/537621/mp3",
+    "xc_id": "",
+    "sound_tip": "A perky 'Hey-selena!' or quick chattering 'Hey-selena-see-me-fly' — lively and conversational, like neighbours gossiping over a fence.",
+    "fun_fact": "One of India's most common birds. Named for the crimson red patch under its tail. Often the first bird a beginner learns.",
+    "umwelt": "One of the more vocal presences in an Indian garden, announcing itself constantly and using calls to hold a mental map of neighbours and rivals it can rarely see across dense hedges. Its vision, like other bulbuls, likely extends into the ultraviolet, adding a layer of colour to plumage and fruit we can't perceive.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Same general basis as other bulbul entries.",
+      "citations": []
+    },
+    "habitat": "Gardens, scrub, open woodland, urban areas",
+    "karnataka_spots": "Everywhere — gardens, parks, balconies across Karnataka",
+    "ebird_code": "revbul"
+  },
+  {
+    "id": "large-hawk-cuckoo",
+    "name": "Large Hawk-Cuckoo",
+    "scientific_name": "Hierococcyx sparverioides",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/142688921/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/541436/mp3",
+    "xc_id": "",
+    "sound_tip": "A frantic, escalating 'brain-FE-ver! brain-FE-VER! BRAIN-FE-VER!' — each repetition louder and higher, like someone losing their mind. Unmistakable once heard.",
+    "fun_fact": "Called 'brain-fever bird' for its maddening, ascending 'brain-FE-ver!' call that repeats endlessly during monsoon nights.",
+    "umwelt": "Its whole look is a visual con: barred stripes across the chest, a hooked beak, and grey upperparts, patterned closely enough to mimic a true hawk (a fast, sharp-eyed hunting bird) that it can spook other birds into fleeing on sight. This disguise only works because bird eyes are sharp enough to catch the resemblance and react to it instantly. As a brood parasite it also tracks a host's nest routine visually, much like the koel.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Extended from close relative",
+      "note": "Hawk mimicry as Batesian mimicry is rigorously demonstrated in the Common Cuckoo (Cuculus canorus) against Eurasian Sparrowhawk models. Hawk-cuckoos (genus Hierococcyx, named for this resemblance) are routinely cited in the same literature as a parallel case, but no dedicated experimental study on H. sparverioides itself was found.",
+      "citations": [
+        "Davies & Welbergen 2008, \"Cuckoo-hawk mimicry? An experimental test,\" Proceedings of the Royal Society B",
+        "Welbergen & Davies 2011, \"A parasite in wolf's clothing,\" Behavioral Ecology"
+      ],
+      "reference_url": "https://en.wikipedia.org/wiki/Hawk"
+    },
+    "habitat": "Dense forests, wooded hills, plantations",
+    "karnataka_spots": "Western Ghats, Coorg, Kudremukh",
+    "ebird_code": "larhac2"
+  },
+  {
+    "id": "shikra",
+    "name": "Shikra",
+    "scientific_name": "Accipiter badius",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126386591/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540202/mp3",
+    "xc_id": "",
+    "sound_tip": "A rapid, sharp 'ti-ti-ti-ti-ti' — like a bicycle bell being hit repeatedly. When you hear it, watch the other birds scatter in terror.",
+    "fun_fact": "A small, fierce raptor used in falconry for centuries. Its piercing 'ti-ti-ti-ti' alarm call sends garden birds into a panic.",
+    "umwelt": "As a hawk itself, a small, fast bird of prey with a hooked beak and sharp talons, its world is built almost entirely around exceptional visual acuity; its eyes resolve far finer detail at distance than ours, with a dedicated high-resolution zone in the retina for locking onto prey the instant it moves. Everything else is secondary to that one dominant, razor-sharp sense.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Extended from close relative",
+      "note": "Dual foveae, high photoreceptor density, and elevated visual acuity are documented across Accipiter/Buteo raptors broadly, not Shikra specifically. Note: most hawks are violet-sensitive, not UV-sensitive, so UV vision was not claimed here.",
+      "citations": [
+        "Wikipedia \"Hawk\", citing red-tailed hawk acuity data",
+        "Oxford Research Encyclopedia of Neuroscience, \"Raptor Vision\""
+      ],
+      "reference_url": "https://en.wikipedia.org/wiki/Hawk"
+    },
+    "habitat": "Open woodland, gardens, urban trees",
+    "karnataka_spots": "Bangalore, Mysore, Nandi Hills",
+    "ebird_code": "shikra1"
+  },
+  {
+    "id": "rufous-treepie",
+    "name": "Rufous Treepie",
+    "scientific_name": "Dendrocitta vagabunda",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126547471/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540310/mp3",
+    "xc_id": "",
+    "sound_tip": "A metallic, ringing 'ko-kee!' or 'bob-o-link' — loud and twangy, like a rusty gate hinge. Impossible to ignore in the forest.",
+    "fun_fact": "A long-tailed member of the crow family with striking rufous, black and grey plumage. Bold and noisy — raids picnics and kitchen windows.",
+    "umwelt": "As a member of the crow family, its world is shaped as much by memory and problem-solving as by raw sensory input; it can recall where it stashed food, treating its territory like a mental map rather than something it rediscovers each time by sight alone.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Food-caching memory is best studied in Western scrub-jays and other Corvidae; treepies are corvids but this is a family-level extension, not a treepie-specific study.",
+      "citations": [
+        "Clayton & Dickinson 1998, scrub-jay episodic memory studies (general corvid caching literature)"
+      ]
+    },
+    "habitat": "Open forests, gardens, plantations",
+    "karnataka_spots": "Bandipur, Nagarhole, Nandi Hills",
+    "ebird_code": "ruftre2"
+  },
+  {
+    "id": "indian-robin",
+    "name": "Indian Robin",
+    "scientific_name": "Copsychus fulicatus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126370921/2400",
+    "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540364/mp3",
+    "xc_id": "",
+    "sound_tip": "A sweet, variable warble interspersed with a sharp 'chrrr' — like a tiny musician who keeps clearing his throat between phrases.",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126370911/2400"
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126370881/2400",
+        "label": "Female"
+      }
+    ],
+    "fun_fact": "Males are glossy black with a rust-orange patch under the tail, which they flick upward constantly.",
+    "umwelt": "Forages by sight on open, sun-baked ground, and its habit of cocking its tail and dropping into little bows is a visual signal, a conversation conducted entirely in posture, aimed at another robin who reads those angles far better than we can.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Tail-cocking as visual display is standard field-guide behavioural description, not a dedicated study.",
+      "citations": []
+    },
+    "habitat": "Open stony ground, scrub, gardens",
+    "karnataka_spots": "Open areas across the Deccan Plateau",
+    "ebird_code": "indrob1"
+  },
+  {
+    "id": "common-myna",
+    "name": "Common Myna",
+    "scientific_name": "Acridotheres tristis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/97324171/2400",
+    "image_credit": "Albin Jacob / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/521778/mp3",
+    "xc_id": "",
+    "sound_tip": "A loud, raucous medley of squawks, whistles, and gurgles — like a noisy argument at a bus stop. No two phrases sound the same. The bird that never shuts up.",
+    "fun_fact": "One of the world's most invasive species. Bold and streetwise, it struts around like it owns the place — and in many cities, it practically does.",
+    "umwelt": "Mynas pay close attention to the humans around them, learning which sounds, routines, and even individual people reliably mean food. Over time this builds into a working memory of the human world they share with us, something we rarely give them credit for. Within a flock, a constant back-and-forth of calls keeps birds in touch with each other along a busy street where they can't always see one another.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Vocal learning and human-association behaviour is well documented in mynas generally via anecdotal and behavioural literature, not one controlled study cited here.",
+      "citations": []
+    },
+    "habitat": "Urban areas, gardens, open woodland, farmland",
+    "karnataka_spots": "Everywhere — cities, towns, and villages across Karnataka",
+    "ebird_code": "hilmyn"
+  },
+  {
+    "id": "cinereous-tit",
+    "name": "Cinereous Tit",
+    "scientific_name": "Parus cinereus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/133732751/2400",
+    "image_credit": "Albin Jacob / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540319/mp3",
+    "xc_id": "",
+    "sound_tip": "A bright, ringing 'tee-cher! tee-cher! tee-cher!' — two-note see-saw rhythm, like a tiny bicycle pump. Clear and mechanical, easy to pick out.",
+    "fun_fact": "Recently split from the Great Tit. A lively acrobat that hangs upside down from branches while hunting insects and seeds.",
+    "umwelt": "Spends its day picking minute insects off leaves and bark, a task that depends on resolving fine detail at very close range rather than seeing far, its world is a foreground world. It also travels in mixed-species foraging flocks held together largely by contact calls, an acoustic thread linking birds that lose sight of each other constantly in foliage.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Extended from close relative",
+      "note": "Mixed-species flock cohesion via contact calls is well studied in tits and Old World flocking systems generally (e.g. Sri Lankan mixed flocks), extended here to this species.",
+      "citations": [
+        "Goodale & Kotagama, mixed-species flock studies (Sri Lanka), general reference"
+      ]
+    },
+    "habitat": "Open woodland, gardens, scrub, forest edges",
+    "karnataka_spots": "Bangalore gardens, Nandi Hills, Coorg, Mysore",
+    "ebird_code": "cintit13"
+  },
+  {
+    "id": "black-kite",
+    "name": "Black Kite",
+    "scientific_name": "Milvus migrans",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/45127481/2400",
+    "image_credit": "PMDE ESTEVES / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/553435/mp3",
+    "xc_id": "",
+    "sound_tip": "A shrill, quavering 'wheee-he-he-he' — like a high-pitched whinnying laugh. Think of a kite (the toy) whistling in the wind.",
+    "fun_fact": "India's most common raptor. Soars effortlessly over cities, snatching food from markets and picnics with surgical precision.",
+    "umwelt": "Circles high enough that its whole feeding strategy depends on spotting tiny movements, a dropped scrap, a struggling animal, from an altitude where a human eye would see only a blur of rooftops. It can also feel rising columns of warm air, called thermals, through its wings and body, invisible currents that tell it whether a stretch of gliding will cost energy or come for free.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "General raptor visual-acuity basis (see Shikra sources); thermal-sensing while soaring is standard raptor flight physiology, not kite-specific.",
+      "citations": []
+    },
+    "habitat": "Cities, towns, open country, near water",
+    "karnataka_spots": "Everywhere — soaring over Bangalore, Mysore, and every Karnataka city",
+    "ebird_code": "blakit1"
+  },
+  {
+    "id": "rose-ringed-parakeet",
+    "name": "Rose-ringed Parakeet",
+    "scientific_name": "Psittacula krameri",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/622584055/2400",
+    "image_credit": "Albin Jacob / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/541326/mp3",
+    "xc_id": "",
+    "sound_tip": "A loud, screeching 'kee-ak! kee-ak!' — like a rusty gate swinging open. Impossible to miss when a flock flies over.",
+    "fun_fact": "The green blur of Indian cities. Males sport a rose-pink and black neck ring. Flocks roost communally in thousands, painting trees green at dusk.",
+    "umwelt": "That pink neck-ring is calibrated for parakeet eyes, not ours, likely carrying UV and colour information that signals age, sex and status far more precisely to another parakeet than it does to us. Its feet also double as manipulative tools, giving it an unusually tactile relationship with food and objects for a bird.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Parrot UV vision and foot dexterity/manipulation are well documented in Psittaciformes generally; no Rose-ringed-specific study cited.",
+      "citations": []
+    },
+    "habitat": "Urban areas, gardens, farmland, woodland",
+    "karnataka_spots": "Lalbagh, Cubbon Park, Mysore Palace grounds, everywhere urban",
+    "ebird_code": "rorpar"
+  },
+  {
+    "id": "indian-grey-hornbill",
+    "name": "Indian Grey Hornbill",
+    "scientific_name": "Ocyceros birostris",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/133738511/2400",
+    "image_credit": "jaya samkutty / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540211/mp3",
+    "xc_id": "",
+    "sound_tip": "A squealing, cackling broken voice — like a squeaky toy being squeezed rapidly. Often calls in flight, so look up when you hear it.",
+    "fun_fact": "The female seals herself inside a tree cavity to nest, leaving only a slit through which the male feeds her for weeks.",
+    "umwelt": "Unusually for a bird, its own bill intrudes into its field of view, restricting the width of its binocular vision but letting it actually see its own bill-tip, a trade-off that aids precise handling of fruit and food. Long lash-like feathers over its eyes double as a built-in sunshade.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Extended from close relative",
+      "note": "Restricted binocular field with bill intrusion, letting the bird see its own bill-tip, was measured directly in Southern Ground Hornbill and Southern Yellow-billed Hornbill -- not this species, but same family (Bucerotidae), and described as a hornbill-wide trait.",
+      "citations": [
+        "Martin 2004, \"Visual fields in hornbills: precision-grasping and sunshades,\" Ibis",
+        "Wikipedia \"Hornbill\", summarising the same finding"
+      ]
+    },
+    "habitat": "Dry deciduous forests, gardens, avenue trees",
+    "karnataka_spots": "Bangalore (IISc campus, Cubbon Park), Mysore, Ramanagara",
+    "ebird_code": "inghor2"
+  },
+  {
+    "id": "purple-sunbird",
+    "name": "Purple Sunbird",
+    "scientific_name": "Cinnyris asiaticus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126385421/2400",
+    "image_credit": "Albin Jacob / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540427/mp3",
+    "xc_id": "",
+    "sound_tip": "A rapid, high-pitched 'chwit-chwit-chwit' or a fast tinkling song — like someone speed-tapping a tiny xylophone. Often given while hovering at flowers.",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/126385381/1200",
+        "label": "Female",
+        "credit": "Albin Jacob / Macaulay Library"
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126385411/1800",
+        "label": "Non-breeding male",
+        "credit": "Albin Jacob / Macaulay Library"
+      }
+    ],
+    "fun_fact": "India's answer to the hummingbird. Males in breeding plumage are iridescent purple-black that flashes in sunlight like a jewel.",
+    "umwelt": "Nectar-feeding is a UV-lit business; many flowers carry ultraviolet 'nectar guide' patterns invisible to us but obvious to a sunbird's eye, essentially arrows pointing to the reward. Its tongue is also fine-tuned to sugar concentration, letting it judge a flower's worth before committing energy to feed there.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "UV nectar guides are best established in bee-pollinated flowers; evidence for bird-pollinated (ornithophilous) flowers specifically is thinner -- some literature suggests bird flowers rely less on UV guides than bee flowers. This is the weakest-supported claim in the set.",
+      "citations": [
+        "Ödeen & Håstad 2010, \"Pollinating birds differ in spectral sensitivity,\" Journal of Comparative Physiology A",
+        "Koski & Ashman 2014, UV bullseye pattern studies (bee-focused, general context)"
+      ]
+    },
+    "habitat": "Gardens, scrub, forest edges, flowering trees",
+    "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, any flowering garden",
+    "ebird_code": "pursun4"
+  },
+  {
+    "id": "ashy-prinia",
+    "name": "Ashy Prinia",
+    "scientific_name": "Prinia socialis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126403561/2400",
+    "image_credit": "Balaji P B / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540342/mp3",
+    "xc_id": "",
+    "sound_tip": "A nagging, electric 'jimmy-jimmy-jimmy' or 'zzzt-zzzt-zzzt' — like a tiny broken doorbell buzzing non-stop. Persistent and impossible to tune out.",
+    "fun_fact": "A tiny, restless bird that cocks its tail upright and scolds everything that moves. Despite its size, it dominates garden soundscapes with sheer volume.",
+    "umwelt": "Lives low in grass and scrub where visibility runs out fast, so its constantly flicking tail is a signal built for occasional clear sightlines rather than continuous viewing, more like waving a small flag now and then than talking constantly. Much of its awareness of neighbours comes through its own scratchy song threading through cover it can't see across.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Tail-flicking as visual signal in scrub habitat is standard behavioural description.",
+      "citations": []
+    },
+    "habitat": "Gardens, scrub, grassland, urban greenery",
+    "karnataka_spots": "Every garden in Bangalore, Mysore, Mangalore — one of the commonest birds",
+    "ebird_code": "ashpri1"
+  },
+  {
+    "id": "indian-white-eye",
+    "name": "Indian White-eye",
+    "scientific_name": "Zosterops palpebrosus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126366191/2400",
+    "image_credit": "Abhishek Das / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540348/mp3",
+    "xc_id": "",
+    "sound_tip": "A soft, tinkling 'chee-chee-chee' — like tiny glass wind chimes in a gentle breeze. Easy to miss unless you're listening for it.",
+    "fun_fact": "Tiny olive-green birds with a bold white eye-ring. They travel in restless flocks, hanging upside down from flowers to sip nectar like miniature acrobats.",
+    "umwelt": "Named for a feature, that pale eye-ring, that probably matters more as a visual marker between birds than as anything functional for its own sight. Almost always found in a moving flock, it stays oriented by a constant thread of soft contact calls rather than by keeping every flock-mate in view.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Flock cohesion via contact calls is general flocking-bird behaviour, not white-eye-specific.",
+      "citations": []
+    },
+    "habitat": "Gardens, woodland edges, flowering trees",
+    "karnataka_spots": "Lalbagh, Cubbon Park, Coorg, any garden with flowering trees",
+    "ebird_code": "indwhe1"
+  },
+  {
+    "id": "spotted-dove",
+    "name": "Spotted Dove",
+    "scientific_name": "Spilopelia chinensis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/621165796/2400",
+    "image_credit": "Aseem Kothiala / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538379/mp3",
+    "xc_id": "",
+    "sound_tip": "A gentle, three-note 'coo-coo-croo' — soft and dreamy, like a lullaby on repeat. Slower and deeper than the Laughing Dove.",
+    "fun_fact": "Named for the black-and-white spotted patch on its neck. One of the most familiar garden doves, often seen walking calmly on the ground.",
+    "umwelt": "Eyes set on the sides of its head give it an almost complete field of view around its body, letting it spot an approaching predator from nearly any direction without turning its head, at the cost of a narrow zone directly in front where it actually sees in 3D. That narrow forward zone is exactly what it uses when pecking seed off the ground.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Wide lateral monocular field with narrow frontal binocular zone is well established across Columbidae (pigeons/doves) via visual-field mapping studies, not Spotted-Dove-specific.",
+      "citations": [
+        "Martin & Young, pigeon (Columba livia) visual field studies, general reference"
+      ]
+    },
+    "habitat": "Gardens, open woodland, urban areas, farmland",
+    "karnataka_spots": "Common everywhere — gardens, campuses, rooftops across Karnataka",
+    "ebird_code": "spodov"
+  },
+  {
+    "id": "black-drongo",
+    "name": "Black Drongo",
+    "scientific_name": "Dicrurus macrocercus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126548371/2400",
+    "image_credit": "Derhasar Brahma / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540285/mp3",
+    "xc_id": "",
+    "sound_tip": "A harsh, metallic 'tchwee-tchwee' mixed with mimicry of other birds — like a DJ remixing forest sounds through a distortion pedal. If it sounds too good to be true, it's probably the drongo.",
+    "fun_fact": "A fearless bully that dive-bombs birds of prey, crows, and even cattle. Often rides on the backs of livestock, snapping up insects they disturb.",
+    "umwelt": "Aggressive and highly observant, it often tracks other birds and animals just to see what they flush out, a kind of parasitic attention where another creature's movement becomes its own hunting cue. It's also an accomplished vocal mimic, holding a repertoire of borrowed calls it can deploy to bluff rivals or draw attention from a nest.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Kleptoparasitism (watching other species to steal flushed food) and vocal mimicry to deceive rivals are best experimentally shown in the African Fork-tailed Drongo, a different species in the same family (Dicruridae); treat as suggestive, not proven for this species.",
+      "citations": [
+        "Flower 2011, \"Deceptive vocal mimicry by drongos,\" Proceedings of the Royal Society B (Fork-tailed Drongo, not Black Drongo)"
+      ]
+    },
+    "habitat": "Open country, farmland, gardens, forest edges",
+    "karnataka_spots": "Everywhere — perched on wires and fences across Karnataka",
+    "ebird_code": "bladro1"
+  },
+  {
+    "id": "oriental-magpie-robin",
+    "name": "Oriental Magpie-Robin",
+    "scientific_name": "Copsychus saularis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126371181/2400",
+    "image_credit": "Craig Brelsford / Macaulay Library",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540368/mp3",
+    "xc_id": "",
+    "sound_tip": "A rich, varied song of whistles and trills — like a confident singer doing scales from a rooftop. One of the best songsters in Indian gardens, often the first bird heard at dawn.",
+    "fun_fact": "The national bird of Bangladesh. Males are striking black-and-white, and they sing from the highest perch they can find — the rockstars of the garden.",
+    "umwelt": "Territorial disputes are fought largely by ear; males remember and match a rival's song type back at them, almost like a coded challenge, a layer of communication entirely inaudible to us as anything but 'nice singing'. Confidence also shows visually, in an upright, tail-raised posture read instantly by other magpie-robins.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Song-type matching in territorial disputes is a general passerine phenomenon, not species-specific here.",
+      "citations": []
+    },
+    "habitat": "Gardens, open woodland, urban parks",
+    "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, every well-wooded garden",
+    "ebird_code": "magrob"
+  },
+  {
+    "id": "lesser-coucal",
+    "name": "Lesser Coucal",
+    "scientific_name": "Centropus bengalensis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/142115921/2400",
+    "image_credit": "Kai Pflug",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/541422/mp3",
+    "xc_id": "",
+    "sound_tip": "Call, a short phrase of deep hooting notes. A rising and falling ”Boop-bip-boo-boo”.",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/142115981/2400",
+        "label": "Non-breeding adult"
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/142115941/2400",
+        "label": "Molting adult"
+      }
+    ],
+    "fun_fact": "Unlike its larger cousin the Greater Coucal, the Lesser Coucal is a seasonal breeder whose plumage shifts dramatically — streaked brown in non-breeding season, all-black when breeding. Extremely skulking, it prefers to creep through tall grass rather than fly.",
+    "umwelt": "A poor, reluctant flier that moves through dense, humid cover mostly on foot, so its world is organised around ground-level sightlines measured in inches, not metres. Its deep, resonant call is built to travel through vegetation thick enough to make visual contact with a mate nearly impossible.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Weak flight and ground-level movement through cover is standard field-guide description.",
+      "citations": []
+    },
+    "habitat": "Found in thick cover of humid forest.",
+    "karnataka_spots": "Tall grasslands and scrub edges — Bandipur, Nagarhole, Kabini grasslands, paddy field margins across the Deccan",
+    "ebird_code": "lescou1"
+  },
+  {
+    "id": "white-browed-fantail",
+    "name": "White-browed Fantail",
+    "scientific_name": "Rhipidura aureola",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/634918468/2400",
+    "image_credit": "Hemant Kirola",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/469624841/mp3",
+    "xc_id": "",
+    "sound_tip": "Frequent song is a 4- to 7-note melodious whistling phrase that ascends and then sometimes descends or is left incomplete. Contact call is a harsh \"switch-wich.\"",
+    "fun_fact": "The White-browed Fantail (Rhipidura aureola) has a fascinating foraging trick: it fans and flicks its tail dramatically not just for display, but to flush insects from leaf litter and vegetation. The sudden movement startles hidden insects into flying up — straight into the bird's waiting beak. The tail is essentially a hunting tool.",
+    "umwelt": "That constant tail-fanning isn't just decorative; spreading white tail feathers while hopping through undergrowth may startle hidden insects into moving, turning its own display into a hunting tool. Like other flycatchers, it's tuned to catch fast, fine motion that would register as barely a flicker to a human eye.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Tail-fanning to flush insects is best documented in the New Zealand Fantail (a different genus/species, Rhipidura fuliginosa); extended here to a related fantail on behavioural plausibility, not direct evidence.",
+      "citations": []
+    },
+    "habitat": "Dense undergrowth, forest edges, scrub, stream-side thickets",
+    "karnataka_spots": "Western Ghats fringe & deciduous forests, Bangalore & surrounds",
+    "ebird_code": "whbfan2",
+    "extra_sounds": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/542928/mp3",
+        "label": "Contact call",
+        "tip": ""
+      }
+    ],
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/148956361/1800",
+        "label": "Tail fanned",
+        "credit": "Cornell Lab / Macaulay Library"
+      }
+    ]
+  },
+  {
+    "id": "red-wattled-lapwing",
+    "name": "Red-wattled Lapwing",
+    "scientific_name": "Vanellus indicus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/239270221/2400",
+    "image_credit": "Ramesh Desai",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/239274571/mp3",
+    "xc_id": "",
+    "sound_tip": "A bird known for its characteristics loud alarm call, often compared to the words “Did we do it?”",
+    "fun_fact": "They feed primarily on insects, catching them in a typical plover-like manner — running a short distance then picking food from the ground. Fearlessly mob much larger animals, including humans, when nesting nearby.",
+    "umwelt": "Nests in the open with nothing to hide behind, so its whole existence depends on early detection; wide-set eyes give it a broad field of view across flat ground, and it erupts into loud, repetitive alarm calls at the faintest hint of movement most other birds wouldn't react to.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Wide-set eyes and vigilance/alarm-calling are standard plover/lapwing behavioural description.",
+      "citations": []
+    },
+    "habitat": "Open ground, farmland, lake shores, dry grassland",
+    "karnataka_spots": "Open ground, farmland, lake shores across Karnataka — Hesaraghatta, Bannerghatta, Ranganathittu, paddy fields near Mysore and Mandya",
+    "ebird_code": "rewlap1",
+    "extra_sounds": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540190/mp3",
+        "label": "Alarm call variant",
+        "tip": ""
+      }
+    ],
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126390871/2400",
+        "label": "Flight",
+        "credit": "Ebird"
+      }
+    ]
+  },
+  {
+    "id": "house-sparrow",
+    "name": "House Sparrow",
+    "scientific_name": "Passer domesticus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/305880301/2400",
+    "image_credit": "Matthew Plante",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/231711901/mp3",
+    "xc_id": "",
+    "sound_tip": "cheep-chirrup (repetitive, rapid, without melody)",
+    "fun_fact": "was once so common it was taken for granted — but urban development has caused a sharp decline, making it a species of local conservation concern in Karnataka.",
+    "umwelt": "Its world has been shaped by us for thousands of years; it reads roof edges, gutters, and market stalls as useful terrain the way a wild bird reads cliffs and trees. Group life runs on a dense, constant chatter, a social soundtrack that keeps a flock coordinated even in the visual chaos of a street.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Human-environment adaptation and flock chatter are well documented generally for this globally studied species, though not tied to one specific sensory study here.",
+      "citations": []
+    },
+    "habitat": "Urban areas, villages, gardens, farmland near human settlements",
+    "karnataka_spots": "Old residential areas (Basavanagudi, Malleswaram), railway stations, and rural villages around Mysuru and Mandya.",
+    "ebird_code": "houspa",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/305874101/640",
+        "label": "Female",
+        "credit": "E-bird"
+      }
+    ]
+  },
+  {
+    "id": "house-crow",
+    "name": "House Crow",
+    "scientific_name": "Corvus splendens",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/167745371/2400",
+    "image_credit": "Ian Hearn",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/101900331/mp3",
+    "xc_id": "",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126364891/2400",
+        "label": ""
+      }
+    ],
+    "sound_tip": "Harsh nasal kaa-kaa repeated endlessly -- one of the most familiar sounds in any Indian town",
+    "fun_fact": "One of the most intelligent birds on the planet -- recognises individual human faces and can hold a grudge",
+    "umwelt": "Crows and their relatives can recognise and remember individual human faces, meaning a house crow may genuinely know you, and whether you've been kind or threatening, in a way most other urban birds simply don't register. That memory extends to food caches, routines, and threats, building a mental map of the city that's as much social as spatial.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Extended from close relative",
+      "note": "Individual human-face recognition and long-term memory of threat/care associations were rigorously shown in the American Crow (Corvus brachyrhynchos), a different species in the same genus. Extended here on strong genus-level (Corvus) plausibility, not direct evidence in C. splendens.",
+      "citations": [
+        "Marzluff et al. 2010, \"Lasting recognition of threatening people by wild American crows,\" Animal Behaviour",
+        "Marzluff et al. 2012, PNAS, brain-imaging follow-up"
+      ]
+    },
+    "habitat": "Urban areas, towns, coastal sites, near human habitation",
+    "karnataka_spots": "Every city, town, and village across Karnataka -- completely unavoidable",
+    "ebird_code": "houcro1"
+  },
+  {
+    "id": "large-billed-crow",
+    "name": "Large-billed Crow",
+    "scientific_name": "Corvus macrorhynchos",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/26860351/2400",
+    "image_credit": "Ian Davies",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/359547881/mp3",
+    "xc_id": "",
+    "sound_tip": "A deeper, hoarser kraah than the House Crow -- more resonant and less nasal",
+    "fun_fact": "All-black unlike the grey-necked House Crow -- often seen in pairs patrolling forest edges and rivers",
+    "umwelt": "Like its urban relative, it carries the same long memory for places, food, and faces that crows are known for, but applies it to forest terrain instead of streets, remembering which tree fruited last season the way a house crow remembers which bin gets emptied on which day. Its harsh call is a canopy tool, calibrated to punch through dense forest foliage.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Extended from close relative",
+      "note": "Same Corvus-genus extension as House Crow.",
+      "citations": [
+        "Marzluff et al. 2010/2012, as above"
+      ]
+    },
+    "habitat": "Forests, forest edges, wooded parks, plantations",
+    "karnataka_spots": "Forest edges, wooded parks, and roadsides in Bangalore, Coorg, Western Ghats",
+    "ebird_code": "labcro1"
+  },
+  {
+    "id": "little-cormorant",
+    "name": "Little Cormorant",
+    "scientific_name": "Microcarbo niger",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/366773081/2400",
+    "image_credit": "Raghavendra  Pai",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/283426/mp3",
+    "xc_id": "",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126570801/2400",
+        "label": ""
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/126570741/2400",
+        "label": ""
+      }
+    ],
+    "sound_tip": "Mostly silent -- occasional low grunts at nesting colonies",
+    "fun_fact": "Spreads its wings wide to dry after diving -- its feathers are intentionally less waterproof than other waterbirds, helping it sink faster when hunting",
+    "umwelt": "The instant it dives, its cornea stops contributing to its vision at all; water and eye tissue bend light almost identically, so the corneal focus it relies on in air simply disappears. It compensates with an unusually flexible lens that reshapes itself within milliseconds of submersion, essentially refocusing its whole eye each time it hunts underwater.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Extended from close relative",
+      "note": "Rapid corneal-refocusing on submersion is best measured in the Great Cormorant (Phalacrocorax carbo), a different but closely related species; the mechanism is described as general to cormorants/diving birds.",
+      "citations": [
+        "Cormorant underwater-vision accommodation research (Great Cormorant, Phalacrocorax carbo)"
+      ]
+    },
+    "habitat": "Lakes, reservoirs, ponds, slow rivers, fish farms",
+    "karnataka_spots": "Ranganathittu, Ulsoor Lake, Bellandur Lake, Cauvery riverbanks",
+    "ebird_code": "litcor1"
+  },
+  {
+    "id": "great-cormorant",
+    "name": "Great Cormorant",
+    "scientific_name": "Phalacrocorax carbo",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/255272571/2400",
+    "image_credit": "Natthaphat Chotjuckdikul",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/66026501/2400",
+        "label": "Breeding adult"
+      }
+    ],
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/309407421/mp3",
+    "xc_id": "",
+    "sound_tip": "Deep guttural grunts at colonies -- mostly silent when fishing alone",
+    "fun_fact": "Can dive up to 6 metres deep to catch fish, using its hooked bill to grip slippery prey underwater",
+    "umwelt": "Great cormorants have been measured refocusing their eyes within 40 to 80 milliseconds of hitting the water, barely a blink, to make up for a sudden, huge loss of focusing power the moment they submerge. To put that in perspective, it's a bigger jump in lens strength than the strongest pair of reading glasses, made instantly, on every single dive. Above water it's an ordinary bird's eye; underwater it becomes something closer to a camera racing to refocus.",
+    "umwelt_sources": {
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "Direct species match: refocusing within ~40-80 ms, compensating for 50+ dioptres of lost corneal power on submersion.",
+      "citations": [
+        "Cormorant underwater-vision accommodation research (Great Cormorant, Phalacrocorax carbo)"
+      ]
+    },
+    "habitat": "Large lakes, reservoirs, coastal waters, major rivers",
+    "karnataka_spots": "Large lakes and reservoirs -- KRS, Kabini, Tungabhadra, coastal Karnataka",
+    "ebird_code": "grecor"
+  },
+  {
+    "id": "painted-stork",
+    "name": "Painted Stork",
+    "scientific_name": "Mycteria leucocephala",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/109346351/2400",
+    "image_credit": "Weber Tsai",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/275767441/mp3",
+    "xc_id": "",
+    "sound_tip": "Mostly silent -- occasional bill clattering at the nest",
+    "fun_fact": "Stirs up muddy water with its feet to flush out fish, then snaps its bill shut in under 25 milliseconds -- one of the fastest reflexes of any bird",
+    "umwelt": "Feeds by touch more than sight, sweeping its open bill through disturbed, muddy water until it contacts something worth snapping shut on, a foraging style built for water too clouded for vision to be much use. That snap, one of the fastest reflex actions known in a bird, happens far quicker than the stork could consciously see and react to its prey.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Tactile, non-visual foraging by bill-snap in turbid water is well documented in storks generally (e.g. openbill storks); no Painted-Stork-specific reflex-speed study found.",
+      "citations": []
+    },
+    "habitat": "Shallow wetlands, paddy fields, lakes, river margins",
+    "karnataka_spots": "Ranganathittu Bird Sanctuary, Kokkare Bellur, Kabini, Cauvery delta",
+    "ebird_code": "paisto1"
+  },
+  {
+    "id": "little-egret",
+    "name": "Little Egret",
+    "scientific_name": "Egretta garzetta",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/312541331/2400",
+    "image_credit": "Ben Lucking",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/203905331/mp3",
+    "xc_id": "",
+    "sound_tip": "A harsh kaarrk when flushed -- usually completely silent while hunting",
+    "fun_fact": "Dances with its bright yellow feet in shallow water to stir up fish -- the yellow acts as a lure against dark muddy water",
+    "umwelt": "Striking at a fish means solving a problem we'd need instruments for: light bends at the water's surface, shifting where prey actually is from where it appears to be. Herons and egrets are known to correct for this refraction on the fly, aiming not at the fish they see but at where experience tells them the fish actually is.",
+    "umwelt_sources": {
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "Direct species match. Little Egrets were shown experimentally to correct for air/water light refraction when striking submerged prey, with high capture success when properly positioned.",
+      "citations": [
+        "Lotem, Schechtman & Katzir 1991, \"Capture of submerged prey by Little Egrets... light refraction,\" Animal Behaviour"
+      ]
+    },
+    "habitat": "Wetlands, paddy fields, lake margins, mudflats, streams",
+    "karnataka_spots": "Any wetland, paddy field, or lake across Karnataka -- one of the most common egrets",
+    "ebird_code": "litegr"
+  },
+  {
+    "id": "eurasian-moorhen",
+    "name": "Eurasian Moorhen",
+    "scientific_name": "Gallinula chloropus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/404825431/2400",
+    "image_credit": "Alexis Lours",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/203978971/mp3",
+    "xc_id": "",
+    "sound_tip": "A loud explosive krruk -- often heard before seen lurking in reeds",
+    "fun_fact": "Pumps its head back and forth like a chicken as it walks -- the bright red forehead shield is a status signal to rivals",
+    "umwelt": "Reed beds block sightlines constantly, so its explosive call functions as the thing vision can't, a way to announce presence or claim space to a rival it may never actually see. That red forehead shield, meanwhile, is a purely visual currency between moorhens, its size and brightness read by rivals as a measure of status and health.",
+    "umwelt_sources": {
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "Direct species match. The red frontal shield's size and colour are testosterone-linked and function as an honest signal of condition/fighting ability, assessed by rival moorhens.",
+      "citations": [
+        "Eens et al. 2000, moorhen shield studies",
+        "Alvarez, Sánchez & Angulo, \"The frontal shield of the moorhen: sex differences and relationship with body condition\""
+      ]
+    },
+    "habitat": "Reed beds, lake margins, vegetated ponds, slow rivers",
+    "karnataka_spots": "Reed beds and wetland edges -- Ulsoor Lake, Hebbal Lake, Bellandur, any well-vegetated tank",
+    "ebird_code": "commoo3"
+  },
+  {
+    "id": "mallard",
+    "name": "Mallard",
+    "scientific_name": "Anas platyrhynchos",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/308743051/2400",
+    "image_credit": "Imran Shah",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/616578316/mp3",
+    "xc_id": "",
+    "sound_tip": "The classic QUACK — females are loud and frequent; males give a softer raspy kwek",
+    "fun_fact": "The ancestor of almost every domestic duck breed. The male's iridescent green head is unmistakable — but it is a scarce winter visitor to Karnataka rather than a year-round resident.",
+    "umwelt": "Its bill is packed with touch-sensitive receptors, letting it sift food from mud and murky water by feel rather than sight, closer to reading braille than foraging by eye. Ducks are also known to sleep with one eye open and half the brain still alert, keeping a literal one-eyed watch on the world even while resting.",
+    "umwelt_sources": {
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "Direct species match on both claims: bill mechanoreceptors (Herbst corpuscles) are documented in Anas platyrhynchos bill/oral skin; unihemispheric sleep with one eye open was discovered and measured in mallards specifically, including the edge-of-group predator-vigilance effect.",
+      "citations": [
+        "Rattenborg et al. 1999, mallard unihemispheric sleep studies, Indiana State University",
+        "\"Corpuscles of Herbst\" -- duck bill mechanoreceptor density data"
+      ]
+    },
+    "habitat": "Lakes, wetlands, rivers, flooded fields",
+    "karnataka_spots": "Kabini, Ranganathittu, Ulsoor Lake, Hebbal Lake — uncommon winter visitor to large Karnataka water bodies",
+    "ebird_code": "mallar3"
+  },
+  {
+    "id": "asian-green-bee-eater",
+    "name": "Asian Green Bee-eater",
+    "scientific_name": "Merops orientalis",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/429960671/2400",
+    "image_credit": "Honza Grünwald",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/122658941/mp3",
+    "xc_id": "",
+    "sound_tip": "A high rolling trrr-trrr-trrr -- often the first thing you hear from a telegraph wire before you spot the bird",
+    "fun_fact": "Removes the sting from bees before eating them -- rubs the bee against a branch to squeeze out the venom first",
+    "umwelt": "Tracks fast insects using a flicker-fusion rate well above ours, so a scene that looks like a blur of motion to a human eye plays out for the bee-eater as something closer to slow motion, exactly what makes snatching a bee mid-flight look effortless. It likely also sees ultraviolet detail on its own iridescent plumage that's simply switched off for us.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "High flicker-fusion in fast aerial insectivores is demonstrated in the flycatcher/tit study (Boström et al. 2016) but not in bee-eaters directly; extended by ecological analogy (aerial insect-hawking).",
+      "citations": [
+        "Boström et al. 2016 (as cited for flycatchers above)"
+      ]
+    },
+    "habitat": "Open country, scrub, farmland, forest clearings, roadsides",
+    "karnataka_spots": "Open country, gardens, and farmland across Karnataka -- perches conspicuously on wires and bare branches",
+    "ebird_code": "grnbee3"
+  },
+  {
+    "id": "green-warbler",
+    "name": "Green Warbler",
+    "scientific_name": "Phylloscopus nitidus",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/58696621/2400",
+    "image_credit": "John C. Mittermeier",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/277766671/mp3",
+    "xc_id": "",
+    "sound_tip": "Green is best identified by its loud, fast, trisyllabic “chi-su-wi” call.",
+    "fun_fact": "A winter visitor to Karnataka with a bright yellow wash on the face and a pale orange lower bill. Once lumped with Greenish Warbler, it was split as a full species — best told apart by its brighter yellow tones and distinctive trisyllabic call.",
+    "umwelt": "Migrating largely at night across huge distances, it very likely reads the Earth's magnetic field as an internal compass, a sense with no human equivalent at all. Fittingly, it's also best told apart from its near-twin, the Greenish Warbler, by ear rather than eye, its own most reliable identity marker is a call, not a colour.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Magnetic-compass orientation in nocturnal migrants is one of the most robustly replicated findings in bird migration research generally, though not tested in this exact species; call-based species separation from Greenish Warbler is standard field-identification knowledge, not a sensory-biology study.",
+      "citations": [
+        "Wiltschko & Wiltschko, magnetic compass orientation research (general migratory-bird literature)"
+      ]
+    },
+    "habitat": "Deciduous forests, forest edges, gardens (winter visitor)",
+    "karnataka_spots": "Western ghats, city parks.",
+    "ebird_code": "grnwar1",
+    "extra_images": [
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/150276351/640",
+        "label": "",
+        "credit": "Ebird"
+      }
+    ]
+  },
+  {
+    "id": "greenish-warbler",
+    "name": "Greenish Warbler",
+    "scientific_name": "Phylloscopus trochiloides",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/30421041/2400",
+    "image_credit": "Ian Davies",
+    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/203992471/mp3",
+    "xc_id": "",
+    "sound_tip": "Song is a high-pitched long series \"tsit-psityee psityu-psi-ti-ti-ti-ti-si,\" but often detected by its call, a two-parted \"t-sli\" with flat or downward inflection.",
+    "fun_fact": "has a strong white eyebrow which is broad behind the eye and goes all the way to the forehead.",
+    "umwelt": "Like other long-distance migrants, it's thought to sense magnetic fields for orientation during night flights spanning thousands of kilometres, a literal extra sense layered on top of normal vision. Its species boundary with the near-identical Green Warbler is defined more by call than by plumage, a reminder that for the birds themselves, sound may carry more identifying information than sight.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Same general migratory magnetoreception basis as Green Warbler; the Greenish/Green Warbler call-vs-plumage identification point is standard birding knowledge.",
+      "citations": []
+    },
+    "habitat": "Forests, forest edges, gardens, orchards (winter visitor)",
+    "karnataka_spots": "A common winter visitor — Lalbagh, Cubbon Park, Nandi Hills, wooded areas across Bangalore; also seen in Western Ghats forests during passage",
+    "ebird_code": "grewar3"
+  }
+]

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#efe8d8">
+    <title>BirdBrain — Karnataka Birds</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.svg">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header id="header">
+            <div class="header-left">
+                <h1>BirdBrain</h1>
+                <span class="subtitle">Karnataka · Field Guide</span>
+            </div>
+            <div class="header-right">
+                <span id="build-stamp" class="build-stamp"></span>
+                <button id="menu-btn" class="icon-btn" onclick="toggleStats()" aria-label="Progress">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 19V11M12 19V5M19 19v-6"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mode Selector -->
+        <div id="settings-bar">
+            <label class="setting-toggle">
+                <input type="checkbox" id="autoplay-toggle" onchange="toggleAutoPlay(this.checked)">
+                <span class="toggle-label-right">Auto-play Call</span>
+            </label>
+        </div>
+
+        <div id="mode-selector">
+            <button class="mode-btn active" data-mode="photo" onclick="setMode('photo')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2L8 5h8l1.5 2h2A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.2"/></svg>Photo</button>
+            <button class="mode-btn" data-mode="sound" onclick="setMode('sound')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L13 19V5L7.5 9.5z"/><path d="M16.5 9a4 4 0 0 1 0 6"/><path d="M19 6.5a7.5 7.5 0 0 1 0 11"/></svg>Sound</button>
+            <button class="mode-btn" data-mode="reverse" onclick="setMode('reverse')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9a8 8 0 0 1 13.4-3.2L20 9"/><path d="M20 4v5h-5"/><path d="M20.5 15a8 8 0 0 1-13.4 3.2L4 15"/><path d="M4 20v-5h5"/></svg>Reverse</button>
+        </div>
+
+        <!-- Quiz Area -->
+        <main id="quiz-area">
+            <!-- Loading -->
+            <div id="loading" class="screen active">
+                <div class="loader"></div>
+                <p>Loading birds...</p>
+            </div>
+
+            <!-- Question -->
+            <div id="question-screen" class="screen">
+                <div id="prompt-area">
+                    <div id="variant-label" class="variant-label" style="display:none;"></div>
+                    <div id="prompt-image-wrap" class="prompt-image-wrap" style="display:none;">
+                        <img id="prompt-image-bg" class="prompt-image-bg" alt="">
+                        <img id="prompt-image" src="" alt="Which bird is this?">
+                    </div>
+                    <div id="prompt-audio" style="display:none;">
+                        <button id="play-sound-btn" class="play-btn" onclick="playSound()">
+                            Play call
+                        </button>
+                        <audio id="audio-player" preload="auto"></audio>
+                    </div>
+                    <div id="prompt-text" style="display:none;">
+                        <p class="reverse-label">Which bird is this?</p>
+                        <h2 id="reverse-name"></h2>
+                    </div>
+                </div>
+
+                <div id="choices"></div>
+
+                <div id="progress-bar">
+                    <span id="round-counter">Bird 1 of 43</span>
+                </div>
+            </div>
+
+            <!-- Result Feedback -->
+            <div id="result-screen" class="screen">
+                <div id="result-icon"></div>
+                <h2 id="result-title"></h2>
+                <img id="result-image" class="result-image" style="display:none;" alt="">
+                <p id="result-bird-name"></p>
+                <p id="result-scientific" class="scientific"></p>
+                <p id="result-fact" class="fun-fact"></p>
+                <div id="result-umwelt" class="umwelt-card" style="display:none;"></div>
+                <p id="result-sound-tip" class="sound-tip" style="display:none;"></p>
+                <div id="result-links" class="result-links" style="display:none;"></div>
+                <div id="result-plumes-wrap" style="display:none;">
+                    <div class="plumes-label">Plumages · also look for</div>
+                    <div id="result-plumes"></div>
+                </div>
+                <div id="result-calls-wrap" style="display:none;">
+                    <div class="calls-label">More calls</div>
+                    <div id="result-calls"></div>
+                </div>
+                <p id="result-habitat" class="detail"></p>
+                <p id="result-spots" class="detail"></p>
+                <button id="next-btn" class="primary-btn" onclick="nextQuestion()">Next Bird →</button>
+            </div>
+
+            <!-- Session Summary -->
+            <div id="summary-screen" class="screen" style="text-align:center;padding:32px 16px;">
+            </div>
+        </main>
+
+        <!-- Stats Panel -->
+        <div id="stats-panel" class="panel hidden">
+            <div class="panel-header">
+                <h2>📊 Your Progress</h2>
+                <button class="icon-btn" onclick="toggleStats()">✕</button>
+            </div>
+            <div id="stats-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="s-accuracy">0%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="s-mastered">0</div>
+                        <div class="stat-label">Mastered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="s-rounds">0</div>
+                        <div class="stat-label">Birds Seen</div>
+                    </div>
+                </div>
+                <h3>Bird Progress</h3>
+                <div id="bird-progress-list"></div>
+                <button class="danger-btn" onclick="resetProgress()">🗑️ Reset All Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="engine.js"></script>
+    <script src="app.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js");
+        }
+    </script>
+</body>
+</html>
