@@ -19,7 +19,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Ground/litter foraging by hearing over sight is a well-documented pattern in skulking babblers (Timaliidae) generally; no dedicated acoustic-foraging study exists for this exact species.",
-      "citations": []
+      "citations": [
+        "Grimmett, Inskipp & Inskipp, \"Birds of the Indian Subcontinent\" (behavioural description)",
+        "Ali & Ripley, \"Handbook of the Birds of India and Pakistan\" (behavioural description)"
+      ]
     },
     "habitat": "Dense undergrowth, forest floor, bamboo thickets",
     "karnataka_spots": "Dandeli, Bhadra Wildlife Sanctuary, Coorg forests",
@@ -64,7 +67,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "UV/tetrachromatic vision is general to birds; no barbet-specific study on fruit-colour discrimination was located.",
-      "citations": []
+      "citations": [
+        "Cuthill, Partridge, Bennett, Church, Hart & Hunt 2000, \"Ultraviolet vision in birds,\" Advances in the Study of Behavior 29:159-214",
+        "Hart & Hunt 2007, review of UV/violet photoreceptor variation in birds"
+      ]
     },
     "habitat": "Moist deciduous forests, gardens, plantations",
     "karnataka_spots": "Coorg, Chikmagalur, Agumbe",
@@ -90,7 +96,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Same general avian UV-vision basis as other bulbuls; no species-specific study.",
-      "citations": []
+      "citations": [
+        "Cuthill, Partridge, Bennett, Church, Hart & Hunt 2000, \"Ultraviolet vision in birds,\" Advances in the Study of Behavior 29:159-214",
+        "Hart & Hunt 2007, review of UV/violet photoreceptor variation in birds"
+      ]
     },
     "habitat": "Dry scrub, gardens, forest edges",
     "karnataka_spots": "Bangalore outskirts, Nandi Hills, Bannerghatta",
@@ -158,7 +167,9 @@
       "confidence": "B",
       "confidence_label": "Extended from close relative",
       "note": "Tail-streamer visual signalling is well-established sexual-selection theory; flicker-fusion claim extended from the flycatcher genus study (Boström et al. 2016).",
-      "citations": []
+      "citations": [
+        "Boström et al. 2016, \"Ultra-rapid vision in birds,\" PLOS ONE / PMC4798572 (flycatcher genus flicker-fusion study, extended here)"
+      ]
     },
     "habitat": "Shady forests, groves, well-wooded gardens",
     "karnataka_spots": "Dandeli, Ranganathittu, Coorg, Bhadra",
@@ -184,7 +195,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Sexual dichromatism read via UV/tetrachromatic vision is general avian science; no cuckooshrike-specific colour-vision study found.",
-      "citations": []
+      "citations": [
+        "Cuthill, Partridge, Bennett, Church, Hart & Hunt 2000, \"Ultraviolet vision in birds,\" Advances in the Study of Behavior 29:159-214",
+        "Hart & Hunt 2007, review of UV/violet photoreceptor variation in birds"
+      ]
     },
     "habitat": "Forest canopy, deciduous woodland, plantations",
     "karnataka_spots": "Dandeli, Bhadra, Sharavathi Valley",
@@ -205,7 +219,9 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Fine bill-tip motor control for leaf-sewing is behaviourally obvious and widely described in field guides; not a dedicated sensory-physiology study.",
-      "citations": []
+      "citations": [
+        "Ali & Ripley, \"Handbook of the Birds of India and Pakistan\" (behavioural description) -- detailed description of leaf-stitching nest construction"
+      ]
     },
     "habitat": "Gardens, scrub, urban greenery",
     "karnataka_spots": "Common in gardens across Bangalore, Mysore, Mangalore",
@@ -264,7 +280,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Same general basis as other bulbul entries.",
-      "citations": []
+      "citations": [
+        "Cuthill, Partridge, Bennett, Church, Hart & Hunt 2000, \"Ultraviolet vision in birds,\" Advances in the Study of Behavior 29:159-214",
+        "Hart & Hunt 2007, review of UV/violet photoreceptor variation in birds"
+      ]
     },
     "habitat": "Light woodland, gardens, urban parks",
     "karnataka_spots": "Coorg, Chikmagalur, Bangalore gardens",
@@ -285,7 +304,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "General avian UV-vision basis; no oriole-specific study found.",
-      "citations": []
+      "citations": [
+        "Cuthill, Partridge, Bennett, Church, Hart & Hunt 2000, \"Ultraviolet vision in birds,\" Advances in the Study of Behavior 29:159-214",
+        "Hart & Hunt 2007, review of UV/violet photoreceptor variation in birds"
+      ]
     },
     "extra_images": [
       {
@@ -313,7 +335,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Same general basis as other bulbul entries.",
-      "citations": []
+      "citations": [
+        "Cuthill, Partridge, Bennett, Church, Hart & Hunt 2000, \"Ultraviolet vision in birds,\" Advances in the Study of Behavior 29:159-214",
+        "Hart & Hunt 2007, review of UV/violet photoreceptor variation in birds"
+      ]
     },
     "habitat": "Gardens, scrub, open woodland, urban areas",
     "karnataka_spots": "Everywhere — gardens, parks, balconies across Karnataka",
@@ -416,7 +441,9 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Tail-cocking as visual display is standard field-guide behavioural description, not a dedicated study.",
-      "citations": []
+      "citations": [
+        "Grimmett, Inskipp & Inskipp, \"Birds of the Indian Subcontinent\" (behavioural description)"
+      ]
     },
     "habitat": "Open stony ground, scrub, gardens",
     "karnataka_spots": "Open areas across the Deccan Plateau",
@@ -434,10 +461,14 @@
     "fun_fact": "One of the world's most invasive species. Bold and streetwise, it struts around like it owns the place — and in many cities, it practically does.",
     "umwelt": "Mynas pay close attention to the humans around them, learning which sounds, routines, and even individual people reliably mean food. Over time this builds into a working memory of the human world they share with us, something we rarely give them credit for. Within a flock, a constant back-and-forth of calls keeps birds in touch with each other along a busy street where they can't always see one another.",
     "umwelt_sources": {
-      "confidence": "C",
-      "confidence_label": "General / textbook-level",
-      "note": "Vocal learning and human-association behaviour is well documented in mynas generally via anecdotal and behavioural literature, not one controlled study cited here.",
-      "citations": []
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "Direct species match. Common mynas have been shown experimentally to learn about dangerous locations by observing what happened to other mynas there (social learning), and urban mynas adjust foraging strategy differently from rural ones, evidence of a real working model of their environment, including the human parts of it.",
+      "citations": [
+        "Griffin & Boyce 2009, \"Indian mynahs, Acridotheres tristis, learn about dangerous places by observing the fate of others,\" Animal Behaviour",
+        "Lermite, Peneaux & Griffin 2017, \"Personality and problem-solving in common mynas,\" Behavioural Processes",
+        "Peneaux et al., \"Adjusting foraging strategies: a comparison of rural and urban common mynas,\" Animal Cognition"
+      ]
     },
     "habitat": "Urban areas, gardens, open woodland, farmland",
     "karnataka_spots": "Everywhere — cities, towns, and villages across Karnataka",
@@ -481,7 +512,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "General raptor visual-acuity basis (see Shikra sources); thermal-sensing while soaring is standard raptor flight physiology, not kite-specific.",
-      "citations": []
+      "citations": [
+        "Wikipedia \"Hawk\", citing raptor visual acuity data (general raptor reference, not kite-specific)",
+        "Oxford Research Encyclopedia of Neuroscience, \"Raptor Vision\""
+      ]
     },
     "habitat": "Cities, towns, open country, near water",
     "karnataka_spots": "Everywhere — soaring over Bangalore, Mysore, and every Karnataka city",
@@ -502,7 +536,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Parrot UV vision and foot dexterity/manipulation are well documented in Psittaciformes generally; no Rose-ringed-specific study cited.",
-      "citations": []
+      "citations": [
+        "Cuthill, Partridge, Bennett, Church, Hart & Hunt 2000, \"Ultraviolet vision in birds,\" Advances in the Study of Behavior 29:159-214",
+        "Brown & Magat 2011, \"The evolution of lateralized foot use in parrots: a phylogenetic approach,\" Behavioral Ecology (Australian parrots, family-level, not Rose-ringed-specific)"
+      ]
     },
     "habitat": "Urban areas, gardens, farmland, woodland",
     "karnataka_spots": "Lalbagh, Cubbon Park, Mysore Palace grounds, everywhere urban",
@@ -583,7 +620,9 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Tail-flicking as visual signal in scrub habitat is standard behavioural description.",
-      "citations": []
+      "citations": [
+        "Grimmett, Inskipp & Inskipp, \"Birds of the Indian Subcontinent\" (behavioural description)"
+      ]
     },
     "habitat": "Gardens, scrub, grassland, urban greenery",
     "karnataka_spots": "Every garden in Bangalore, Mysore, Mangalore — one of the commonest birds",
@@ -604,7 +643,9 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Flock cohesion via contact calls is general flocking-bird behaviour, not white-eye-specific.",
-      "citations": []
+      "citations": [
+        "Goodale & Kotagama, mixed-species flock studies (Sri Lanka), general reference -- extended from tit/flock literature"
+      ]
     },
     "habitat": "Gardens, woodland edges, flowering trees",
     "karnataka_spots": "Lalbagh, Cubbon Park, Coorg, any garden with flowering trees",
@@ -671,7 +712,9 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Song-type matching in territorial disputes is a general passerine phenomenon, not species-specific here.",
-      "citations": []
+      "citations": [
+        "Catchpole & Slater, \"Bird Song: Biological Themes and Variations\" (standard reference on song-type matching/countersinging in territorial disputes, general passerine literature)"
+      ]
     },
     "habitat": "Gardens, open woodland, urban parks",
     "karnataka_spots": "Lalbagh, Cubbon Park, Nandi Hills, every well-wooded garden",
@@ -702,7 +745,10 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Weak flight and ground-level movement through cover is standard field-guide description.",
-      "citations": []
+      "citations": [
+        "Grimmett, Inskipp & Inskipp, \"Birds of the Indian Subcontinent\" (behavioural description)",
+        "Ali & Ripley, \"Handbook of the Birds of India and Pakistan\" (behavioural description)"
+      ]
     },
     "habitat": "Found in thick cover of humid forest.",
     "karnataka_spots": "Tall grasslands and scrub edges — Bandipur, Nagarhole, Kabini grasslands, paddy field margins across the Deccan",
@@ -723,7 +769,9 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Tail-fanning to flush insects is best documented in the New Zealand Fantail (a different genus/species, Rhipidura fuliginosa); extended here to a related fantail on behavioural plausibility, not direct evidence.",
-      "citations": []
+      "citations": [
+        "Tail-fanning-to-flush-insects foraging behaviour is best documented in the New Zealand Fantail (Rhipidura fuliginosa), a different species in the same genus; general genus-level reference, not White-browed-specific."
+      ]
     },
     "habitat": "Dense undergrowth, forest edges, scrub, stream-side thickets",
     "karnataka_spots": "Western Ghats fringe & deciduous forests, Bangalore & surrounds",
@@ -755,10 +803,13 @@
     "fun_fact": "They feed primarily on insects, catching them in a typical plover-like manner — running a short distance then picking food from the ground. Fearlessly mob much larger animals, including humans, when nesting nearby.",
     "umwelt": "Nests in the open with nothing to hide behind, so its whole existence depends on early detection; wide-set eyes give it a broad field of view across flat ground, and it erupts into loud, repetitive alarm calls at the faintest hint of movement most other birds wouldn't react to.",
     "umwelt_sources": {
-      "confidence": "C",
-      "confidence_label": "General / textbook-level",
-      "note": "Wide-set eyes and vigilance/alarm-calling are standard plover/lapwing behavioural description.",
-      "citations": []
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "The alarm-calling/vigilance behaviour was studied directly in this species (Red-wattled Lapwing nest defence, Ganges riverside population, India). The wide-set-eyes/visual-field claim is extended from a related lapwing (Blacksmith Lapwing, same genus Vanellus), not measured in V. indicus directly.",
+      "citations": [
+        "Study on nest predators and anti-predator response of Vanellus indicus, Ganges river population, Raebareli, India (ScienceDirect)",
+        "Visual fields and foraging ecology of Blacksmith Lapwings (Vanellus armatus), general reference for genus-level visual field topography"
+      ]
     },
     "habitat": "Open ground, farmland, lake shores, dry grassland",
     "karnataka_spots": "Open ground, farmland, lake shores across Karnataka — Hesaraghatta, Bannerghatta, Ranganathittu, paddy fields near Mysore and Mandya",
@@ -790,10 +841,13 @@
     "fun_fact": "was once so common it was taken for granted — but urban development has caused a sharp decline, making it a species of local conservation concern in Karnataka.",
     "umwelt": "Its world has been shaped by us for thousands of years; it reads roof edges, gutters, and market stalls as useful terrain the way a wild bird reads cliffs and trees. Group life runs on a dense, constant chatter, a social soundtrack that keeps a flock coordinated even in the visual chaos of a street.",
     "umwelt_sources": {
-      "confidence": "C",
-      "confidence_label": "General / textbook-level",
-      "note": "Human-environment adaptation and flock chatter are well documented generally for this globally studied species, though not tied to one specific sensory study here.",
-      "citations": []
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "Direct species match. House sparrows have been tested experimentally on whether they recognise individual humans by face/mask and adjust behaviour accordingly, and on cognitive flexibility differences between urban and rural populations.",
+      "citations": [
+        "Vincze et al., \"Does urbanization facilitate individual recognition of humans by house sparrows?\" Animal Cognition",
+        "Papp et al. / related, \"A comparison of problem-solving success between urban and rural house sparrows,\" Behavioral Ecology and Sociobiology"
+      ]
     },
     "habitat": "Urban areas, villages, gardens, farmland near human settlements",
     "karnataka_spots": "Old residential areas (Basavanagudi, Malleswaram), railway stations, and rural villages around Mysuru and Mandya.",
@@ -936,7 +990,9 @@
       "confidence": "C",
       "confidence_label": "General / textbook-level",
       "note": "Tactile, non-visual foraging by bill-snap in turbid water is well documented in storks generally (e.g. openbill storks); no Painted-Stork-specific reflex-speed study found.",
-      "citations": []
+      "citations": [
+        "Tactile, non-visual foraging by bill-snap in turbid water is documented in storks generally, e.g. Asian openbill stork (Anastomus oscitans) foraging studies; genus/family-level (Ciconiidae) reference, not Painted-Stork-specific."
+      ]
     },
     "habitat": "Shallow wetlands, paddy fields, lakes, river margins",
     "karnataka_spots": "Ranganathittu Bird Sanctuary, Kokkare Bellur, Kabini, Cauvery delta",
@@ -1078,10 +1134,14 @@
     "fun_fact": "has a strong white eyebrow which is broad behind the eye and goes all the way to the forehead.",
     "umwelt": "Like other long-distance migrants, it's thought to sense magnetic fields for orientation during night flights spanning thousands of kilometres, a literal extra sense layered on top of normal vision. Its species boundary with the near-identical Green Warbler is defined more by call than by plumage, a reminder that for the birds themselves, sound may carry more identifying information than sight.",
     "umwelt_sources": {
-      "confidence": "C",
-      "confidence_label": "General / textbook-level",
-      "note": "Same general migratory magnetoreception basis as Green Warbler; the Greenish/Green Warbler call-vs-plumage identification point is standard birding knowledge.",
-      "citations": []
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "Direct species match for the call-based identification point. Greenish Warbler is the classic textbook 'ring species' -- its song changes gradually around a ring of populations circling the Tibetan Plateau, and where the two ends of the ring meet in Siberia, the birds no longer recognise each other's songs as belonging to their own kind. This is genuinely species-specific, rigorously studied research, not a general extrapolation. The magnetic-compass claim remains general migratory-bird science, not tested in this species directly.",
+      "citations": [
+        "Irwin 2000, \"Song variation in an avian ring species,\" Evolution 54(3):998-1010",
+        "Irwin, Bensch & Price 2001, \"Speciation in a ring,\" Nature 409:333-337",
+        "Wiltschko & Wiltschko, magnetic compass orientation research (general migratory-bird literature, for the magnetoreception part only)"
+      ]
     },
     "habitat": "Forests, forest edges, gardens, orchards (winter visitor)",
     "karnataka_spots": "A common winter visitor — Lalbagh, Cubbon Park, Nandi Hills, wooded areas across Bangalore; also seen in Western Ghats forests during passage",
