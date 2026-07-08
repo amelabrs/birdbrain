@@ -1,8 +1,8 @@
-const CACHE = "birdbrain-v2";
+const CACHE = "birdbrain-v3";
 const STATIC = [
     "/",
-    "/static/app.js?v=13",
-    "/static/style.css?v=13",
+    "/static/app.js?v=14",
+    "/static/style.css?v=14",
     "/static/manifest.json",
     "/static/icon-192.svg",
     "/static/icon-512.svg",

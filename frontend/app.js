@@ -89,13 +89,13 @@ function renderExtras(birdId) {
 
         umweltEl.innerHTML = `
             <div class="umwelt-header">
-                <span class="umwelt-label">Umwelt</span>
+                <span class="umwelt-label">UMWELT</span>
                 <span class="umwelt-sub">what this bird's world is actually like</span>
             </div>
             <p class="umwelt-text">${bird.umwelt}</p>
             <div class="umwelt-footer">
                 ${drawerHtml ? `<button class="umwelt-badge ${confClass}" onclick="toggleUmweltDrawer('${birdId}', this)" aria-expanded="false">
-                    <span class="conf-dot"></span>${confLabel}
+                    <span class="conf-dot"></span>${confLabel}<svg class="umwelt-chevron" viewBox="0 0 10 6" width="8" height="8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
                 </button>` : `<span class="umwelt-badge ${confClass}"><span class="conf-dot"></span>${confLabel}</span>`}
                 ${refHtml}
             </div>

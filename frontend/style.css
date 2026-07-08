@@ -777,6 +777,7 @@ body {
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.4px;
+    white-space: nowrap;
     border: 1px solid transparent;
     background: none;
     cursor: default;
@@ -788,6 +789,16 @@ button.umwelt-badge {
 }
 
 button.umwelt-badge:active { opacity: 0.75; }
+
+.umwelt-chevron {
+    margin-left: 1px;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+button.umwelt-badge[aria-expanded="true"] .umwelt-chevron {
+    transform: rotate(180deg);
+}
 
 .conf-dot {
     width: 7px;
