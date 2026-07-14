@@ -156,3 +156,14 @@ app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
 @app.get("/")
 def serve_index():
     return FileResponse(str(FRONTEND_DIR / "index.html"))
+
+
+@app.get("/manifest.json")
+def serve_manifest():
+    return FileResponse(str(FRONTEND_DIR / "manifest.json"), media_type="application/manifest+json")
+
+
+@app.get("/.well-known/assetlinks.json")
+def serve_assetlinks():
+    # Populated after TWA signing key is generated via PWABuilder
+    return FileResponse(str(FRONTEND_DIR / "assetlinks.json"), media_type="application/json")
