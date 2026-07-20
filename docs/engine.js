@@ -172,10 +172,18 @@ const BirdEngine = (() => {
         _state = _load();
     }
 
-    function getQuestion(mode) {
-        const ids = mode === "sound" ? _soundIds : _birds.map(b => b.id);
+    function getQuestion(mode, overrideIds) {
+        let ids = overrideIds
+            ? (mode === "sound"
+                ? overrideIds.filter(id => _birdMap[id]?.sound_url)
+                : overrideIds.filter(id => !!_birdMap[id]))
+            : (mode === "sound" ? _soundIds : _birds.map(b => b.id));
+        if (!ids.length) ids = mode === "sound" ? _soundIds : _birds.map(b => b.id);
         const id = _pickBird(ids);
-        return _generateQuestion(_birdMap[id], mode);
+        const q = _generateQuestion(_birdMap[id], mode);
+        q.unlocked_count = ids.length;
+        q.total_bird_count = ids.length;
+        return q;
     }
 
     function submitAnswer(birdId, chosenIndex, correctIndex) {

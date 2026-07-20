@@ -129,6 +129,7 @@ body {
 
 .icon-btn svg { width: 18px; height: 18px; }
 .icon-btn:active { transform: scale(0.94); }
+.icon-btn.muted { background: var(--wrong-bg); border-color: var(--wrong-line); color: var(--wrong); }
 
 /* ── Settings toggles (switches) ─────────────────────────────────── */
 
@@ -883,6 +884,7 @@ button.umwelt-badge[aria-expanded="true"] .umwelt-chevron {
 }
 
 .primary-btn:active { transform: scale(0.98); }
+.retry-btn { background: var(--accent); box-shadow: 0 6px 18px rgba(169,118,42,0.22); }
 
 /* ── Summary ─────────────────────────────────────────────────────── */
 

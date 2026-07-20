@@ -179,7 +179,7 @@
     "id": "indian-cuckooshrike",
     "name": "Indian Cuckooshrike",
     "scientific_name": "Campephaga indica",
-    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/624756413/2400",
+    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/623060026/1200",
     "image_credit": "Cornell Lab of Ornithology / Macaulay Library",
     "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/541589/mp3",
     "xc_id": "",
@@ -187,17 +187,32 @@
     "extra_images": [
       {
         "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/624756410/2400"
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/173403621/1200",
+        "label": "Female"
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/139117281/1200",
+        "label": "Female"
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/379237541/1200",
+        "label": "Male"
+      },
+      {
+        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/412469481/1200",
+        "label": "Male"
       }
     ],
     "fun_fact": "Males are glossy black while females are barred grey-brown — so different they were once thought to be separate species.",
-    "umwelt": "The stark difference between male and female plumage exists partly because these birds are reading each other with sharper colour vision than we bring to it, what looks like two species to us is an ordinary pair to them. Life in the high canopy means vision, not sound, does most of the navigating.",
+    "umwelt": "The cuckooshrike is a patient forager — it works the treetops methodically, branch to branch, reading foliage with its eyes and bill for insects, larvae, and fruit. It recognises its mate from plumage: the degree of black masking and the pattern of barring. Wing-flicking, performed when perched, is another quick visual pulse.",
     "umwelt_sources": {
-      "confidence": "C",
-      "confidence_label": "General / textbook-level",
-      "note": "Sexual dichromatism read via UV/tetrachromatic vision is general avian science; no cuckooshrike-specific colour-vision study found.",
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "All facts drawn directly from the Birds of the World species account for Indian Cuckooshrike (Campephaga indica): vocalisations, call frequency range, calling times, pair-contact and territory functions, the Jerdon's Baza chick response, wing-flicking behaviour, and foraging method. No smell, magnetic sensing, or other sensory modalities are documented in the account.",
       "citations": [
-        "Cuthill, Partridge, Bennett, Church, Hart & Hunt 2000, \"Ultraviolet vision in birds,\" Advances in the Study of Behavior 29:159-214",
-        "Hart & Hunt 2007, review of UV/violet photoreceptor variation in birds"
+        "Birds of the World species account: Indian Cuckooshrike (Campephaga indica), Cornell Lab of Ornithology"
       ]
     },
     "habitat": "Forest canopy, deciduous woodland, plantations",
@@ -755,41 +770,27 @@
     "ebird_code": "lescou1"
   },
   {
-    "id": "white-browed-fantail",
-    "name": "White-browed Fantail",
-    "scientific_name": "Rhipidura aureola",
-    "image_url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/634918468/2400",
-    "image_credit": "Hemant Kirola",
-    "sound_url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/469624841/mp3",
+    "id": "spot-breasted-fantail",
+    "name": "Spot-breasted Fantail",
+    "scientific_name": "Rhipidura albogularis",
+    "image_url": "",
+    "image_credit": "",
+    "sound_url": "",
     "xc_id": "",
-    "sound_tip": "Frequent song is a 4- to 7-note melodious whistling phrase that ascends and then sometimes descends or is left incomplete. Contact call is a harsh \"switch-wich.\"",
-    "fun_fact": "The White-browed Fantail (Rhipidura aureola) has a fascinating foraging trick: it fans and flicks its tail dramatically not just for display, but to flush insects from leaf litter and vegetation. The sudden movement startles hidden insects into flying up — straight into the bird's waiting beak. The tail is essentially a hunting tool.",
-    "umwelt": "That constant tail-fanning isn't just decorative; spreading white tail feathers while hopping through undergrowth may startle hidden insects into moving, turning its own display into a hunting tool. Like other flycatchers, it's tuned to catch fast, fine motion that would register as barely a flicker to a human eye.",
+    "sound_tip": "A two-part song: 5–6 trilling notes that rise and fall, then 4–5 notes climbing up the scale — like a musical question that always ends reaching upward.",
+    "fun_fact": "Each bird maintains its personal song year to year with only gradual changes — the same individual sounds noticeably different after several years. It fans its spotted tail constantly while foraging, flushing hidden insects straight into its beak.",
+    "umwelt": "That constant tail-fanning isn't just decorative — spreading the white-edged tail while hopping through undergrowth startles hidden insects into moving, turning its own display into a hunting tool. Like other flycatchers, it's tuned to catch fast, fine motion that would register as barely a flicker to a human eye.",
     "umwelt_sources": {
       "confidence": "C",
       "confidence_label": "General / textbook-level",
-      "note": "Tail-fanning to flush insects is best documented in the New Zealand Fantail (a different genus/species, Rhipidura fuliginosa); extended here to a related fantail on behavioural plausibility, not direct evidence.",
+      "note": "Tail-fanning to flush insects is best documented in the New Zealand Fantail (Rhipidura fuliginosa); extended here to Rhipidura albogularis on genus-level behavioural plausibility, not direct species-specific evidence.",
       "citations": [
-        "Tail-fanning-to-flush-insects foraging behaviour is best documented in the New Zealand Fantail (Rhipidura fuliginosa), a different species in the same genus; general genus-level reference, not White-browed-specific."
+        "Tail-fanning-to-flush-insects foraging behaviour is best documented in the New Zealand Fantail (Rhipidura fuliginosa), a different species in the same genus; general genus-level reference."
       ]
     },
-    "habitat": "Dense undergrowth, forest edges, scrub, stream-side thickets",
-    "karnataka_spots": "Western Ghats fringe & deciduous forests, Bangalore & surrounds",
-    "ebird_code": "whbfan2",
-    "extra_sounds": [
-      {
-        "url": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/542928/mp3",
-        "label": "Contact call",
-        "tip": ""
-      }
-    ],
-    "extra_images": [
-      {
-        "url": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/148956361/1800",
-        "label": "Tail fanned",
-        "credit": "Cornell Lab / Macaulay Library"
-      }
-    ]
+    "habitat": "Forest edges, scrub, open woodland and cultivation — keeps low in dense cover",
+    "karnataka_spots": "Western Ghats fringe, deciduous forests, dry scrub across south Karnataka",
+    "ebird_code": "spbfan1"
   },
   {
     "id": "red-wattled-lapwing",
@@ -1146,5 +1147,47 @@
     "habitat": "Forests, forest edges, gardens, orchards (winter visitor)",
     "karnataka_spots": "A common winter visitor — Lalbagh, Cubbon Park, Nandi Hills, wooded areas across Bangalore; also seen in Western Ghats forests during passage",
     "ebird_code": "grewar3"
+  },
+  {
+    "id": "grey-francolin",
+    "name": "Grey Francolin",
+    "scientific_name": "Ortygornis pondicerianus",
+    "image_url": "",
+    "image_credit": "",
+    "sound_url": "",
+    "xc_id": "",
+    "sound_tip": "A loud, ringing 'Ka-tee-tar...tee-tar' repeated insistently — so distinctive it gave the bird its Hindi name 'teetar'. Pairs answer each other in escalating cackling duets.",
+    "fun_fact": "Its running gait was considered so graceful that in traditional Urdu poetry, a lover's highest compliment was to liken his beloved's walk to that of a partridge. Also historically kept for bird fights in northern India.",
+    "habitat": "Open cultivated land, dry scrub, grassland — ground-dwelling, rarely above 500m",
+    "karnataka_spots": "Dry Deccan Plateau — Hampi, Bidar, Raichur districts; farmland edges across north Karnataka",
+    "ebird_code": "gryfra"
+  },
+  {
+    "id": "ashy-drongo",
+    "name": "Ashy Drongo",
+    "scientific_name": "Dicrurus leucophaeus",
+    "image_url": "",
+    "image_credit": "",
+    "sound_url": "",
+    "xc_id": "",
+    "sound_tip": "A sharp 'drangh gip' or rapid 'gip-gip-drangh' — more metallic and slurred than the Black Drongo. Also mimics other birds mid-perch, so if a call sounds like the Common Iora but nothing adds up, check for the Ashy Drongo.",
+    "fun_fact": "Unlike the resident Black Drongo, the Ashy Drongo is a winter visitor from the Himalayas and Central Asia — a traveller dressed in grey instead of glossy black. It can mimic other species' calls convincingly, including the Common Iora.",
+    "habitat": "Hill forests, forest edges, open woodland — mainly a winter visitor to the plains",
+    "karnataka_spots": "Western Ghats forests in winter — Coorg, Chikmagalur, Dandeli; sometimes gardens in Bangalore during migration",
+    "ebird_code": "ashdro1"
+  },
+  {
+    "id": "black-naped-monarch",
+    "name": "Black-naped Monarch",
+    "scientific_name": "Hypothymis azurea",
+    "image_url": "",
+    "image_credit": "",
+    "sound_url": "",
+    "xc_id": "",
+    "sound_tip": "A sharp, abrupt 'skrip!' — quick and insistent, like a tiny referee's whistle. Very similar to the Asian Paradise Flycatcher's alarm note, so look carefully before deciding which you've found.",
+    "fun_fact": "When alarmed, this otherwise serene blue flycatcher raises its nape feathers into a pointed crest — instantly transforming from jewel to spiky punk. Females build the nest and decorate it with spider egg cases.",
+    "habitat": "Thick forest understorey, well-wooded gardens, shaded ravines",
+    "karnataka_spots": "Western Ghats forests — Dandeli, Coorg, Bhadra, Kudremukh; forest patches near Bangalore",
+    "ebird_code": "blnmon1"
   }
 ]
