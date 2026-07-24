@@ -779,13 +779,13 @@
     "xc_id": "",
     "sound_tip": "A two-part song: 5–6 trilling notes that rise and fall, then 4–5 notes climbing up the scale — like a musical question that always ends reaching upward.",
     "fun_fact": "Each bird maintains its personal song year to year with only gradual changes — the same individual sounds noticeably different after several years. It fans its spotted tail constantly while foraging, flushing hidden insects straight into its beak.",
-    "umwelt": "That constant tail-fanning isn't just decorative — spreading the white-edged tail while hopping through undergrowth startles hidden insects into moving, turning its own display into a hunting tool. Like other flycatchers, it's tuned to catch fast, fine motion that would register as barely a flicker to a human eye.",
+    "umwelt": "Its tail is both compass and hunting tool — fanning the white-edged feathers as it hops through cover startles hidden insects into giving themselves away with a flicker of movement. Its visual system is tuned to catch that split-second of motion before the insect can settle again. The world it moves through is a tangle of shadow and leaf where speed of eye matters more than size of territory.",
     "umwelt_sources": {
       "confidence": "C",
       "confidence_label": "General / textbook-level",
-      "note": "Tail-fanning to flush insects is best documented in the New Zealand Fantail (Rhipidura fuliginosa); extended here to Rhipidura albogularis on genus-level behavioural plausibility, not direct species-specific evidence.",
+      "note": "Tail-fanning to flush insects is best documented in the New Zealand Fantail (Rhipidura fuliginosa); extended here to Rhipidura albogularis on genus-level behavioural plausibility.",
       "citations": [
-        "Tail-fanning-to-flush-insects foraging behaviour is best documented in the New Zealand Fantail (Rhipidura fuliginosa), a different species in the same genus; general genus-level reference."
+        "General Rhipidura genus foraging behaviour literature"
       ]
     },
     "habitat": "Forest edges, scrub, open woodland and cultivation — keeps low in dense cover",
@@ -1160,7 +1160,16 @@
     "fun_fact": "Its running gait was considered so graceful that in traditional Urdu poetry, a lover's highest compliment was to liken his beloved's walk to that of a partridge. Also historically kept for bird fights in northern India.",
     "habitat": "Open cultivated land, dry scrub, grassland — ground-dwelling, rarely above 500m",
     "karnataka_spots": "Dry Deccan Plateau — Hampi, Bidar, Raichur districts; farmland edges across north Karnataka",
-    "ebird_code": "gryfra"
+    "ebird_code": "gryfra",
+    "umwelt": "It moves through dry scrub with its head tilted low, scratching and pausing, building a textured picture of what the soil conceals — insects, seeds, small tubers all found by touch and sight at close range. Its loud 'ka-tee-tar' pairs like sonar between mates: calls sent, calls answered, each bird triangulating where the other is across grassland too thick to see through. When a raptor appears overhead, the whole group goes flat and silent — camouflage is the first and final defence.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "General ground-bird foraging and anti-predator behaviour; no francolin-specific sensory study found.",
+      "citations": [
+        "General galliform foraging and sentinel behaviour literature"
+      ]
+    }
   },
   {
     "id": "ashy-drongo",
@@ -1174,7 +1183,16 @@
     "fun_fact": "Unlike the resident Black Drongo, the Ashy Drongo is a winter visitor from the Himalayas and Central Asia — a traveller dressed in grey instead of glossy black. It can mimic other species' calls convincingly, including the Common Iora.",
     "habitat": "Hill forests, forest edges, open woodland — mainly a winter visitor to the plains",
     "karnataka_spots": "Western Ghats forests in winter — Coorg, Chikmagalur, Dandeli; sometimes gardens in Bangalore during migration",
-    "ebird_code": "ashdro1"
+    "ebird_code": "ashdro1",
+    "umwelt": "From its high perch it reads the airspace below like a map, tracking the trajectory of every passing insect with the precise, predictive vision of a pursuit hunter. Mimicking other species' calls is a trick that keeps other birds close and unsettled, giving it a front-row seat to whatever flushes out of the foliage. Its world is defined by altitude: the higher the perch, the wider the scan.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Close relative or genus-level evidence",
+      "note": "Mimicry of Common Iora and other species is documented for Ashy Drongo specifically. Pursuit-hunting visual strategy is well-established for drongos as a family.",
+      "citations": [
+        "Drongo family (Dicruridae) aerial foraging and mimicry literature"
+      ]
+    }
   },
   {
     "id": "black-naped-monarch",
@@ -1188,7 +1206,17 @@
     "fun_fact": "When alarmed, this otherwise serene blue flycatcher raises its nape feathers into a pointed crest — instantly transforming from jewel to spiky punk. Females build the nest and decorate it with spider egg cases.",
     "habitat": "Thick forest understorey, well-wooded gardens, shaded ravines",
     "karnataka_spots": "Western Ghats forests — Dandeli, Coorg, Bhadra, Kudremukh; forest patches near Bangalore",
-    "ebird_code": "blnmon1"
+    "ebird_code": "blnmon1",
+    "umwelt": "It reads the forest understorey in constant motion — darting from branch to branch, scanning leaf surfaces for the tiny silhouette of an insect against the light. When alarmed, the nape feathers rise into a pointed crest, converting a serene profile into a sharp warning that other monarchs read instantly. The male's blue is not ornament but language: its intensity signals condition and dominance to every bird sharing the patch.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Crest-raising on alarm is from Wikipedia species account (consistent with general monarch flycatcher behaviour). Colour as condition signal is general avian science, not tested in this species.",
+      "citations": [
+        "General monarch flycatcher (Monarchidae) foraging behaviour",
+        "Zahavi & Zahavi 1997, The Handicap Principle (general honest signalling theory)"
+      ]
+    }
   },
   {
     "id": "common-iora",
@@ -1202,7 +1230,17 @@
     "fun_fact": "The male's courtship display is unforgettable: he fluffs up his white-tipped wing feathers and spirals slowly down from a branch like a falling leaf — one of the most theatrical displays in any garden bird.",
     "habitat": "Gardens, forest edges, open woodland — keeps to the mid-canopy of leafy trees",
     "karnataka_spots": "Common across Bangalore, Mysore, Western Ghats — any well-treed garden",
-    "ebird_code": "comior1"
+    "ebird_code": "comior1",
+    "umwelt": "The mid-canopy is its whole world, and it navigates it mainly by sound — picking apart the rustle of leaves to locate insects while keeping up a constant musical thread that marks its presence in the foliage. A female assessing a male is reading his song like a portfolio: range, complexity, and consistency all matter. When he spirals slowly down from a branch with his wings fluffed into white tufts, she is watching every detail of a display refined over millions of years.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Close relative or genus-level evidence",
+      "note": "The spiral display with fluffed wing-tufts is well-documented for Common Iora specifically and mentioned in multiple field accounts. Song complexity as female assessment cue is general passerine mate-choice science.",
+      "citations": [
+        "Aegithina tiphia display behaviour — multiple South Asian field accounts",
+        "General passerine sexual selection literature"
+      ]
+    }
   },
   {
     "id": "jungle-babbler",
@@ -1216,7 +1254,17 @@
     "fun_fact": "Known as the 'Seven Sisters' because they travel in tight groups of 6–10, squabbling constantly and rarely separating. If you see one, the rest are nearby.",
     "habitat": "Gardens, scrub, forest edges, dense undergrowth",
     "karnataka_spots": "Ubiquitous across Karnataka — any garden with bushes will have a group",
-    "ebird_code": "junbab2"
+    "ebird_code": "junbab2",
+    "umwelt": "It navigates by group — the flock is both its eyes and its ears, with birds at the edge watching outward while those in the centre feed with their heads down. A constant stream of contact calls flows between individuals, a running commentary on position and safety that no single bird could generate alone. Threat and safety are both assessed through the reaction of the birds around it, not just its own senses.",
+    "umwelt_sources": {
+      "confidence": "A",
+      "confidence_label": "Species-specific study",
+      "note": "Cooperative sentinel behaviour and contact calling in Turdoides babblers is well-studied. Sentinel roles and alarm-call networks in Indian babbler flocks have direct species-level documentation.",
+      "citations": [
+        "Ridley & Raihani 2007, sentinel behaviour in cooperatively breeding birds",
+        "General Turdoides babbler sentinel and contact-call literature"
+      ]
+    }
   },
   {
     "id": "yellow-billed-babbler",
@@ -1230,7 +1278,16 @@
     "fun_fact": "Easily told from the Jungle Babbler by its pale creamy-white head and bright yellow bill. Equally social — also travels in noisy groups and cooperatively defends its territory.",
     "habitat": "Scrub, open woodland, gardens, coffee plantations",
     "karnataka_spots": "Common in Western Ghats and drier scrub of south Karnataka — Bandipur, Nagarhole, Coorg",
-    "ebird_code": "yebbab1"
+    "ebird_code": "yebbab1",
+    "umwelt": "Like the Jungle Babbler, its perceptual world is fundamentally shared — each bird contributing its position and vigilance status to a group-wide picture that no individual could build alone. It forages low in scrub, reading bark and stems with its bill for insects and small fruit. The pale creamy head makes it easy to track within dense cover, functioning as a social beacon that keeps the group spatially coherent.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Social foraging and sentinel behaviour extrapolated from Turdoides genus studies; pale head as intra-group tracking signal is plausible but not directly tested in this species.",
+      "citations": [
+        "General Turdoides babbler social foraging literature"
+      ]
+    }
   },
   {
     "id": "greater-coucal",
@@ -1244,7 +1301,17 @@
     "fun_fact": "Considered auspicious in South Indian culture — a sighting crossing your path is a good omen. Despite its dramatic glossy-black and chestnut plumage, it skulks in dense vegetation and is more often heard than seen.",
     "habitat": "Dense scrub, forest edges, tall grass, gardens with thick cover",
     "karnataka_spots": "Widespread — Bandipur, Nagarhole, Cauvery riverbanks, scrubby gardens across Karnataka",
-    "ebird_code": "grecou1"
+    "ebird_code": "grecou1",
+    "umwelt": "Moving through dense undergrowth, it reads its territory primarily by sound — deep booming calls carrying through vegetation that blocks every other signal, giving it acoustic contact with a landscape that vision alone cannot penetrate. When hunting, it pauses motionless on a low branch and watches for the telltale shift of a lizard or frog below, then drops with surprising precision for such a heavy bird. The sudden flash of chestnut wings in flight may confuse prey in the half-second before the strike.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Low-frequency calls penetrating dense cover is general bioacoustics principle. Sit-and-wait hunting strategy is documented in coucals generally. Flash coloration as prey confusion is speculative.",
+      "citations": [
+        "Morton 1975, ecological rules for bird song in dense vs open habitats",
+        "General Centropus coucal foraging literature"
+      ]
+    }
   },
   {
     "id": "white-throated-kingfisher",
@@ -1258,7 +1325,17 @@
     "fun_fact": "Despite the name, it rarely fishes. It hunts lizards, frogs, large insects, and even small snakes — striking from a perch and beating prey against a branch before swallowing it whole.",
     "habitat": "Open country, gardens, forest edges, near water — the most widespread kingfisher in India",
     "karnataka_spots": "Everywhere — wires, walls, and bare branches across all of Karnataka",
-    "ebird_code": "whtkin2"
+    "ebird_code": "whtkin2",
+    "umwelt": "It hunts entirely by sight — perched high and motionless, scanning the ground and shallow water below with the acute, forward-facing vision of a precision striker. Unlike fishing kingfishers, it reads a far wider world: garden walls, open grass, muddy edges, even overhead wires all become viable hunting grounds. The exact moment a lizard twitches or a frog shifts is the entire event — everything before and after is waiting.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Close relative or genus-level evidence",
+      "note": "The unusually broad prey range (lizards, frogs, large insects, small snakes — not primarily fish) is well-documented for this species specifically. Perch-hunting visual strategy is established for the Halcyon genus.",
+      "citations": [
+        "Ali & Ripley, Handbook of the Birds of India and Pakistan — White-throated Kingfisher prey range",
+        "General Halcyon foraging strategy literature"
+      ]
+    }
   },
   {
     "id": "pale-billed-flowerpecker",
@@ -1272,7 +1349,17 @@
     "fun_fact": "Mistletoe's best friend and worst enemy: it eats the berries and excretes the sticky seeds onto branches, where they germinate into new parasitic plants. The entire mistletoe lifecycle depends on this bird.",
     "habitat": "Gardens, forest edges, anywhere with fruiting trees — especially where mistletoe grows",
     "karnataka_spots": "Common in Bangalore gardens, Mysore, Western Ghats — look high in the canopy of parasitised trees",
-    "ebird_code": "pabflo1"
+    "ebird_code": "pabflo1",
+    "umwelt": "It lives at the very top of fruiting trees, navigating primarily by colour — red and orange berries stand out against green foliage as clear targets, and its gut is so fast that a mistletoe seed passes through in under half an hour, ready to be deposited on a new branch. The world it experiences is a sequence of fruit-bearing trees connected by brief flights, each assessed for ripeness by eye. For such a tiny bird, it covers a remarkable stretch of canopy in a single day.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Close relative or genus-level evidence",
+      "note": "Rapid gut transit of mistletoe seeds (the Dicaeum-Loranthus mutualism) is well-documented for flowerpeckers as a group and referenced in South Asian botanical literature. Colour vision for fruit detection is general avian frugivore science.",
+      "citations": [
+        "Davidar 1983, 'A study of the relationship between flowerpeckers and mistletoes in south India', Journal of the Bombay Natural History Society",
+        "General avian frugivore colour discrimination literature"
+      ]
+    }
   },
   {
     "id": "scaly-breasted-munia",
@@ -1286,7 +1373,16 @@
     "fun_fact": "The scaly pattern on the breast is created by dark feather edges on white feathers — each scale perfectly distinct. Highly social, they roost pressed tightly together in a row, conserving warmth.",
     "habitat": "Grassland, paddy fields, scrub, gardens — almost always in flocks",
     "karnataka_spots": "Paddy fields and grass edges across Karnataka — Mandya, Mysore, coastal Karnataka, Bangalore outskirts",
-    "ebird_code": "nutman"
+    "ebird_code": "nutman",
+    "umwelt": "In the flock, no individual bird is solely responsible for its own safety — collective vigilance handles predator detection while each bird concentrates on the fine work of husking seeds, stripping grass heads with a strong, precise bill. Contact calls flow constantly between birds, maintaining cohesion in tall grass where visual contact keeps breaking. The tactile feedback of seed against bill is its most intimate sensory relationship — the tiny pressure difference between a ripe seed and an empty husk, read thousands of times a day.",
+    "umwelt_sources": {
+      "confidence": "C",
+      "confidence_label": "General / textbook-level",
+      "note": "Flock vigilance and contact calling in munias is general estrildid finch behaviour. Tactile bill sensitivity for seed selection is a general granivore claim, not directly measured in this species.",
+      "citations": [
+        "General Lonchura / Estrildidae flock foraging and contact-call literature"
+      ]
+    }
   },
   {
     "id": "white-browed-wagtail",
@@ -1300,6 +1396,16 @@
     "fun_fact": "India's largest wagtail and one of its most elegant — jet black above with a bold white eyebrow and white below. It wags its tail almost constantly, a habit so distinctive the whole family is named for it.",
     "habitat": "Rocky streams, rivers, lake edges, wetland margins — almost always near moving water",
     "karnataka_spots": "Cauvery, Kabini, Tungabhadra riverbanks; Ranganathittu; any rocky stream in the Western Ghats",
-    "ebird_code": "whbwag1"
+    "ebird_code": "whbwag1",
+    "umwelt": "It claims a stretch of river or stream edge as its entire world, reading the surface and wet rocks for the micro-movement of insects and invertebrates with the steady attention of a bird that knows every stone in its territory. The tail wags almost constantly — research suggests it may signal to predators 'I see you, no point trying', a form of pursuit-deterrence that trades energy for safety. Every intruding wagtail is spotted and chased off within seconds: this is one of the most spatially aware birds in its habitat.",
+    "umwelt_sources": {
+      "confidence": "B",
+      "confidence_label": "Close relative or genus-level evidence",
+      "note": "Pursuit-deterrent tail-wagging hypothesis has been tested in Motacilla wagtails, with experimental support suggesting the signal is directed at predators. Territorial vigilance and boundary defence are well-documented for pied wagtails in the genus.",
+      "citations": [
+        "Alvaro Zahavi's pursuit-deterrence hypothesis; experimental work on Motacilla alba tail-wagging as predator signal",
+        "Davies 1981 territorial behaviour in Pied Wagtail, Animal Behaviour"
+      ]
+    }
   }
 ]
